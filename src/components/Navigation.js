@@ -2,23 +2,19 @@ import React from "react";
 import {
   Box,
   Flex,
-  Avatar,
   HStack,
   Link,
   IconButton,
+  Image,
   Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
   useDisclosure,
   useColorModeValue,
   Stack,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import logo from "../assets/zulfah-logo.png";
 
-const Links = ["Dashboard", "Projects", "Team"];
+const Links = ["About", "Courses", "Hire", "FAQs"];
 
 const NavLink = ({ children }) => (
   <Link
@@ -40,32 +36,54 @@ export default function WithAction() {
 
   return (
     <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <Box>Logo</Box>
-          <IconButton
-            size={"md"}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={"Open Menu"}
-            display={{ md: "none" }}
-            onClick={isOpen ? onClose : onOpen}
-          />
-          <HStack spacing={8} alignItems={"center"}>
-            <HStack
-              as={"nav"}
-              spacing={4}
-              display={{ base: "none", md: "flex" }}
-            >
+      <Box bg={{ base: "#DFEAEF", lg: "brand.white" }} px={{ base: 4, lg: 20 }}>
+        <Flex
+          h={{ sm: 16, lg: 84 }}
+          alignItems={"center"}
+          justifyContent={"space-between"}
+        >
+          <Box>
+            <Image h={45} objectFit="cover" src={logo} alt="Zulfah group" />
+          </Box>
+
+          <HStack
+            as={"nav"}
+            w="65%"
+            spacing={4}
+            display={{ base: "none", md: "flex" }}
+            justifyContent="space-between"
+          >
+            <Box w="60%" display={"flex"} justifyContent={"space-around"}>
               {Links.map((link) => (
                 <NavLink key={link}>{link}</NavLink>
               ))}
-              <Flex alignItems={"center"}>
-                <Button variant={"solid"} bg={"brand.gold"} size={"sm"} mr={4}>
-                  Apply now
-                </Button>
-              </Flex>
-            </HStack>
+            </Box>
+
+            <Button variant={"solid"} bg={"brand.gold"} size={"md"}>
+              Apply now
+            </Button>
           </HStack>
+
+          <IconButton
+            size={"md"}
+            icon={
+              isOpen ? (
+                <CloseIcon
+                  p={1}
+                  borderRadius="50%"
+                  color={"brand.white"}
+                  bg={"brand.deepgrey"}
+                />
+              ) : (
+                <HamburgerIcon />
+              )
+            }
+            aria-label={"Open Menu"}
+            display={{ md: "none" }}
+            onClick={isOpen ? onClose : onOpen}
+            bg="#DFEAEF"
+            variant={"solid"}
+          />
         </Flex>
 
         {isOpen ? (
@@ -74,11 +92,10 @@ export default function WithAction() {
               {Links.map((link) => (
                 <NavLink key={link}>{link}</NavLink>
               ))}
-              <Flex alignItems={"center"}>
-                <Button variant={"solid"} bg={"brand.gold"} size={"sm"} mr={4}>
-                  Apply now
-                </Button>
-              </Flex>
+
+              <Button bg={"brand.gold"} size={"md"} borderRadius={4}>
+                Apply now
+              </Button>
             </Stack>
           </Box>
         ) : null}
