@@ -10,7 +10,7 @@ const theme = extendTheme({
       textgrey: "#332E2E",
       deepgrey: "#263238",
       bluishgrey: "#1D3547",
-      fuscia: "#CF375D",
+      fuscia: "#CF3A5E",
       gold: "#ECB32C",
     },
   },

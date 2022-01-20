@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   Box,
   Flex,
@@ -12,6 +13,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { Link as ReactRouterLink } from "react-router-dom";
 import logo from "../assets/zulfah-logo.png";
 
 const Links = ["About", "Courses", "Hire", "FAQs"];
@@ -25,20 +27,20 @@ const NavLink = ({ children }) => (
       textDecoration: "none",
       bg: useColorModeValue("gray.200", "gray.700"),
     }}
-    href={"#"}
+    href={children}
   >
     {children}
   </Link>
 );
 
-export default function WithAction() {
+export default function MainNavigation() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <>
+    <Box>
       <Box bg={{ base: "#DFEAEF", lg: "brand.white" }} px={{ base: 4, lg: 20 }}>
         <Flex
-          h={{ sm: 16, lg: 84 }}
+          h={{ sm: 16, lg: 100 }}
           alignItems={"center"}
           justifyContent={"space-between"}
         >
@@ -60,7 +62,7 @@ export default function WithAction() {
             </Box>
 
             <Button variant={"solid"} bg={"brand.gold"} size={"md"}>
-              Apply now
+              <ReactRouterLink to="/application">Apply now</ReactRouterLink>
             </Button>
           </HStack>
 
@@ -94,12 +96,12 @@ export default function WithAction() {
               ))}
 
               <Button bg={"brand.gold"} size={"md"} borderRadius={4}>
-                Apply now
+                <Link to="/application">Apply now</Link>
               </Button>
             </Stack>
           </Box>
         ) : null}
       </Box>
-    </>
+    </Box>
   );
 }
