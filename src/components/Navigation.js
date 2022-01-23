@@ -37,7 +37,7 @@ export default function MainNavigation() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box>
+    <Box position={"absolute"} top={0} left={0} zIndex={20} width={"100%"}>
       <Box bg={{ base: "#DFEAEF", lg: "brand.white" }} px={{ base: 4, lg: 20 }}>
         <Flex
           h={{ sm: 16, lg: 100 }}
