@@ -35,7 +35,7 @@ export default function Home() {
   return (
     <Box position={"relative"}>
       <MainNavigation />
-      <Box paddingTop={{ base: "45px", lg: "none" }}>
+      <Box paddingTop={{ base: "45px", lg: "none" }} bg={"white"}>
         <Stack
           pos={"relative"}
           h={{ base: "50vh", lg: "75vh" }}
@@ -154,6 +154,7 @@ export default function Home() {
             spacing={{ base: "15px", lg: "50px" }}
             w={{ base: "75%", lg: "380px" }}
             mb={{ base: "40px", lg: "none" }}
+            mt={{ base: "50px", lg: "none" }}
           >
             <Heading fontSize={"36px"}>
               Get the skills you need to get a job.
@@ -270,6 +271,7 @@ export default function Home() {
           h={{ base: "50vh", lg: "75vh" }}
           direction={{ base: "column", md: "row" }}
           bg={"brand.white"}
+          mb={{ base: "70px", lg: "none" }}
         >
           <Flex p={8} flex={1} alignItems={"center"} justifyContent={"center"}>
             <Stack
@@ -398,7 +400,6 @@ export default function Home() {
                 justifyContent={"space-between"}
                 spacing={{ base: 4, lg: 8 }}
                 maxW={{ base: "95%", lg: "85%" }}
-                h={"480px"}
                 textAlign={{ base: "center", lg: "left" }}
                 color={"white"}
               >
@@ -605,10 +606,10 @@ export default function Home() {
               boxSize={"100px"}
               style={{ clipPath: "polygon(100% 0, 100% 100%,  0 100%)" }}
             ></Box>
-            <Heading w={{ base: "70%", lg: "500px" }}>
+            <Heading w={{ base: "80%", lg: "500px" }}>
               Start your application to become a software engineer
             </Heading>
-            <Text w={{ base: "70%", lg: "600px" }}>
+            <Text w={{ base: "80%", lg: "600px" }}>
               Become a student at Bloom Institute of Technology. The next
               application deadline is: December 10, 2021
             </Text>
