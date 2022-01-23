@@ -30,6 +30,7 @@ import {
 import { Android, BriefCase, Bookmark, Charts } from "../assets/icons/index";
 
 import { Link as ReactRouterLink } from "react-router-dom";
+import { Footer } from "../components/Footer";
 
 export default function Home() {
   return (
@@ -625,6 +626,7 @@ export default function Home() {
           </Stack>
         </VStack>
       </Box>
+      <Footer />
     </Box>
   );
 }

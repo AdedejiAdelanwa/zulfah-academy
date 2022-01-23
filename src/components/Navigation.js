@@ -18,7 +18,7 @@ import logo from "../assets/zulfah-logo.png";
 
 const Links = ["About", "Courses", "Hire", "FAQs"];
 
-const NavLink = ({ children }) => (
+export const NavLink = ({ children }) => (
   <Link
     px={2}
     py={1}
