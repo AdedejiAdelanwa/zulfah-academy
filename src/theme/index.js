@@ -13,6 +13,7 @@ const theme = extendTheme({
       bluishgrey: "#1D3547",
       fuscia: "#CF3A5E",
       gold: "#ECB32C",
+      green: "#3C9A9D",
     },
   },
 });
