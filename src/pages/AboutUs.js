@@ -317,7 +317,8 @@ export default function AboutUs() {
             direction={{ base: "column", lg: "row" }}
             justifyContent={{ base: "space-around", lg: "space-between" }}
             bg={"white"}
-            mt={"100px"}
+            mt={{ base: "50px", lg: "100px" }}
+            mb={{ base: "50px", lg: "100px" }}
           >
             <Stack
               w={{ base: "350px", lg: "530px" }}
@@ -375,7 +376,10 @@ export default function AboutUs() {
                 </Stack>
               </Flex>
             </Stack>
-            <Stack w={{ base: "100%", lg: "541px" }}>
+            <Stack
+              w={{ base: "100%", lg: "541px" }}
+              mt={{ base: "50px", lg: "none" }}
+            >
               <Heading py={"15px"}>Financing Options</Heading>
               <Tabs variant="unstyled">
                 <TabList>
@@ -624,7 +628,7 @@ export default function AboutUs() {
             </TabPanels>
           </Tabs>
         </Stack>
-        <Stack w={"100%"} py={"100px"} alignItems={"center"}>
+        <Stack w={"100%"} py={"50px"} alignItems={"center"}>
           <Stack
             pos={"relative"}
             w={{ base: "90%", lg: "80%" }}
