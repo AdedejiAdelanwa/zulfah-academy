@@ -120,7 +120,7 @@ export const Application = () => {
           ) : (
             <form onSubmit={handleSubmit}>
               {progress === "not started" && (
-                <Stack spacing={4} pt={{ base: "50px", lg: "0px" }}>
+                <Stack spacing={4} pt={{ base: "100px", lg: "0px" }}>
                   <Heading>Application</Heading>
                   <Text>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
