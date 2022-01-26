@@ -34,7 +34,11 @@ export default function AppNavigation() {
 
   return (
     <Box position={"absolute"} top={0} left={0} zIndex={20} width={"100%"}>
-      <Box px={{ base: 4, lg: 20 }}>
+      <Box
+        px={{ base: 4, lg: 20 }}
+        bg={{ base: "brand.bluishgrey", lg: "transparent" }}
+        color={{ base: "white", lg: "transparent" }}
+      >
         <Flex
           h={{ sm: 16, lg: 100 }}
           alignItems={"center"}
@@ -59,14 +63,14 @@ export default function AppNavigation() {
               )
             }
             aria-label={"Open Menu"}
-            // display={{ md: "none" }}
+            display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
             variant={"unstyled"}
           />
         </Flex>
 
         {isOpen ? (
-          <Box pb={4} display={{ md: "none" }} bg={"red"}>
+          <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
               {Links.map((link) => (
                 <NavLink key={link}>{link}</NavLink>
