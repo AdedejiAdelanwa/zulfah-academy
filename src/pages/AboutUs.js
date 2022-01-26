@@ -59,7 +59,7 @@ export default function AboutUs() {
         >
           <Heading
             w={{ base: "80%", lg: "395px" }}
-            fontSize={{ base: "48px", lg: "64px" }}
+            fontSize={{ base: "44px", lg: "64px" }}
           >
             Software Development
           </Heading>
@@ -76,7 +76,7 @@ export default function AboutUs() {
           </Button>
           <Box
             position={"absolute"}
-            bottom={"-40%"}
+            bottom={"-60%"}
             display={{ base: "block", lg: "none" }}
             boxSize={"341px"}
             backgroundImage={LadyWithTab}
@@ -90,7 +90,7 @@ export default function AboutUs() {
         <Stack
           w={"100%"}
           alignItems={"center"}
-          paddingTop={{ base: "300px", lg: "90px" }}
+          paddingTop={{ base: "350px", lg: "90px" }}
         >
           <HStack
             w={"80%"}
@@ -137,8 +137,9 @@ export default function AboutUs() {
               w={{ base: "100%", lg: "630px" }}
               spacing={8}
               textAlign={{ base: "center", lg: "left" }}
+              mt={{ base: "30px", lg: "0px" }}
             >
-              <Heading fontSize={{ base: "36px", lg: "48px" }}>
+              <Heading fontSize={{ base: "28px", lg: "48px" }}>
                 Overview of Zulfah Software Engineering Training
               </Heading>
               <Text lineHeight={"2"}>
@@ -175,7 +176,7 @@ export default function AboutUs() {
               justifyContent={{ base: "center", lg: "left" }}
               w={{ base: "100%", lg: "420px" }}
             >
-              <Heading fontSize={{ base: "36px", lg: "48px" }}>
+              <Heading fontSize={{ base: "28px", lg: "48px" }}>
                 What you will learn
               </Heading>
               <VStack>
@@ -190,8 +191,8 @@ export default function AboutUs() {
                   borderTopRightRadius={"12px"}
                   borderBottomRightRadius={"12px"}
                 >
-                  <Heading fontSize={"25px"}>Front-end development</Heading>
-                  <Text fontSize={"16px"}>
+                  <Heading fontSize={"22px"}>Front-end development</Heading>
+                  <Text fontSize={"14px"}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
                     semper magna sapien
                   </Text>
@@ -207,8 +208,8 @@ export default function AboutUs() {
                   borderTopRightRadius={"12px"}
                   borderBottomRightRadius={"12px"}
                 >
-                  <Heading fontSize={"25px"}>Back-end development</Heading>
-                  <Text fontSize={"16px"}>
+                  <Heading fontSize={"22px"}>Back-end development</Heading>
+                  <Text fontSize={"14px"}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
                     semper magna sapien
                   </Text>
@@ -224,8 +225,8 @@ export default function AboutUs() {
                   borderTopRightRadius={"12px"}
                   borderBottomRightRadius={"12px"}
                 >
-                  <Heading fontSize={"25px"}>DevOps</Heading>
-                  <Text fontSize={"16px"}>
+                  <Heading fontSize={"22px"}>DevOps</Heading>
+                  <Text fontSize={"14px"}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. In
                     semper magna sapien
                   </Text>
@@ -321,7 +322,7 @@ export default function AboutUs() {
             mb={{ base: "50px", lg: "100px" }}
           >
             <Stack
-              w={{ base: "350px", lg: "530px" }}
+              w={{ base: "330px", lg: "530px" }}
               h={{ base: "auto", lg: "541px" }}
               alignItems={"flex-end"}
               justifyContent={"space-around"}
@@ -396,8 +397,8 @@ export default function AboutUs() {
                     borderColor={"brand.deepgrey"}
                     borderTopLeftRadius={4}
                     borderBottomLeftRadius={4}
-                    py="10px"
-                    px="15px"
+                    py={{ base: "5px", lg: "10px" }}
+                    px={{ base: "10px", lg: "15px" }}
                   >
                     Self Payment Plan
                   </Tab>
@@ -413,8 +414,8 @@ export default function AboutUs() {
                     borderStyle={"solid"}
                     borderColor={"brand.deepgrey"}
                     borderTopRightRadius={4}
-                    py="10px"
-                    px="15px"
+                    py={{ base: "5px", lg: "10px" }}
+                    px={{ base: "10px", lg: "15px" }}
                   >
                     Financial support
                   </Tab>
@@ -486,7 +487,7 @@ export default function AboutUs() {
                 borderTopLeftRadius={4}
                 borderBottomLeftRadius={4}
                 py={{ base: "5px", lg: "10px" }}
-                px={{ base: "5px", lg: "15px" }}
+                px={{ base: "10px", lg: "15px" }}
               >
                 About the process
               </Tab>
@@ -502,6 +503,8 @@ export default function AboutUs() {
                 borderStyle={"solid"}
                 borderColor={"brand.deepgrey"}
                 borderTopRightRadius={4}
+                py={{ base: "5px", lg: "10px" }}
+                px={{ base: "10px", lg: "15px" }}
               >
                 About the program
               </Tab>
