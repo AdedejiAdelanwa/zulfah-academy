@@ -5,11 +5,13 @@ import { ChakraProvider } from "@chakra-ui/react";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import theme from "./theme/index";
+import Fonts from "./components/Fonts";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <ChakraProvider theme={theme}>
+        <Fonts />
         <App />
       </ChakraProvider>
     </Router>

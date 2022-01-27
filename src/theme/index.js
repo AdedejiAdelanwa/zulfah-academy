@@ -16,5 +16,9 @@ const theme = extendTheme({
       green: "#3C9A9D",
     },
   },
+  fonts: {
+    heading: "SF Pro Display",
+    body: "SF Pro Display",
+  },
 });
 export default theme;
