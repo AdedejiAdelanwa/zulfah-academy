@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, theme as base } from "@chakra-ui/react";
 
 const theme = extendTheme({
   colors: {
@@ -17,8 +17,8 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    heading: "SF Pro Display",
-    body: "SF Pro Display",
+    heading: `SF Pro Display, ${base.fonts?.heading}`,
+    body: `SF Pro Display, ${base.fonts?.body}`,
   },
 });
 export default theme;
