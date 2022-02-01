@@ -20,8 +20,8 @@ const Links = ["About", "Courses", "Hire", "FAQs"];
 
 export const NavLink = ({ children }) => (
   <Link
-    px={2}
-    py={1}
+    py="10px"
+    px="35px"
     rounded={"md"}
     _hover={{
       textDecoration: "none",
