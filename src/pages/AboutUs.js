@@ -469,7 +469,12 @@ export default function AboutUs() {
             </Stack>
           </Flex>
         </Stack>
-        <Stack w={"100%"} alignItems={"center"} justifyContent={"center"}>
+        <Stack
+          w={"100%"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          id="frequently-asked"
+        >
           <Heading py={"15px"}>FAQs</Heading>
           <Tabs variant="unstyled" w={{ base: "80%", lg: "70%" }}>
             <TabList justifyContent={"center"}>
