@@ -44,9 +44,11 @@ export default function MainNavigation() {
           alignItems={"center"}
           justifyContent={"space-between"}
         >
-          <Box>
-            <Image h={45} objectFit="cover" src={logo} alt="Zulfah group" />
-          </Box>
+          <ReactRouterLink to="/">
+            <Box>
+              <Image h={45} objectFit="cover" src={logo} alt="Zulfah group" />
+            </Box>
+          </ReactRouterLink>
 
           <HStack
             as={"nav"}

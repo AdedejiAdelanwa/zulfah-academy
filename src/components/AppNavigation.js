@@ -9,6 +9,8 @@ import {
   useColorModeValue,
   Stack,
 } from "@chakra-ui/react";
+import { Link as ReactRouterLink } from "react-router-dom";
+
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import logo from "../assets/zulfah-mono.png";
 
@@ -44,9 +46,11 @@ export default function AppNavigation() {
           alignItems={"center"}
           justifyContent={"space-between"}
         >
-          <Box>
-            <Image h={50} objectFit="cover" src={logo} alt="Zulfah group" />
-          </Box>
+          <ReactRouterLink to="/">
+            <Box>
+              <Image h={50} objectFit="cover" src={logo} alt="Zulfah group" />
+            </Box>
+          </ReactRouterLink>
 
           <IconButton
             size={"md"}
