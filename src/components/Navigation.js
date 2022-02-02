@@ -20,14 +20,14 @@ const Links = ["About", "Courses", "Hire", "FAQs"];
 
 export const NavLink = ({ children }) => (
   <Link
-    px={2}
-    py={1}
+    py="10px"
+    px="35px"
     rounded={"md"}
     _hover={{
       textDecoration: "none",
       bg: useColorModeValue("gray.200", "gray.700"),
     }}
-    href={children}
+    href={children === "FAQs" ? "/About#frequently-asked" : children}
   >
     {children}
   </Link>
@@ -44,9 +44,11 @@ export default function MainNavigation() {
           alignItems={"center"}
           justifyContent={"space-between"}
         >
-          <Box>
-            <Image h={45} objectFit="cover" src={logo} alt="Zulfah group" />
-          </Box>
+          <ReactRouterLink to="/">
+            <Box>
+              <Image h={45} objectFit="cover" src={logo} alt="Zulfah group" />
+            </Box>
+          </ReactRouterLink>
 
           <HStack
             as={"nav"}

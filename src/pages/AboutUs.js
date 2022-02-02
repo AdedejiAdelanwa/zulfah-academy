@@ -58,8 +58,8 @@ export default function AboutUs() {
           spacing={{ base: 4, lg: 8 }}
         >
           <Heading
-            w={{ base: "80%", lg: "395px" }}
-            fontSize={{ base: "44px", lg: "64px" }}
+            w={{ base: "80%", lg: "400px" }}
+            fontSize={{ base: "42px", lg: "62px" }}
           >
             Software Development
           </Heading>
@@ -122,6 +122,7 @@ export default function AboutUs() {
                 <ListItem>Payment & Sponsorship</ListItem>
                 <ListItem>Next application</ListItem>
               </List>
+
               <Button
                 variant={"solid"}
                 bg={"brand.fuscia"}
@@ -469,7 +470,12 @@ export default function AboutUs() {
             </Stack>
           </Flex>
         </Stack>
-        <Stack w={"100%"} alignItems={"center"} justifyContent={"center"}>
+        <Stack
+          w={"100%"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          id="frequently-asked"
+        >
           <Heading py={"15px"}>FAQs</Heading>
           <Tabs variant="unstyled" w={{ base: "80%", lg: "70%" }}>
             <TabList justifyContent={"center"}>
