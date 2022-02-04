@@ -58,7 +58,7 @@ export default function AboutUs() {
           spacing={{ base: 4, lg: 8 }}
         >
           <Heading
-            w={{ base: "80%", lg: "395px" }}
+            w={{ base: "100%", lg: "395px" }}
             fontSize={{ base: "44px", lg: "64px" }}
           >
             Software Development

@@ -3,6 +3,7 @@ import MainNavigation from "../components/Navigation";
 import CodingScreen from "../assets/coding-screen.png";
 import BlackDev from "../assets/black-smiling.png";
 import BoyWithLaptop from "../assets/boy-holding-pc.png";
+import guyWithLaptop from "../assets/guy-with-laptop.png";
 import Founder from "../assets/founder.png";
 import {
   Box,
@@ -158,7 +159,8 @@ export default function Home() {
             mt={{ base: "50px", lg: "none" }}
           >
             <Heading fontSize={"36px"}>
-              Get the skills you need to get a job.
+            Why Zulfah is the #1
+            choice for you
             </Heading>
             <Text fontSize={"16px"}>
               We work with employers to understand their needs, then teach you
@@ -235,7 +237,7 @@ export default function Home() {
                 icon={<Android />}
               />
               <Heading fontSize={"14px"}>
-                Get daily support with peers, staff and instructors
+                Monthly meetout session with Industry experts
               </Heading>
               <Text fontSize={"12px"}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed
@@ -325,72 +327,7 @@ export default function Home() {
             bg={"brand.deepgrey"}
             borderRadius={{ base: "15px", lg: "none" }}
           >
-            <Flex
-              display={{ base: "none", lg: "flex" }}
-              flex={1}
-              justifyContent={"right"}
-              alignItems={"center"}
-            >
-              <Box
-                pos={"relative"}
-                display={{ base: "none", lg: "block" }}
-                w="372px"
-                h="555px"
-                backgroundImage={BoyWithLaptop}
-                backgroundSize={"cover"}
-                backgroundPosition={"bottom"}
-                backgroundRepeat={"no-repeat"}
-                borderRadius={{ lg: "12px" }}
-              >
-                <Stack
-                  position={"absolute"}
-                  w={"218px"}
-                  h={"221px"}
-                  bg={"white"}
-                  top={"-90px"}
-                  left={"-130px"}
-                  borderRadius={{ lg: "12px" }}
-                  overflow={"hidden"}
-                >
-                  <VStack p={4} h={"80%"} justifyContent={"space-between"}>
-                    <Flex
-                      w={"100%"}
-                      justifyContent={"space-around"}
-                      alignItems={"center"}
-                    >
-                      <Image
-                        boxSize="41px"
-                        objectFit="cover"
-                        src={Founder}
-                        alt="Founder"
-                        borderRadius="4px"
-                      />
-                      <Stack spacing={0}>
-                        <Heading fontSize={"14px"}>Abayomi Rosh</Heading>
-                        <Text fontSize={"12px"} color={"brand.fuscia"}>
-                          Founder
-                        </Text>
-                      </Stack>
-                    </Flex>
-                    <Text fontSize={"14px"}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Lirisus, duis accumsan .
-                    </Text>
-                  </VStack>
-                  <Flex
-                    h={"20%"}
-                    fontSize={"14px"}
-                    fontWeight={"bold"}
-                    justifyContent={"center"}
-                    alignItems={"center"}
-                    bg={"brand.lightgrey"}
-                  >
-                    <Link to="/#">View profile</Link>
-                  </Flex>
-                </Stack>
-              </Box>
-            </Flex>
-            <Flex
+             <Flex
               p={{ base: 4, lg: 8 }}
               flex={1}
               alignItems={"center"}
@@ -405,7 +342,7 @@ export default function Home() {
                 color={"white"}
               >
                 <Heading fontSize={"36px"}>
-                  What you know <br></br> about Zulfah
+                Why Zulfah is the #1 choice <br /> for you
                 </Heading>
                 <Text
                   fontSize={"16px"}
@@ -437,6 +374,73 @@ export default function Home() {
                 </Button>
               </Stack>
             </Flex>
+            <Flex
+              display={{ base: "none", lg: "flex" }}
+              flex={1}
+              justifyContent={"right"}
+              alignItems={"center"}
+            >
+             <Box
+                pos={"relative"}
+                display={{ base: "none", lg: "block" }}
+                w="100%"
+                h="600px"
+                backgroundImage={guyWithLaptop}
+                backgroundSize={"cover"}
+                backgroundPosition={"bottom"}
+                backgroundRepeat={"no-repeat"}
+                borderRadius={{ lg: "12px" }}
+              >
+              {/*  <Stack
+                  position={"absolute"}
+                  w={"218px"}
+                  h={"221px"}
+                  bg={"white"}
+                  top={"-90px"}
+                  left={"-130px"}
+                  borderRadius={{ lg: "12px" }}
+                  overflow={"hidden"}
+                >
+                {
+                  <VStack p={4} h={"80%"} justifyContent={"space-between"}>
+                    <Flex
+                      w={"100%"}
+                      justifyContent={"space-around"}
+                      alignItems={"center"}
+                    >
+                       <Image
+                        boxSize="41px"
+                        objectFit="cover"
+                        src={Founder}
+                        alt="Founder"
+                        borderRadius="4px"
+                      />
+                      <Stack spacing={0}>
+                        <Heading fontSize={"14px"}>Abayomi Rosh</Heading>
+                        <Text fontSize={"12px"} color={"brand.fuscia"}>
+                          Founder
+                        </Text>
+                      </Stack> 
+                    </Flex>
+                    <Text fontSize={"14px"}>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Lirisus, duis accumsan .
+                    </Text>
+                  </VStack> 
+                  <Flex
+                    h={"20%"}
+                    fontSize={"14px"}
+                    fontWeight={"bold"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    bg={"brand.lightgrey"}
+                  >
+                    <Link to="/#">View profile</Link>
+                  </Flex>
+                </Stack> */}
+              </Box> 
+            </Flex>
+           
           </Stack>
         </Flex>
         <VStack justifyContent={"center"}>
@@ -611,8 +615,8 @@ export default function Home() {
               Start your application to become a software engineer
             </Heading>
             <Text w={{ base: "80%", lg: "600px" }}>
-              Become a student at Bloom Institute of Technology. The next
-              application deadline is: December 10, 2021
+              Become a student at Zulfah Academy of Technology. The next
+              cohort 2 application will open is: February 10, 2022.
             </Text>
             <Button
               variant={"solid"}
