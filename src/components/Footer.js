@@ -27,7 +27,7 @@ export const Footer = () => {
         <Image h={45} objectFit="cover" src={logo} alt="Zulfah group" />
         <Flex
           direction={{ base: "column", lg: "row" }}
-          w={"30%"}
+          w={{ base: "60%", lg: "30%" }}
           justifyContent={"space-around"}
         >
           {Links.map((link) => (
