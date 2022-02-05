@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  AspectRatio,
   Box,
   Button,
   Flex,
@@ -36,6 +35,7 @@ import MemberB from "../assets/memberB.png";
 import MemberC from "../assets/memberC.png";
 import { Hourglass, Tuition } from "../assets/icons";
 import { BsArrowRight } from "react-icons/bs";
+import EventsCarousel from "../components/EventsCarousel";
 
 export default function AboutUs() {
   const team = [
@@ -236,27 +236,7 @@ export default function AboutUs() {
             </Stack>
           </HStack>
         </Stack>
-        <HStack
-          w={"100%"}
-          paddingTop={{ base: "100px", lg: "90px" }}
-          justifyContent={"center"}
-          bg={"whiteAlpha.100"}
-        >
-          <Box
-            w={"80%"}
-            // h={{ base: "545", lg: "545px" }}
-            borderRadius={"4px"}
-            overflow={"hidden"}
-          >
-            <AspectRatio maxW="100%" ratio={{ base: 0.9, lg: 2.2 }}>
-              <iframe
-                title="naruto"
-                src="https://www.youtube.com/embed/QhBnZ6NPOY0"
-                allowFullScreen
-              />
-            </AspectRatio>
-          </Box>
-        </HStack>
+        <EventsCarousel />
         <Stack
           w={"100%"}
           alignItems={"center"}
