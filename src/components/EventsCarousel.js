@@ -1,5 +1,5 @@
 import React from "react";
-import { Heading, HStack, Text, VStack } from "@chakra-ui/react";
+import { Flex, Heading, HStack, Stack, Text, VStack } from "@chakra-ui/react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import FireChat from "../assets/firechat-withYellow.jpeg";
@@ -22,39 +22,138 @@ export default function EventsCarousel() {
         autoPlay
         interval={5000}
       >
-        <HStack h={{ base: "350px", lg: "700px" }}>
-          <VStack w={"45%"}>
-            <Heading>Hello</Heading>
-            <Text>Lorem</Text>
-          </VStack>
+        <Flex
+          direction={{ base: "column", lg: "row" }}
+          justifyContent={"center"}
+          alignItems={"center"}
+          h={{ base: "auto", lg: "700px" }}
+        >
+          <Stack
+            p={{ base: 0, lg: 4 }}
+            w={"45%"}
+            h={{ base: "100%", lg: "80%" }}
+            alignItems={"center"}
+            justifyContent={"center"}
+          >
+            <VStack
+              w={{ base: "100%", lg: "70%" }}
+              h={{ base: "100%", lg: "95%" }}
+              display={{ base: "none", lg: "flex" }}
+              bg={"#fff"}
+              boxShadow={"lg"}
+              borderColor={"black"}
+              borderWidth={{ base: 0, lg: "4px" }}
+              borderStyle={"solid"}
+              borderRadius={{ base: 0, lg: 8 }}
+              textAlign="left"
+              p={4}
+            >
+              <Heading>Hello</Heading>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                tempor fermentum fermentum. Vestibulum ante ipsum primis in
+                faucibus orci luctus et ultrices posuere cubilia curae;
+                Pellentesque augue felis, dapibus ac ligula in, blandit lacinia
+                metus. Curabitur posuere sapien quis tellus cursus posuere.
+                Vivamus maximus erat eget sodales tincidunt. Aliquam erat
+                volutpat.
+              </Text>
+            </VStack>
+          </Stack>
           <img
             src={FireChat}
             style={{ display: "block", width: "55%", height: "100%" }}
             alt="hello"
           />
-        </HStack>
-        <HStack h={{ base: "350px", lg: "700px" }}>
-          <VStack w={"45%"}>
-            <Heading>Hello</Heading>
-            <Text>Lorem</Text>
-          </VStack>
+        </Flex>
+        <Flex
+          direction={{ base: "column", lg: "row" }}
+          justifyContent={"center"}
+          alignItems={"center"}
+          h={{ base: "auto", lg: "700px" }}
+        >
+          <Stack
+            p={{ base: 0, lg: 4 }}
+            w={"45%"}
+            h={{ base: "100%", lg: "80%" }}
+            alignItems={"center"}
+            justifyContent={"center"}
+          >
+            <VStack
+              w={{ base: "100%", lg: "70%" }}
+              h={{ base: "100%", lg: "95%" }}
+              display={{ base: "none", lg: "flex" }}
+              bg={"#fff"}
+              boxShadow={"lg"}
+              borderColor={"black"}
+              borderWidth={{ base: 0, lg: "4px" }}
+              borderStyle={"solid"}
+              borderRadius={{ base: 0, lg: 8 }}
+              textAlign="left"
+              p={4}
+            >
+              <Heading>Hello</Heading>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                tempor fermentum fermentum. Vestibulum ante ipsum primis in
+                faucibus orci luctus et ultrices posuere cubilia curae;
+                Pellentesque augue felis, dapibus ac ligula in, blandit lacinia
+                metus. Curabitur posuere sapien quis tellus cursus posuere.
+                Vivamus maximus erat eget sodales tincidunt. Aliquam erat
+                volutpat.
+              </Text>
+            </VStack>
+          </Stack>
           <img
             src={HandsOn}
             style={{ display: "block", width: "55%", height: "100%" }}
             alt="hello"
           />
-        </HStack>
-        <HStack h={{ base: "350px", lg: "700px" }}>
-          <VStack w={"45%"}>
-            <Heading>Hello</Heading>
-            <Text>Lorem</Text>
-          </VStack>
+        </Flex>
+        <Flex
+          direction={{ base: "column", lg: "row" }}
+          justifyContent={"center"}
+          alignItems={"center"}
+          h={{ base: "auto", lg: "700px" }}
+        >
+          <Stack
+            p={{ base: 0, lg: 4 }}
+            w={"45%"}
+            h={{ base: "100%", lg: "80%" }}
+            alignItems={"center"}
+            justifyContent={"center"}
+          >
+            <VStack
+              w={{ base: "100%", lg: "70%" }}
+              h={{ base: "100%", lg: "95%" }}
+              display={{ base: "none", lg: "flex" }}
+              bg={"#fff"}
+              boxShadow={"lg"}
+              borderColor={"black"}
+              borderWidth={{ base: 0, lg: "4px" }}
+              borderStyle={"solid"}
+              borderRadius={{ base: 0, lg: 8 }}
+              textAlign="left"
+              p={4}
+            >
+              <Heading>Hello</Heading>
+              <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                tempor fermentum fermentum. Vestibulum ante ipsum primis in
+                faucibus orci luctus et ultrices posuere cubilia curae;
+                Pellentesque augue felis, dapibus ac ligula in, blandit lacinia
+                metus. Curabitur posuere sapien quis tellus cursus posuere.
+                Vivamus maximus erat eget sodales tincidunt. Aliquam erat
+                volutpat.
+              </Text>
+            </VStack>
+          </Stack>
           <img
             src={WithGuest}
             style={{ display: "block", width: "55%", height: "100%" }}
             alt="hello"
           />
-        </HStack>
+        </Flex>
       </Carousel>
     </HStack>
   );
