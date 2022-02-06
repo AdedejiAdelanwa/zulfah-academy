@@ -111,8 +111,8 @@ export default function Home() {
                   Get Selected{" "}
                 </Heading>
                 <Text fontSize={"12px"} color={"brand.textgrey"}>
-                  We screen all submissions to identify high-potential
-                  candidates
+                  You get a call from us because you made it into the Academy
+                 
                 </Text>
               </Stack>
               <Divider orientation="vertical" />
