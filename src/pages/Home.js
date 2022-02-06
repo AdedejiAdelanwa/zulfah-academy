@@ -37,7 +37,7 @@ export default function Home() {
   return (
     <Box position={"relative"}>
       <MainNavigation />
-      <Box paddingTop={{ base: "45px", lg: "none" }} bg={"white"}>
+      <Box paddingTop={{ base: "0px", lg: "none" }} bg={"white"}>
         <Stack
           pos={"relative"}
           h={{ base: "50vh", lg: "75vh" }}
