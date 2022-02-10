@@ -7,7 +7,6 @@ import Founder from "../assets/founder.png";
 import {
   Box,
   Divider,
-  // Button,
   Flex,
   Heading,
   HStack,
@@ -20,7 +19,6 @@ import {
   Image,
   Link,
   Icon,
-  // useBreakpointValue,
 } from "@chakra-ui/react";
 import {
   BsArrowRight,
@@ -28,9 +26,9 @@ import {
   BsArrowRightCircleFill,
 } from "react-icons/bs";
 import { Android, BriefCase, Bookmark, Charts } from "../assets/icons/index";
-
 import { Link as ReactRouterLink } from "react-router-dom";
 import { Footer } from "../components/Footer";
+import { ApplicationCTA } from "../components/ApplicationCTA";
 
 export default function Home() {
   return (
@@ -576,54 +574,7 @@ export default function Home() {
               </Flex>
             </Stack>
           </Stack>
-          <Stack
-            pos={"relative"}
-            w={{ base: "90%", lg: "80%" }}
-            h={{ base: "470px", lg: "370px" }}
-            justifyContent={{ base: "space-around", lg: "center" }}
-            alignItems={"center"}
-            color={"white"}
-            textAlign={"center"}
-            bg={"brand.deepgrey"}
-            borderRadius={{ base: "15px", lg: "4px" }}
-            spacing={{ base: 4, lg: 8 }}
-            overflow={"hidden"}
-          >
-            <Box
-              pos={"absolute"}
-              top={0}
-              left={0}
-              display={{ base: "none", lg: "block" }}
-              bg={"brand.gold"}
-              boxSize={"100px"}
-              style={{ clipPath: "polygon(0 0, 100% 0%,  0 100%)" }}
-            ></Box>
-            <Box
-              pos={"absolute"}
-              bottom={0}
-              right={0}
-              display={{ base: "none", lg: "block" }}
-              bg={"brand.gold"}
-              boxSize={"100px"}
-              style={{ clipPath: "polygon(100% 0, 100% 100%,  0 100%)" }}
-            ></Box>
-            <Heading w={{ base: "80%", lg: "500px" }}>
-              Start your application to become a software engineer
-            </Heading>
-            <Text w={{ base: "80%", lg: "600px" }}>
-              Become a student at Bloom Institute of Technology. The next
-              application deadline is: December 10, 2021
-            </Text>
-            <Button
-              variant={"solid"}
-              bg={"brand.gold"}
-              color={"brand.deepgrey"}
-              w="150px"
-              size={"lg"}
-            >
-              <ReactRouterLink to="/about">Learn more</ReactRouterLink>
-            </Button>
-          </Stack>
+          <ApplicationCTA />
         </VStack>
       </Box>
       <Footer />
