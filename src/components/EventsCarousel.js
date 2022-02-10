@@ -31,7 +31,7 @@ export default function EventsCarousel() {
           <Stack
             p={{ base: 0, lg: 4 }}
             w={"45%"}
-            h={{ base: "100%", lg: "80%" }}
+            h={{ base: "100% ", lg: "80%" }}
             alignItems={"center"}
             justifyContent={"center"}
           >
@@ -75,7 +75,7 @@ export default function EventsCarousel() {
           <Stack
             p={{ base: 0, lg: 4 }}
             w={"45%"}
-            h={{ base: "100%", lg: "80%" }}
+            h={{ base: "100% ", lg: "80%" }}
             alignItems={"center"}
             justifyContent={"center"}
           >
@@ -119,7 +119,7 @@ export default function EventsCarousel() {
           <Stack
             p={{ base: 0, lg: 4 }}
             w={"45%"}
-            h={{ base: "100%", lg: "80%" }}
+            h={{ base: "100% ", lg: "80%" }}
             alignItems={"center"}
             justifyContent={"center"}
           >

@@ -123,5 +123,59 @@ const Tuition = () => {
     </svg>
   );
 };
+const RatingStars = () => {
+  return (
+    <svg
+      width="76"
+      height="19"
+      viewBox="0 0 76 19"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.5 0L11.6329 6.56434H18.535L12.9511 10.6213L15.084 17.1857L9.5 13.1287L3.91604 17.1857L6.04892 10.6213L0.464963 6.56434H7.36712L9.5 0Z"
+        fill="#ECB32C"
+      />
+      <path
+        d="M28.5 0L30.6329 6.56434H37.535L31.9511 10.6213L34.084 17.1857L28.5 13.1287L22.916 17.1857L25.0489 10.6213L19.465 6.56434H26.3671L28.5 0Z"
+        fill="#ECB32C"
+      />
+      <path
+        d="M47.5 0L49.6329 6.56434H56.535L50.9511 10.6213L53.084 17.1857L47.5 13.1287L41.916 17.1857L44.0489 10.6213L38.465 6.56434H45.3671L47.5 0Z"
+        fill="#ECB32C"
+      />
+      <path
+        d="M66.5 0L68.6329 6.56434H75.535L69.9511 10.6213L72.084 17.1857L66.5 13.1287L60.916 17.1857L63.0489 10.6213L57.465 6.56434H64.3671L66.5 0Z"
+        fill="#ECB32C"
+      />
+    </svg>
+  );
+};
 
-export { BriefCase, Android, Bookmark, Charts, Hourglass, Tuition };
+const OneStar = () => {
+  return (
+    <svg
+      width="13"
+      height="12"
+      viewBox="0 0 13 12"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.5 0L7.95934 4.49139H12.6819L8.86126 7.26722L10.3206 11.7586L6.5 8.98278L2.6794 11.7586L4.13874 7.26722L0.318133 4.49139H5.04066L6.5 0Z"
+        fill="#F0BF13"
+      />
+    </svg>
+  );
+};
+
+export {
+  BriefCase,
+  Android,
+  Bookmark,
+  Charts,
+  Hourglass,
+  OneStar,
+  RatingStars,
+  Tuition,
+};
