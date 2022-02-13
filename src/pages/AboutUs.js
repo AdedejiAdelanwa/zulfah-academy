@@ -453,9 +453,8 @@ export default function AboutUs() {
           </Flex>
         </Stack>
         <FAQs />
-        <Stack w={"100%"} py={"50px"} alignItems={"center"}>
-          <ApplicationCTA />
-        </Stack>
+
+        <ApplicationCTA />
       </Box>
       <Footer />
     </Box>
