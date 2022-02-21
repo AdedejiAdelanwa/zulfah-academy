@@ -33,6 +33,7 @@ import Partner2 from "../assets/partner2.png";
 import { RatingStars } from "../assets/icons";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+// import axios from "axios";
 
 const responsive = {
   0: { items: 1 },
@@ -124,6 +125,25 @@ const reviews = [
 ];
 
 export const Hire = () => {
+  // useEffect(() => {
+  //   axios({
+  //     method: "post",
+  //     url: "https://api.zulfahgroup.com/api/v1/application/hire",
+  //     headers: {
+  //       Authorization:
+  //         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvc2hib25AZ21haWwuY29tIiwiX2lkIjoiMTBjMzk5ODAtM2MwOS00MGZhLTk1NDUtMTZlMDQwNGE2OTZkIiwiaWF0IjoxNjQ0NzMzODM2LCJleHAiOjE2NDQ3Mzc0MzZ9.748K-M2eU52GdLdtbc_j7VG89NOPG5Z2jYeQb23LlME",
+  //     },
+  //     data: {
+  //       fullname: "Adedeji Adelanwa",
+  //       email: "deji@gmail.com",
+  //       company_name: "Meristem Securities",
+  //       phone: "08084259372",
+  //       location: "Ikoyi Lagos",
+  //       message: "We really need to close out on this application",
+  //       no_of_engineers: "4",
+  //     },
+  //   });
+  // }, []);
   return (
     <Box position={"relative"}>
       <MainNavigation />

@@ -57,3 +57,11 @@ export const hireFaqs = [
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
   },
 ];
+
+export const hearAboutUs = [
+  { name: "Facebook" },
+  { name: "LinkedIn" },
+  { name: "Twitter" },
+  { name: "An Alumnus" },
+  { name: "Google search" },
+];
