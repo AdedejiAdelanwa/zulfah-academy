@@ -1,10 +1,8 @@
-import MainNavigation from "../components/Navigation";
-
-import CodingScreen from "../assets/coding-screen.png";
-import BlackDev from "../assets/black-smiling.png";
-import BoyWithLaptop from "../assets/boy-holding-pc.png";
-import guyWithLaptop from "../assets/guy-with-laptop.png";
-import Founder from "../assets/founder.png";
+import MainNavigation from "../components/Navigation"
+import CodingScreen from "../assets/coding-screen.png"
+import BlackDev from "../assets/black-smiling.png"
+import guyWithLaptop from "../assets/guy-with-laptop.png"
+import Founder from "../assets/founder.png"
 import {
   Box,
   Divider,
