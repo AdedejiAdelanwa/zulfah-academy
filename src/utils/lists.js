@@ -1,10 +1,5 @@
 export const countries = [
   { name: "Nigeria" },
-  { name: "Algeria" },
-  { name: "Ghana" },
-  { name: "Mexico" },
-  { name: "South Africa" },
-  { name: "Sudan" },
 ];
 
 export const processStages = [

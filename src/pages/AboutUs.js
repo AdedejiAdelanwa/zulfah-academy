@@ -43,7 +43,7 @@ export default function AboutUs() {
   return (
     <Box position={"relative"}>
       <MainNavigation />
-      <Box paddingTop={{ base: "45px", lg: "none" }} bg={"white"}>
+      <Box paddingTop={{ base: "0px", lg: "none" }} bg={"white"}>
         <Stack
           pos={"relative"}
           paddingTop={{ base: "40px", lg: "none" }}
@@ -54,6 +54,11 @@ export default function AboutUs() {
           textAlign={"center"}
           spacing={{ base: 4, lg: 8 }}
         >
+                      {/* w={{ base: "100%", lg: "395px" }}
+            fontSize={{ base: "44px", lg: "64px" }}
+
+            w={{ base: "80%", lg: "400px" }}
+            fontSize={{ base: "42px", lg: "62px" }} */}
           <Heading
             w={{ base: "80%", lg: "400px" }}
             fontSize={{ base: "42px", lg: "62px" }}

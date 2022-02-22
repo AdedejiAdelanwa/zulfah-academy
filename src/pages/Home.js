@@ -1,9 +1,8 @@
-import MainNavigation from "../components/Navigation";
-
-import CodingScreen from "../assets/coding-screen.png";
-import BlackDev from "../assets/black-smiling.png";
-import BoyWithLaptop from "../assets/boy-holding-pc.png";
-import Founder from "../assets/founder.png";
+import MainNavigation from "../components/Navigation"
+import CodingScreen from "../assets/coding-screen.png"
+import BlackDev from "../assets/black-smiling.png"
+import guyWithLaptop from "../assets/guy-with-laptop.png"
+import Founder from "../assets/founder.png"
 import {
   Box,
   Divider,
@@ -34,7 +33,7 @@ export default function Home() {
   return (
     <Box position={"relative"}>
       <MainNavigation />
-      <Box paddingTop={{ base: "45px", lg: "none" }} bg={"white"}>
+      <Box paddingTop={{ base: "0px", lg: "none" }} bg={"white"}>
         <Stack
           pos={"relative"}
           h={{ base: "50vh", lg: "75vh" }}
@@ -108,8 +107,8 @@ export default function Home() {
                   Get Selected{" "}
                 </Heading>
                 <Text fontSize={"12px"} color={"brand.textgrey"}>
-                  We screen all submissions to identify high-potential
-                  candidates
+                  You get a call from us because you made it into the Academy
+                 
                 </Text>
               </Stack>
               <Divider orientation="vertical" />
@@ -156,7 +155,8 @@ export default function Home() {
             mt={{ base: "50px", lg: "none" }}
           >
             <Heading fontSize={"36px"}>
-              Get the skills you need to get a job.
+            Why Zulfah is the #1
+            choice for you
             </Heading>
             <Text fontSize={"16px"}>
               We work with employers to understand their needs, then teach you
@@ -233,7 +233,7 @@ export default function Home() {
                 icon={<Android />}
               />
               <Heading fontSize={"14px"}>
-                Get daily support with peers, staff and instructors
+                Monthly meetout session with Industry experts
               </Heading>
               <Text fontSize={"12px"}>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed
@@ -317,78 +317,14 @@ export default function Home() {
         <Flex width={"100%"} bg={"white"} justifyContent={"center"}>
           <Stack
             pos={"relative"}
-            h={{ base: "650px", lg: "1059px" }}
+            // h={{ base: "650px", lg: "1059px" }}
             w={{ base: "90%", lg: "100%" }}
             direction={{ base: "column", md: "row" }}
             bg={"brand.deepgrey"}
             borderRadius={{ base: "15px", lg: "none" }}
+            style={{ padding: '50px' }}
           >
-            <Flex
-              display={{ base: "none", lg: "flex" }}
-              flex={1}
-              justifyContent={"right"}
-              alignItems={"center"}
-            >
-              <Box
-                pos={"relative"}
-                display={{ base: "none", lg: "block" }}
-                w="372px"
-                h="555px"
-                backgroundImage={BoyWithLaptop}
-                backgroundSize={"cover"}
-                backgroundPosition={"bottom"}
-                backgroundRepeat={"no-repeat"}
-                borderRadius={{ lg: "12px" }}
-              >
-                <Stack
-                  position={"absolute"}
-                  w={"218px"}
-                  h={"221px"}
-                  bg={"white"}
-                  top={"-90px"}
-                  left={"-130px"}
-                  borderRadius={{ lg: "12px" }}
-                  overflow={"hidden"}
-                >
-                  <VStack p={4} h={"80%"} justifyContent={"space-between"}>
-                    <Flex
-                      w={"100%"}
-                      justifyContent={"space-around"}
-                      alignItems={"center"}
-                    >
-                      <Image
-                        boxSize="41px"
-                        objectFit="cover"
-                        src={Founder}
-                        alt="Founder"
-                        borderRadius="4px"
-                      />
-                      <Stack spacing={0}>
-                        <Heading fontSize={"14px"}>Abayomi Rosh</Heading>
-                        <Text fontSize={"12px"} color={"brand.fuscia"}>
-                          Founder
-                        </Text>
-                      </Stack>
-                    </Flex>
-                    <Text fontSize={"14px"}>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Lirisus, duis accumsan .
-                    </Text>
-                  </VStack>
-                  <Flex
-                    h={"20%"}
-                    fontSize={"14px"}
-                    fontWeight={"bold"}
-                    justifyContent={"center"}
-                    alignItems={"center"}
-                    bg={"brand.lightgrey"}
-                  >
-                    <Link to="/#">View profile</Link>
-                  </Flex>
-                </Stack>
-              </Box>
-            </Flex>
-            <Flex
+             <Flex
               p={{ base: 4, lg: 8 }}
               flex={1}
               alignItems={"center"}
@@ -401,9 +337,10 @@ export default function Home() {
                 maxW={{ base: "95%", lg: "85%" }}
                 textAlign={{ base: "center", lg: "left" }}
                 color={"white"}
+               
               >
                 <Heading fontSize={"36px"}>
-                  What you know <br></br> about Zulfah
+                Why Zulfah is the #1 choice <br /> for you
                 </Heading>
                 <Text
                   fontSize={"16px"}
@@ -412,18 +349,31 @@ export default function Home() {
                   lineHeight={{ base: 1.6, lg: 2 }}
                   color={"brand.lightgrey"}
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Lirisus, dignissim netus nulla assa eu sed id. Sit aliquam
-                  volutpat auctor turpis. Sed lectus enim scelerisque maecenas
-                  enim eget sed. ue sed dignissim. Ultricies pretium nibh et
-                  quam. Rutrum facilisis lectus accumsan morbi nulla quis
-                  suscipit. Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit. Lirisus, dignissim netus nulla assa eu sed id. Sit
-                  aliquam volutpat auctor turpis. Sed lectus enim scelerisque m
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Lirisus, dignissim netus nulla assa eu sed id.
+                  We deliver an intensive 6-month program where our software developers
+                learn both full-stack software development and additional soft skills
+                in an immersive environment. Through an agile delivery methodology,
+                mentor matching and leadership modules, our elite engineers are equipped
+                with techniques and a leadership mindset that enables them to work
+                competitively in any team globally.
+                As part of our curriculum, we expose our engineers to real-life applications
+                and projects. During these projects, we ensure they are well-equipped to
+                design programs both individually and in teams.
+                This aspect of our program provides our engineers with verifiable work
+                experience and the confidence to excel in their jobs after the training.
+
+               {/* At the end of the program, the best among our developers are matched with our
+                company partners to join their development teams fulltime, either remotely or
+                in person.
+             
+              There are 3-phases to get into the programme  
+              - Application  submission
+              - Interview with applicants
+              - Selection process 
+
+              We also have a waiting list for our prospective students who do not make the selection process. Such students, are then given the opportunity to join the programme, if performance of any of the previously selected is below expectation
+              */}
                 </Text>
-                <Button
+                {/* <Button
                   variant={"solid"}
                   bg={"brand.fuscia"}
                   color={"white"}
@@ -432,9 +382,76 @@ export default function Home() {
                   py={{ base: "10px", lg: "none" }}
                 >
                   <ReactRouterLink to="/about">Contact us</ReactRouterLink>
-                </Button>
+                </Button> */}
               </Stack>
             </Flex>
+            <Flex
+              display={{ base: "none", lg: "flex" }}
+              flex={1}
+              justifyContent={"right"}
+              alignItems={"center"}
+            >
+             <Box
+                pos={"relative"}
+                display={{ base: "none", lg: "block" }}
+                w="100%"
+                h="600px"
+                backgroundImage={guyWithLaptop}
+                backgroundSize={"cover"}
+                backgroundPosition={"bottom"}
+                backgroundRepeat={"no-repeat"}
+                borderRadius={{ lg: "12px" }}
+              >
+              {/*  <Stack
+                  position={"absolute"}
+                  w={"218px"}
+                  h={"221px"}
+                  bg={"white"}
+                  top={"-90px"}
+                  left={"-130px"}
+                  borderRadius={{ lg: "12px" }}
+                  overflow={"hidden"}
+                >
+                {
+                  <VStack p={4} h={"80%"} justifyContent={"space-between"}>
+                    <Flex
+                      w={"100%"}
+                      justifyContent={"space-around"}
+                      alignItems={"center"}
+                    >
+                       <Image
+                        boxSize="41px"
+                        objectFit="cover"
+                        src={Founder}
+                        alt="Founder"
+                        borderRadius="4px"
+                      />
+                      <Stack spacing={0}>
+                        <Heading fontSize={"14px"}>Abayomi Rosh</Heading>
+                        <Text fontSize={"12px"} color={"brand.fuscia"}>
+                          Founder
+                        </Text>
+                      </Stack> 
+                    </Flex>
+                    <Text fontSize={"14px"}>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Lirisus, duis accumsan .
+                    </Text>
+                  </VStack> 
+                  <Flex
+                    h={"20%"}
+                    fontSize={"14px"}
+                    fontWeight={"bold"}
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    bg={"brand.lightgrey"}
+                  >
+                    <Link to="/#">View profile</Link>
+                  </Flex>
+                </Stack> */}
+              </Box> 
+            </Flex>
+           
           </Stack>
         </Flex>
         <VStack justifyContent={"center"}>
