@@ -33,7 +33,10 @@ export const processStages = [
 export const qualifications = ["OND", "HND", "BSc", "MSC", "PhD"];
 
 export const devYears = ["0 years", "1-2 years", "3+ years"];
-export const paymentOptions = ["upfront", "after training"];
+export const paymentOptions = [
+  { name: "upfront", value: "SIP" },
+  { name: "after training", value: "FIP" },
+];
 
 export const hireFaqs = [
   {

@@ -31,7 +31,6 @@ import { BaseUrl } from "../utils/Url";
 export const Application = () => {
   const tokenEmail = "roshbon@gmail.com";
   const tokenPassword = "Pass123@#";
-
   const [token, setToken] = useState("");
   const [progress, setProgress] = useState("not started");
   const [surname, setSurname] = useState("");
@@ -52,33 +51,50 @@ export const Application = () => {
   const [devExperience, setDevExperience] = useState("");
   const [programmingLanguage, setProgrammingLanguage] = useState("");
   const [paymentOption, setPaymentOption] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
+    setIsSubmitted(true);
+    try {
+      const { data } = await axios({
+        method: "post",
+        url: `${BaseUrl}/api/v1/application/create`,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        data: {
+          surname,
+          othernames,
+          address,
+          sex: gender,
+          phone: phoneNumber,
+          dob,
+          country,
+          city,
+          current_location: address,
+          state: countryState,
+          highest_qualification: highestQualification,
+          years_of_programming: devExperience,
+          programming_language: "Nil",
+          email,
+          where_you_heard_about_us: infoMedium,
+          available_in_six_month: true,
 
-    console.table({
-      token,
-      surname,
-      othernames,
-      address,
-      sex: gender,
-      phone: phoneNumber,
-      dob,
-      country,
-      city,
-      state: countryState,
-      highest_qualification: highestQualification,
-      years_of_programming: devExperience,
-      programming_language: "Nil",
-      email,
-      where_you_heard_about_us: infoMedium,
-      //current_location,
-      available_in_six_month: true,
-      //university,
-      devExperience,
-      payment_option: paymentOption,
-    });
-    setProgress("submitted");
+          payment_option: paymentOption,
+        },
+      });
+      setIsSubmitted(false);
+      setProgress("submitted");
+      setSuccessMessage(data.message);
+    } catch (error) {
+      setIsSubmitted(false);
+      if (error.repsonse) {
+        console.log(error.response.message);
+      }
+      console.log(error);
+    }
   }
   useEffect(() => {
     const getToken = async () => {
@@ -150,9 +166,7 @@ export const Application = () => {
                 color={"brand.fuscia"}
                 as={AiFillCheckCircle}
               />
-              <Heading>
-                Your application is successful, we'll be in touch soon
-              </Heading>
+              <Heading>{successMessage}</Heading>
               <Button
                 variant={"solid"}
                 bg={"brand.gold"}
@@ -269,6 +283,7 @@ export const Application = () => {
                         required
                       />
                     </GridItem>
+
                     <GridItem colSpan={1}>
                       <Input
                         type="text"
@@ -304,8 +319,8 @@ export const Application = () => {
                         onChange={(e) => setGender(e.target.value)}
                         required
                       >
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
                       </Select>
                     </GridItem>
                     <GridItem colSpan={{ base: 1, lg: 2 }}>
@@ -448,9 +463,9 @@ export const Application = () => {
                         onChange={(e) => setPaymentOption(e.target.value)}
                         required
                       >
-                        {paymentOptions.map((option, index) => (
-                          <option key={index} value={option}>
-                            {option}
+                        {paymentOptions.map((option) => (
+                          <option key={option.name} value={option.value}>
+                            {option.name}
                           </option>
                         ))}
                       </Select>
@@ -478,7 +493,7 @@ export const Application = () => {
                       mt={{ base: "30px", lg: "50px" }}
                       disabled={!paymentOption}
                     >
-                      Submit
+                      {isSubmitted ? "Submitting..." : "Submit"}
                     </Button>
                   </Stack>
                 </Stack>
