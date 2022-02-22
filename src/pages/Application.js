@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Link as ReactRouterLink } from "react-router-dom";
 
 import {
@@ -24,11 +25,18 @@ import {
   paymentOptions,
   processStages,
   qualifications,
+  hearAboutUs,
 } from "../utils/lists";
+import { BaseUrl } from "../utils/Url";
 export const Application = () => {
+  const tokenEmail = "roshbon@gmail.com";
+  const tokenPassword = "Pass123@#";
+  const [token, setToken] = useState("");
   const [progress, setProgress] = useState("not started");
-  const [fullname, setFullname] = useState("");
+  const [surname, setSurname] = useState("");
+  const [othernames, setOthernames] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [email, setEmail] = useState("");
   const [country, setCountry] = useState("");
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
@@ -37,23 +45,78 @@ export const Application = () => {
   const [gender, setGender] = useState("");
   const [dob, setDob] = useState("");
   const [highestQualification, setHighestQualification] = useState("");
-  const [university, setUniversity] = useState("");
+  //const [university, setUniversity] = useState("");
   const [course, setCourse] = useState("");
+  const [infoMedium, setInfoMedium] = useState("");
   const [devExperience, setDevExperience] = useState("");
+  const [programmingLanguage, setProgrammingLanguage] = useState("");
   const [paymentOption, setPaymentOption] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
+    setIsSubmitted(true);
+    try {
+      const { data } = await axios({
+        method: "post",
+        url: `${BaseUrl}/api/v1/application/create`,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        data: {
+          surname,
+          othernames,
+          address,
+          sex: gender,
+          phone: phoneNumber,
+          dob,
+          country,
+          city,
+          current_location: address,
+          state: countryState,
+          highest_qualification: highestQualification,
+          years_of_programming: devExperience,
+          programming_language: "Nil",
+          email,
+          where_you_heard_about_us: infoMedium,
+          available_in_six_month: true,
 
-    console.log("Submitted", {
-      fullname,
-      country,
-      gender,
-      university,
-      devExperience,
-    });
-    setProgress("submitted");
+          payment_option: paymentOption,
+        },
+      });
+      setIsSubmitted(false);
+      setProgress("submitted");
+      setSuccessMessage(data.message);
+    } catch (error) {
+      setIsSubmitted(false);
+      if (error.repsonse) {
+        console.log(error.response.message);
+      }
+      console.log(error);
+    }
   }
+  useEffect(() => {
+    const getToken = async () => {
+      try {
+        const { data } = await axios({
+          method: "post",
+          url: `${BaseUrl}/api/v1/get-token`,
+          data: {
+            email: tokenEmail,
+            password: tokenPassword,
+          },
+        });
+        setToken(data.token);
+      } catch (error) {
+        if (error.repsonse) {
+          console.log(error.repsonse);
+        }
+        console.log(error);
+      }
+    };
+    getToken();
+  }, []);
 
   return (
     <Flex pos={"relative"} h={"100vh"} bg={"white"}>
@@ -103,9 +166,7 @@ export const Application = () => {
                 color={"brand.fuscia"}
                 as={AiFillCheckCircle}
               />
-              <Heading>
-                Your application is successful, we'll be in touch soon
-              </Heading>
+              <Heading>{successMessage}</Heading>
               <Button
                 variant={"solid"}
                 bg={"brand.gold"}
@@ -163,12 +224,21 @@ export const Application = () => {
                     rowGap={4}
                     w="100%"
                   >
-                    <GridItem colSpan={{ base: 2, lg: 3 }}>
+                    <GridItem colSpan={{ base: 2, lg: 1 }}>
                       <Input
                         type="text"
-                        value={fullname}
-                        onChange={(e) => setFullname(e.target.value)}
-                        placeholder="Your name"
+                        value={surname}
+                        onChange={(e) => setSurname(e.target.value)}
+                        placeholder="Surname"
+                        required
+                      />
+                    </GridItem>
+                    <GridItem colSpan={{ base: 2, lg: 2 }}>
+                      <Input
+                        type="text"
+                        value={othernames}
+                        onChange={(e) => setOthernames(e.target.value)}
+                        placeholder="Other Names"
                         required
                       />
                     </GridItem>
@@ -178,6 +248,15 @@ export const Application = () => {
                         value={phoneNumber}
                         onChange={(e) => setPhoneNumber(e.target.value)}
                         placeholder="Phone number"
+                        required
+                      />
+                    </GridItem>
+                    <GridItem colSpan={{ base: 2, lg: 3 }}>
+                      <Input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Email"
                         required
                       />
                     </GridItem>
@@ -204,6 +283,7 @@ export const Application = () => {
                         required
                       />
                     </GridItem>
+
                     <GridItem colSpan={1}>
                       <Input
                         type="text"
@@ -239,8 +319,8 @@ export const Application = () => {
                         onChange={(e) => setGender(e.target.value)}
                         required
                       >
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
                       </Select>
                     </GridItem>
                     <GridItem colSpan={{ base: 1, lg: 2 }}>
@@ -261,6 +341,7 @@ export const Application = () => {
                     size={"lg"}
                     onClick={() => setProgress("education")}
                     mt={{ base: "30px", lg: "50px" }}
+                    disabled={!dob}
                   >
                     Next
                   </Button>
@@ -286,7 +367,7 @@ export const Application = () => {
                         ))}
                       </Select>
                     </GridItem>
-                    <GridItem colSpan={1}>
+                    {/* <GridItem colSpan={1}>
                       <Input
                         type="tel"
                         value={university}
@@ -294,7 +375,7 @@ export const Application = () => {
                         placeholder="Where did you graduate from?"
                         required
                       />
-                    </GridItem>
+                    </GridItem> */}
 
                     <GridItem colSpan={1}>
                       <Input
@@ -320,6 +401,29 @@ export const Application = () => {
                         ))}
                       </Select>
                     </GridItem>
+                    <GridItem colSpan={1}>
+                      <Input
+                        type="text"
+                        value={programmingLanguage}
+                        onChange={(e) => setProgrammingLanguage(e.target.value)}
+                        placeholder="Programming language"
+                        required
+                      />
+                    </GridItem>
+                    <GridItem colSpan={1}>
+                      <Select
+                        placeholder="Where did you hear about us?"
+                        value={infoMedium}
+                        onChange={(e) => setInfoMedium(e.target.value)}
+                        required
+                      >
+                        {hearAboutUs.map((medium) => (
+                          <option key={medium.name} value={medium.name}>
+                            {medium.name}
+                          </option>
+                        ))}
+                      </Select>
+                    </GridItem>
                   </SimpleGrid>
                   <Stack>
                     <Button
@@ -341,6 +445,7 @@ export const Application = () => {
                       size={"lg"}
                       onClick={() => setProgress("payment")}
                       mt={{ base: "30px", lg: "50px" }}
+                      disabled={!infoMedium}
                     >
                       Next
                     </Button>
@@ -358,9 +463,9 @@ export const Application = () => {
                         onChange={(e) => setPaymentOption(e.target.value)}
                         required
                       >
-                        {paymentOptions.map((option, index) => (
-                          <option key={index} value={option}>
-                            {option}
+                        {paymentOptions.map((option) => (
+                          <option key={option.name} value={option.value}>
+                            {option.name}
                           </option>
                         ))}
                       </Select>
@@ -386,8 +491,9 @@ export const Application = () => {
                       size={"lg"}
                       onClick={handleSubmit}
                       mt={{ base: "30px", lg: "50px" }}
+                      disabled={!paymentOption}
                     >
-                      Submit
+                      {isSubmitted ? "Submitting..." : "Submit"}
                     </Button>
                   </Stack>
                 </Stack>
