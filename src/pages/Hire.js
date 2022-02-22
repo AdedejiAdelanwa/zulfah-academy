@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { BaseUrl } from "../utils/Url";
+
 import {
   Box,
   Button,
@@ -14,8 +17,19 @@ import {
   Stack,
   Text,
   VStack,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
+  SimpleGrid,
+  GridItem,
+  Input,
+  Textarea,
+  useToast,
 } from "@chakra-ui/react";
-import { Link as ReactRouterLink } from "react-router-dom";
 import MainNavigation from "../components/Navigation";
 import { Footer } from "../components/Footer";
 import { ApplicationCTA } from "../components/ApplicationCTA";
@@ -27,13 +41,11 @@ import Sancho from "../assets/sancho.png";
 import { HireFAQs } from "../components/HireFAQs";
 import { AiFillCheckCircle } from "react-icons/ai";
 import { OneStar } from "../assets/icons";
-// import { Carousel } from "react-responsive-carousel";
 import Partner1 from "../assets/partner1.png";
 import Partner2 from "../assets/partner2.png";
 import { RatingStars } from "../assets/icons";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-// import axios from "axios";
 
 const responsive = {
   0: { items: 1 },
@@ -125,28 +137,189 @@ const reviews = [
 ];
 
 export const Hire = () => {
-  // useEffect(() => {
-  //   axios({
-  //     method: "post",
-  //     url: "https://api.zulfahgroup.com/api/v1/application/hire",
-  //     headers: {
-  //       Authorization:
-  //         "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvc2hib25AZ21haWwuY29tIiwiX2lkIjoiMTBjMzk5ODAtM2MwOS00MGZhLTk1NDUtMTZlMDQwNGE2OTZkIiwiaWF0IjoxNjQ0NzMzODM2LCJleHAiOjE2NDQ3Mzc0MzZ9.748K-M2eU52GdLdtbc_j7VG89NOPG5Z2jYeQb23LlME",
-  //     },
-  //     data: {
-  //       fullname: "Adedeji Adelanwa",
-  //       email: "deji@gmail.com",
-  //       company_name: "Meristem Securities",
-  //       phone: "08084259372",
-  //       location: "Ikoyi Lagos",
-  //       message: "We really need to close out on this application",
-  //       no_of_engineers: "4",
-  //     },
-  //   });
-  // }, []);
+  const tokenEmail = "roshbon@gmail.com";
+  const tokenPassword = "Pass123@#";
+  const [token, setToken] = useState("");
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [fullname, setFullname] = useState("");
+  const [email, setEmail] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [location, setLocation] = useState("");
+  const [numOfEngineers, setNumOfEngineers] = useState("");
+  const [message, setMessage] = useState("");
+  const [isRequesting, setIsRequesting] = useState(false);
+  const toast = useToast();
+
+  function showToast(title, desc, status) {
+    toast({
+      title,
+      description: desc,
+      status,
+      duration: 9000,
+      isClosable: true,
+    });
+  }
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setIsRequesting(true);
+    try {
+      await axios({
+        method: "post",
+        url: `${BaseUrl}/application/hire`,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        data: {
+          fullname,
+          email,
+          company_name: companyName,
+          phone: phoneNumber,
+          location,
+          message,
+          no_of_engineers: numOfEngineers,
+        },
+      });
+      setIsRequesting(false);
+      setFullname("");
+      setEmail("");
+      setCompanyName("");
+      setPhoneNumber("");
+      setLocation("");
+      setNumOfEngineers("");
+      setMessage("");
+
+      onClose();
+      showToast("Successful", "We will be in touch", "success");
+    } catch (error) {
+      setIsRequesting(false);
+      if (error.response) {
+        onClose();
+        showToast("Oops!", "There seems to be an issue", "error");
+      }
+      showToast("Oops!", "There seems to be an issue", "error");
+      onClose();
+    }
+  }
+
+  useEffect(() => {
+    const getToken = async () => {
+      try {
+        const { data } = await axios({
+          method: "post",
+          url: `${BaseUrl}/get-token`,
+          data: {
+            email: tokenEmail,
+            password: tokenPassword,
+          },
+        });
+        setToken(data.token);
+      } catch (error) {
+        if (error.repsonse) {
+          console.log(error.repsonse);
+        }
+        console.log(error);
+      }
+    };
+    getToken();
+  }, []);
   return (
     <Box position={"relative"}>
       <MainNavigation />
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent alignItems={"center"}>
+          <ModalHeader>
+            <span style={{ color: "#3C9A9D" }}>Talent</span> Hire Form
+          </ModalHeader>
+          <ModalCloseButton />
+          <ModalBody width="100%">
+            <form onSubmit={handleSubmit}>
+              <SimpleGrid
+                columns={{ base: 1, lg: 2 }}
+                columnGap={4}
+                rowGap={4}
+                w="100%"
+              >
+                <GridItem colSpan={2}>
+                  <Input
+                    type="text"
+                    value={fullname}
+                    onChange={(e) => setFullname(e.target.value)}
+                    placeholder="Full Name"
+                    required
+                  />
+                </GridItem>
+                <GridItem colSpan={2}>
+                  <Input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Email"
+                    required
+                  />
+                </GridItem>
+                <GridItem colSpan={2}>
+                  <Input
+                    type="text"
+                    value={companyName}
+                    onChange={(e) => setCompanyName(e.target.value)}
+                    placeholder="Company Name"
+                    required
+                  />
+                </GridItem>
+                <GridItem colSpan={2}>
+                  <Input
+                    type="tel"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                    placeholder="Phone Number"
+                    required
+                  />
+                </GridItem>
+                <GridItem colSpan={1}>
+                  <Input
+                    type="text"
+                    value={location}
+                    onChange={(e) => setLocation(e.target.value)}
+                    placeholder="Location"
+                    required
+                  />
+                </GridItem>
+                <GridItem colSpan={1}>
+                  <Input
+                    type="text"
+                    value={numOfEngineers}
+                    onChange={(e) => setNumOfEngineers(e.target.value)}
+                    placeholder="Number of Engineers"
+                    required
+                  />
+                </GridItem>
+                <GridItem colSpan={2}>
+                  <Textarea
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="Any question for us?"
+                    size="sm"
+                  />
+                </GridItem>
+                <GridItem colSpan={2}>
+                  <Button
+                    color={"white"}
+                    w="100%"
+                    bg={"brand.fuscia"}
+                    py="30px"
+                    my="15px"
+                    onClick={handleSubmit}
+                  >
+                    {isRequesting ? "Requesting..." : "Hire"}
+                  </Button>
+                </GridItem>
+              </SimpleGrid>
+            </form>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
       <Box paddingTop={{ base: "25px", lg: "none" }} bg={"white"}>
         <Stack
           pos={"relative"}
@@ -181,8 +354,9 @@ export const Hire = () => {
                 w="150px"
                 size={"lg"}
                 alignSelf={{ lg: "flex-start" }}
+                onClick={onOpen}
               >
-                <ReactRouterLink to="/about">Hire engineers</ReactRouterLink>
+                Hire engineers
               </Button>
             </Stack>
           </Flex>

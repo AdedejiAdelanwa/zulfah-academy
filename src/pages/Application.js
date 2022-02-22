@@ -60,7 +60,7 @@ export const Application = () => {
     try {
       const { data } = await axios({
         method: "post",
-        url: `${BaseUrl}/api/v1/application/create`,
+        url: `${BaseUrl}/application/create`,
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -101,7 +101,7 @@ export const Application = () => {
       try {
         const { data } = await axios({
           method: "post",
-          url: `${BaseUrl}/api/v1/get-token`,
+          url: `${BaseUrl}/get-token`,
           data: {
             email: tokenEmail,
             password: tokenPassword,
