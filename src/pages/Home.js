@@ -349,18 +349,31 @@ export default function Home() {
                   lineHeight={{ base: 1.6, lg: 2 }}
                   color={"brand.lightgrey"}
                 >
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Lirisus, dignissim netus nulla assa eu sed id. Sit aliquam
-                  volutpat auctor turpis. Sed lectus enim scelerisque maecenas
-                  enim eget sed. ue sed dignissim. Ultricies pretium nibh et
-                  quam. Rutrum facilisis lectus accumsan morbi nulla quis
-                  suscipit. Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit. Lirisus, dignissim netus nulla assa eu sed id. Sit
-                  aliquam volutpat auctor turpis. Sed lectus enim scelerisque m
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Lirisus, dignissim netus nulla assa eu sed id.
+                  We deliver an intensive 6-month program where our software developers
+                learn both full-stack software development and additional soft skills
+                in an immersive environment. Through an agile delivery methodology,
+                mentor matching and leadership modules, our elite engineers are equipped
+                with techniques and a leadership mindset that enables them to work
+                competitively in any team globally.
+                As part of our curriculum, we expose our engineers to real-life applications
+                and projects. During these projects, we ensure they are well-equipped to
+                design programs both individually and in teams.
+                This aspect of our program provides our engineers with verifiable work
+                experience and the confidence to excel in their jobs after the training.
+
+               {/* At the end of the program, the best among our developers are matched with our
+                company partners to join their development teams fulltime, either remotely or
+                in person.
+             
+              There are 3-phases to get into the programme  
+              - Application  submission
+              - Interview with applicants
+              - Selection process 
+
+              We also have a waiting list for our prospective students who do not make the selection process. Such students, are then given the opportunity to join the programme, if performance of any of the previously selected is below expectation
+              */}
                 </Text>
-                <Button
+                {/* <Button
                   variant={"solid"}
                   bg={"brand.fuscia"}
                   color={"white"}
@@ -369,7 +382,7 @@ export default function Home() {
                   py={{ base: "10px", lg: "none" }}
                 >
                   <ReactRouterLink to="/about">Contact us</ReactRouterLink>
-                </Button>
+                </Button> */}
               </Stack>
             </Flex>
             <Flex
