@@ -68,3 +68,26 @@ export const hearAboutUs = [
   { name: "An Alumnus" },
   { name: "Google search" },
 ];
+
+export const tableOfContent = [
+  {
+    title: "Overview of Zulfah Software Engineering Training",
+    body: `Backend web developers are responsible for designing, building, and maintaining a scalable “behind-the-scenes” infrastructure to support the user interfaces and user experiences built by frontend developers. This skill set is one of the most sought-after by major tech employers. We frequently have conversations with tech companies like Apple, Google, and Microsoft that have hired our graduates for full stack and frontend developer roles in the past, and they all say the same thing: "We need more engineers with back end web development skills."`,
+  },
+  {
+    title: "The Curriculum",
+    body: `Backend web developers are responsible for designing, building, and maintaining a scalable “behind-the-scenes” infrastructure to support the user interfaces and user experiences built by frontend developers. This skill set is one of the most sought-after by major tech employers. We frequently have conversations with tech companies like Apple, Google, and Microsoft that have hired our graduates for full stack and frontend developer roles in the past, and they all say the same thing: "We need more engineers with back end web development skills."`,
+  },
+  {
+    title: "The Team",
+    body: `Backend web developers are responsible for designing, building, and maintaining a scalable “behind-the-scenes” infrastructure to support the user interfaces and user experiences built by frontend developers. This skill set is one of the most sought-after by major tech employers. We frequently have conversations with tech companies like Apple, Google, and Microsoft that have hired our graduates for full stack and frontend developer roles in the past, and they all say the same thing: "We need more engineers with back end web development skills."`,
+  },
+  {
+    title: "Payment & Sponsorship",
+    body: `Backend web developers are responsible for designing, building, and maintaining a scalable “behind-the-scenes” infrastructure to support the user interfaces and user experiences built by frontend developers. This skill set is one of the most sought-after by major tech employers. We frequently have conversations with tech companies like Apple, Google, and Microsoft that have hired our graduates for full stack and frontend developer roles in the past, and they all say the same thing: "We need more engineers with back end web development skills."`,
+  },
+  {
+    title: "Next application",
+    body: `Backend web developers are responsible for designing, building, and maintaining a scalable “behind-the-scenes” infrastructure to support the user interfaces and user experiences built by frontend developers. This skill set is one of the most sought-after by major tech employers. We frequently have conversations with tech companies like Apple, Google, and Microsoft that have hired our graduates for full stack and frontend developer roles in the past, and they all say the same thing: "We need more engineers with back end web development skills."`,
+  },
+];

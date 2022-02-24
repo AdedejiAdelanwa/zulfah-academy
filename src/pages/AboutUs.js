@@ -7,8 +7,6 @@ import {
   HStack,
   Icon,
   Link,
-  List,
-  ListItem,
   Stack,
   Text,
   VStack,
@@ -33,6 +31,7 @@ import { BsArrowRight } from "react-icons/bs";
 import EventsCarousel from "../components/EventsCarousel";
 import { FAQs } from "../components/FAQs";
 import { ApplicationCTA } from "../components/ApplicationCTA";
+import { tableOfContent } from "../utils/lists";
 
 export default function AboutUs() {
   const team = [
@@ -89,14 +88,15 @@ export default function AboutUs() {
           alignItems={"center"}
           paddingTop={{ base: "350px", lg: "90px" }}
         >
-          <HStack
+          <Tabs
             w={"80%"}
+            display={{ base: "none", lg: "flex" }}
             alignItems={"flex-start"}
             justifyContent={"space-between"}
+            variant="unstyled"
           >
             <Stack
               w={"353px"}
-              display={{ base: "none", lg: "flex" }}
               spacing={8}
               p={4}
               borderWidth={"thin"}
@@ -112,13 +112,27 @@ export default function AboutUs() {
               >
                 SOFTWARE ENGINEERING TRAINING
               </Heading>
-              <List spacing={4}>
-                <ListItem>Overview</ListItem>
-                <ListItem>Curriculum</ListItem>
-                <ListItem>Meet the team</ListItem>
-                <ListItem>Payment & Sponsorship</ListItem>
-                <ListItem>Next application</ListItem>
-              </List>
+              <TabList
+                spacing={4}
+                display={"flex"}
+                style={{ flexDirection: "column", alignItems: "flex-start" }}
+              >
+                <Tab pl={0} _selected={{ fontWeight: "bold" }}>
+                  Overview
+                </Tab>
+                <Tab pl={0} _selected={{ fontWeight: "bold" }}>
+                  Curriculum
+                </Tab>
+                <Tab pl={0} _selected={{ fontWeight: "bold" }}>
+                  Meet the team
+                </Tab>
+                <Tab pl={0} _selected={{ fontWeight: "bold" }}>
+                  Payment & Sponsorship
+                </Tab>
+                <Tab pl={0} _selected={{ fontWeight: "bold" }}>
+                  Next application
+                </Tab>
+              </TabList>
 
               <Button
                 variant={"solid"}
@@ -131,29 +145,23 @@ export default function AboutUs() {
                 <ReactRouterLink to="/application">Enrol now</ReactRouterLink>
               </Button>
             </Stack>
-            <Stack
-              w={{ base: "100%", lg: "630px" }}
-              spacing={8}
-              textAlign={{ base: "center", lg: "left" }}
-              mt={{ base: "30px", lg: "0px" }}
-            >
-              <Heading fontSize={{ base: "28px", lg: "48px" }}>
-                Overview of Zulfah Software Engineering Training
-              </Heading>
-              <Text lineHeight={"2"}>
-                Backend web developers are responsible for designing, building,
-                and maintaining a scalable “behind-the-scenes” infrastructure to
-                support the user interfaces and user experiences built by
-                frontend developers. This skill set is one of the most
-                sought-after by major tech employers. We frequently have
-                conversations with tech companies like Apple, Google, and
-                Microsoft that have hired our graduates for full stack and
-                frontend developer roles in the past, and they all say the same
-                thing: "We need more engineers with back end web development
-                skills."
-              </Text>
-            </Stack>
-          </HStack>
+            <TabPanels w={{ base: "100%", lg: "700px" }}>
+              {tableOfContent.map((item) => (
+                <TabPanel key={item.title}>
+                  <Stack
+                    spacing={8}
+                    textAlign={{ base: "center", lg: "left" }}
+                    mt={{ base: "30px", lg: "0px" }}
+                  >
+                    <Heading fontSize={{ base: "28px", lg: "48px" }}>
+                      {item.title}
+                    </Heading>
+                    <Text lineHeight={"2"}>{item.body}</Text>
+                  </Stack>
+                </TabPanel>
+              ))}
+            </TabPanels>
+          </Tabs>
         </Stack>
         <Stack
           w={"100%"}
