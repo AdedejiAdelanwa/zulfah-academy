@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { Link as ReactRouterLink } from "react-router-dom";
+import React, { useEffect, useState } from "react" 
+import axios from "axios" 
+import { Link as ReactRouterLink } from "react-router-dom" 
 
 import {
   Box,
@@ -15,10 +15,13 @@ import {
   SimpleGrid,
   Stack,
   Text,
-} from "@chakra-ui/react";
-import { AiFillCheckCircle } from "react-icons/ai";
-import Spacedev from "../assets/space-dev.png";
-import AppNavigation from "../components/AppNavigation";
+  useToast,
+  useDisclosure,
+  Textarea,
+} from "@chakra-ui/react" 
+import { AiFillCheckCircle } from "react-icons/ai" 
+import Spacedev from "../assets/space-dev.png" 
+import AppNavigation from "../components/AppNavigation" 
 import {
   countries,
   devYears,
@@ -26,44 +29,41 @@ import {
   processStages,
   qualifications,
   hearAboutUs,
-} from "../utils/lists";
-import { BaseUrl } from "../utils/Url";
+} from "../utils/lists" 
+import { BaseUrl } from "../utils/Url" 
 export const Application = () => {
-  const tokenEmail = "roshbon@gmail.com";
-  const tokenPassword = "Pass123@#";
-  const [token, setToken] = useState("");
-  const [progress, setProgress] = useState("not started");
-  const [surname, setSurname] = useState("");
-  const [othernames, setOthernames] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("");
-  const [country, setCountry] = useState("");
-  const [address, setAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [countryState, setCountryState] = useState("");
-  const [postalcode, setPostalCode] = useState("");
-  const [gender, setGender] = useState("");
-  const [dob, setDob] = useState("");
-  const [highestQualification, setHighestQualification] = useState("");
-  //const [university, setUniversity] = useState("");
-  const [course, setCourse] = useState("");
-  const [infoMedium, setInfoMedium] = useState("");
-  const [devExperience, setDevExperience] = useState("");
-  const [programmingLanguage, setProgrammingLanguage] = useState("");
-  const [paymentOption, setPaymentOption] = useState("");
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [progress, setProgress] = useState("not started") 
+  const [surname, setSurname] = useState("") 
+  const [othernames, setOthernames] = useState("") 
+  const [phoneNumber, setPhoneNumber] = useState("") 
+  const [email, setEmail] = useState("") 
+  const [country, setCountry] = useState("") 
+  const [address, setAddress] = useState("") 
+  const [city, setCity] = useState("") 
+  const [countryState, setCountryState] = useState("") 
+  const [postalcode, setPostalCode] = useState("") 
+  const [gender, setGender] = useState("") 
+  const [dob, setDob] = useState("") 
+  const [highestQualification, setHighestQualification] = useState("") 
+  //const [university, setUniversity] = useState("") 
+  const [course, setCourse] = useState("") 
+  const [infoMedium, setInfoMedium] = useState("") 
+  const [devExperience, setDevExperience] = useState("") 
+  const [programmingLanguage, setProgrammingLanguage] = useState("") 
+  const [paymentOption, setPaymentOption] = useState("") 
+  const [isSubmitted, setIsSubmitted] = useState(false) 
+  const [successMessage, setSuccessMessage] = useState("")
+  const toast = useToast()
 
+  
   async function handleSubmit(e) {
-    e.preventDefault();
-    setIsSubmitted(true);
+    e.preventDefault() 
+    setIsSubmitted(true) 
     try {
-      const { data } = await axios({
+      const{data} = await axios({
         method: "post",
         url: `${BaseUrl}/application/create`,
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
         data: {
           surname,
           othernames,
@@ -84,40 +84,53 @@ export const Application = () => {
 
           payment_option: paymentOption,
         },
-      });
-      setIsSubmitted(false);
-      setProgress("submitted");
-      setSuccessMessage(data.message);
+      })
+      setIsSubmitted(false) 
+      setProgress("submitted") 
+      setSuccessMessage(data.message) 
+      onClose();
+      showToast("Success", data.message, "success");
     } catch (error) {
-      setIsSubmitted(false);
-      if (error.repsonse) {
-        console.log(error.response.message);
-      }
-      console.log(error);
+      setIsSubmitted(false) 
+      console.log(error.response.data.message)
+      showToast("Error",error.response.data.message, "error");
+      onClose(); 
     }
   }
-  useEffect(() => {
-    const getToken = async () => {
-      try {
-        const { data } = await axios({
-          method: "post",
-          url: `${BaseUrl}/get-token`,
-          data: {
-            email: tokenEmail,
-            password: tokenPassword,
-          },
-        });
-        setToken(data.token);
-      } catch (error) {
-        if (error.repsonse) {
-          console.log(error.repsonse);
-        }
-        console.log(error);
-      }
-    };
-    getToken();
-  }, []);
 
+const  showToast = (title, desc, status) => {
+    toast({
+      title,
+      description: desc,
+      status,
+      duration: 5000,
+      isClosable: true,
+    }) 
+  }
+  // useEffect(() => {
+  //   const getToken = async () => {
+  //     try {
+  //       const { data } = await axios({
+  //         method: "post",
+  //         url: `${BaseUrl}/get-token`,
+  //         data: {
+  //           email: tokenEmail,
+  //           password: tokenPassword,
+  //         },
+  //       }) 
+  //       setToken(data.token) 
+  //     } catch (error) {
+  //       if (error.repsonse) {
+  //         console.log(error.repsonse) 
+  //       }
+  //       console.log(error) 
+  //     }
+  //   } 
+  //   getToken() 
+  // }, []) 
+
+  
+  
   return (
     <Flex pos={"relative"} h={"100vh"} bg={"white"}>
       <AppNavigation />
@@ -184,8 +197,7 @@ export const Application = () => {
                 <Stack spacing={4} pt={{ base: "100px", lg: "0px" }}>
                   <Heading>Application</Heading>
                   <Text>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam
-                    sed mattis in ornare nisl in. Tortor, ut eget nibh ipsum
+                  Start your career in tech! Click <b>Get Started </b>to begin your journey with us.
                   </Text>
                   {processStages.map((stage, index) => (
                     <Box
@@ -208,7 +220,7 @@ export const Application = () => {
                     bg={{ base: "brand.gold", lg: "brand.fuscia" }}
                     w={{ base: "100%", lg: "150px" }}
                     size={"lg"}
-                    alignSelf={"flex-end"}
+                    alignSelf={"flex-start"}
                     onClick={() => setProgress("personal")}
                   >
                     Get started
@@ -216,7 +228,8 @@ export const Application = () => {
                 </Stack>
               )}
               {progress === "personal" && (
-                <Stack spacing={8}>
+                  <Stack spacing={8}>
+               
                   <Heading fontSize={"36px"}>Personal details</Heading>
                   <SimpleGrid
                     columns={{ base: 2, lg: 3 }}
@@ -225,44 +238,51 @@ export const Application = () => {
                     w="100%"
                   >
                     <GridItem colSpan={{ base: 2, lg: 1 }}>
-                      <Input
-                        type="text"
-                        value={surname}
-                        onChange={(e) => setSurname(e.target.value)}
-                        placeholder="Surname"
-                        required
-                      />
+                          <Input
+                            id='surname'
+                            type='text'
+                            value={surname}
+                            onChange={(e) => setSurname(e.target.value)}
+                            placeholder="Surname"
+                            required
+                          />
+                      
                     </GridItem>
                     <GridItem colSpan={{ base: 2, lg: 2 }}>
                       <Input
-                        type="text"
-                        value={othernames}
-                        onChange={(e) => setOthernames(e.target.value)}
-                        placeholder="Other Names"
-                        required
-                      />
+                            id='OtherNames'
+                            type="text"
+                            value={othernames}
+                            onChange={(e) => setOthernames(e.target.value)}
+                            placeholder="Other Names"
+                            required
+                          />
+                    </GridItem>
+                        
+                    <GridItem colSpan={{ base: 2, lg: 3 }}>
+                      <Input
+                            id='Phone'
+                            type="tel"
+                            value={phoneNumber}
+                            onChange={(e) => setPhoneNumber(e.target.value)}
+                            placeholder="Phone number"
+                            required
+                          />
+                     
                     </GridItem>
                     <GridItem colSpan={{ base: 2, lg: 3 }}>
                       <Input
-                        type="tel"
-                        value={phoneNumber}
-                        onChange={(e) => setPhoneNumber(e.target.value)}
-                        placeholder="Phone number"
-                        required
-                      />
-                    </GridItem>
-                    <GridItem colSpan={{ base: 2, lg: 3 }}>
-                      <Input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Email"
-                        required
-                      />
+                            id='Email'
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="Email"
+                            required
+                          />
                     </GridItem>
                     <GridItem colSpan={{ base: 2, lg: 3 }}>
                       <Select
-                        placeholder="Country"
+                        placeholder="Select country"
                         value={country}
                         onChange={(e) => setCountry(e.target.value)}
                         required
@@ -275,13 +295,12 @@ export const Application = () => {
                       </Select>
                     </GridItem>
                     <GridItem colSpan={{ base: 2, lg: 3 }}>
-                      <Input
-                        type="text"
+                      <Textarea
                         value={address}
                         onChange={(e) => setAddress(e.target.value)}
                         placeholder="Address"
                         required
-                      />
+                      ></Textarea>
                     </GridItem>
 
                     <GridItem colSpan={1}>
@@ -307,7 +326,7 @@ export const Application = () => {
                         type="text"
                         value={postalcode}
                         onChange={(e) => setPostalCode(e.target.value)}
-                        placeholder="Postal code"
+                        placeholder="Current Location"
                         required
                       />
                     </GridItem>
@@ -325,9 +344,21 @@ export const Application = () => {
                     </GridItem>
                     <GridItem colSpan={{ base: 1, lg: 2 }}>
                       <Input
-                        type="date"
+                        type="text"
                         value={dob}
                         onChange={(e) => setDob(e.target.value)}
+                        onFocus = {
+                          (e)=> {
+                            e.currentTarget.type = "date"
+                            e.currentTarget.focus()
+                           }
+                         }
+                         onBlur = {
+                          (e)=> {
+                            e.currentTarget.type = "text"
+                            e.currentTarget.focus()
+                           }
+                         }
                         placeholder="Date of birth"
                         required
                       />
@@ -341,10 +372,12 @@ export const Application = () => {
                     size={"lg"}
                     onClick={() => setProgress("education")}
                     mt={{ base: "30px", lg: "50px" }}
-                    disabled={!dob}
+                    disabled={!dob }
+                      //
                   >
                     Next
-                  </Button>
+                    </Button>
+                   
                 </Stack>
               )}
               {progress === "education" && (
@@ -503,5 +536,5 @@ export const Application = () => {
         </Stack>
       </Stack>
     </Flex>
-  );
-};
+  ) 
+} 

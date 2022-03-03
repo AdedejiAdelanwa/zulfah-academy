@@ -14,7 +14,7 @@ import { Link as ReactRouterLink } from "react-router-dom";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import logo from "../assets/zulfah-mono.png";
 
-const Links = ["About", "Courses", "Hire", "FAQs"];
+const Links = ["FAQs", "HIRE"];
 
 export const NavLink = ({ children }) => (
   <Link
@@ -48,7 +48,7 @@ export default function AppNavigation() {
         >
           <ReactRouterLink to="/">
             <Box>
-              <Image h={50} objectFit="cover" src={logo} alt="Zulfah group" />
+              <Image h={50} objectFit="cover" src={logo} alt="Zulfah" />
             </Box>
           </ReactRouterLink>
 
@@ -76,8 +76,8 @@ export default function AppNavigation() {
         {isOpen ? (
           <Box pb={4} display={{ md: "none" }}>
             <Stack as={"nav"} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+              { Links.map((link) => (
+                 <NavLink key={link}>{link}</NavLink>
               ))}
             </Stack>
           </Box>

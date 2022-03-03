@@ -1,8 +1,9 @@
 import MainNavigation from "../components/Navigation"
-import CodingScreen from "../assets/coding-screen.png"
 import BlackDev from "../assets/black-smiling.png"
 import guyWithLaptop from "../assets/guy-with-laptop.png"
 import Founder from "../assets/founder.png"
+
+import coffee from '../assets/coffee.webp'
 import {
   Box,
   Divider,
@@ -16,7 +17,6 @@ import {
   IconButton,
   Button,
   Image,
-  Link,
   Icon,
 } from "@chakra-ui/react";
 import {
@@ -49,9 +49,8 @@ export default function Home() {
                 Become a Skilled Software Engineer
               </Heading>
               <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
-                Gain the skills you need to land a job in the tech industry. Our
-                academy trains and mentors you to become an industry standard
-                software engineer.
+                Gain the skills you need to land a job in the tech industry. Zulfah
+                Academy trains and mentors you to become the excellent software engineer.
               </Text>
               <Button
                 display={{ lg: "none" }}
@@ -67,7 +66,7 @@ export default function Home() {
           <Flex flex={1} justifyContent={"center"}>
             <Box
               boxSize={{ base: "300px", lg: "100%" }}
-              backgroundImage={CodingScreen}
+              backgroundImage={coffee}
               backgroundSize={"cover"}
               backgroundPosition={"bottom"}
               backgroundRepeat={"no-repeat"}
@@ -90,7 +89,7 @@ export default function Home() {
             <HStack h={"70%"}>
               <Stack spacing={4} w={"220px"}>
                 <Heading fontSize={"lg"} color={"brand.fuscia"}>
-                  Apply
+                  Application
                 </Heading>
                 <Text fontSize={"12px"} color={"brand.textgrey"}>
                   We screen all submissions to identify high-potential
@@ -104,7 +103,7 @@ export default function Home() {
               />
               <Stack spacing={4} pl={4} w={"220px"}>
                 <Heading fontSize={"lg"} color={"brand.fuscia"}>
-                  Get Selected{" "}
+                  Selection{" "}
                 </Heading>
                 <Text fontSize={"12px"} color={"brand.textgrey"}>
                   You get a call from us because you made it into the Academy
@@ -114,10 +113,10 @@ export default function Home() {
               <Divider orientation="vertical" />
               <Stack spacing={4} pl={4} w={"220px"}>
                 <Heading fontSize={"lg"} color={"brand.fuscia"}>
-                  Join Training
+                  Training
                 </Heading>
                 <Text fontSize={"12px"} color={"brand.textgrey"}>
-                  You will join the our intensive six-months training program
+                 After six-months, you earn the title "Skilled Software Engineer"
                 </Text>
               </Stack>
             </HStack>
@@ -148,20 +147,28 @@ export default function Home() {
           alignItems={{ base: "center", lg: "baseline" }}
         >
           <VStack
-            textAlign={{ base: "center", lg: "left" }}
+            textAlign={{ base: "center", lg: "justify" }}
             spacing={{ base: "15px", lg: "50px" }}
-            w={{ base: "75%", lg: "380px" }}
+            w={{ base: "75%", lg: "500px" }}
             mb={{ base: "40px", lg: "none" }}
             mt={{ base: "50px", lg: "none" }}
           >
-            <Heading fontSize={"36px"}>
+            {/* <Heading fontSize={"36px"}>
             Why Zulfah is the #1
             choice for you
-            </Heading>
+            </Heading> */}
             <Text fontSize={"16px"}>
-              We work with employers to understand their needs, then teach you
-              those in-demand skills. At Zulfah, you'll get the work experience
-              to grow a rewarding career.
+             <p> We deliver an intensive 6-month program where our software developers
+              learn both full-stack software development and additional soft skills
+                in an immersive environment.</p><br />
+              <p>Through an agile delivery methodology, mentor matching and leadership modules,
+                our elite engineers are equipped with techniques and a leadership mindset
+                that enables them to work competitively in any team globally.</p><br />
+              <p>As part of our curriculum, we expose our engineers to real-life
+                applications and projects. During these projects, we ensure they are
+                well-equipped to design programs both individually and in teams.</p>
+              <p>This aspect of our program provides our engineers with verifiable work
+                experience and the confidence to excel in their jobs after the training.</p>
             </Text>
           </VStack>
           <SimpleGrid
@@ -190,8 +197,7 @@ export default function Home() {
                 Take online classes with live instruction
               </Heading>
               <Text fontSize={"12px"}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed
-                mattis in ornare nisl in.
+              Complete hands-on coding projects with personalized feedback
               </Text>
             </VStack>
             <VStack
@@ -284,8 +290,17 @@ export default function Home() {
               </Heading>
               <Text fontSize={"16px"} color={"#000000"}>
                 We'll work with you throughout your program and after graduation
-                to help you polish your portfolio, practice interviewing and
-                more to land a job that fits your goals.
+                to help you polish your portfolio, practice interviewing and more to
+                land a job that fits your goals.
+                <p>
+                <ul>
+                  <li>Work closely with our Career Coaches </li>
+                  <li>Develop job hunt skills: networking, interviewing, negotiating and more</li>
+                  <li>Connect to our exclusive network of employers </li>
+                  <li>Share and get advice in our nationwide alumni community </li>
+                  <li> Get ongoing career support as part of the Zulfah family</li>
+                </ul>
+                </p>
               </Text>
               <Button
                 variant={"solid"}

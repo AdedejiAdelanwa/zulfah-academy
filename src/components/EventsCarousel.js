@@ -15,9 +15,9 @@ export default function EventsCarousel() {
       bg={"whiteAlpha.100"}
     >
       <Carousel
-        showStatus={false}
+        showStatus={true}
         showThumbs={false}
-        showIndicators={false}
+        showIndicators={true}
         infiniteLoop
         autoPlay
         interval={5000}
@@ -28,7 +28,7 @@ export default function EventsCarousel() {
           alignItems={"center"}
           h={{ base: "auto", lg: "700px" }}
         >
-          <Stack
+         {/* <Stack
             p={{ base: 0, lg: 4 }}
             w={"45%"}
             h={{ base: "100% ", lg: "80%" }}
@@ -60,9 +60,10 @@ export default function EventsCarousel() {
               </Text>
             </VStack>
           </Stack>
+            */}
           <img
             src={FireChat}
-            style={{ display: "block", width: "55%", height: "100%" }}
+            style={{ display: "block", width: "70%", height: "100%" }}
             alt="hello"
           />
         </Flex>
@@ -72,7 +73,7 @@ export default function EventsCarousel() {
           alignItems={"center"}
           h={{ base: "auto", lg: "700px" }}
         >
-          <Stack
+         {/* <Stack
             p={{ base: 0, lg: 4 }}
             w={"45%"}
             h={{ base: "100% ", lg: "80%" }}
@@ -104,19 +105,20 @@ export default function EventsCarousel() {
               </Text>
             </VStack>
           </Stack>
+          */}
           <img
             src={HandsOn}
-            style={{ display: "block", width: "55%", height: "100%" }}
+            style={{ display: "block", width: "70%", height: "100%" }}
             alt="hello"
           />
         </Flex>
-        <Flex
+        {/* <Flex
           direction={{ base: "column", lg: "row" }}
           justifyContent={"center"}
           alignItems={"center"}
           h={{ base: "auto", lg: "700px" }}
         >
-          <Stack
+         <Stack
             p={{ base: 0, lg: 4 }}
             w={"45%"}
             h={{ base: "100% ", lg: "80%" }}
@@ -148,12 +150,14 @@ export default function EventsCarousel() {
               </Text>
             </VStack>
           </Stack>
+          
           <img
             src={WithGuest}
-            style={{ display: "block", width: "55%", height: "100%" }}
+            style={{ display: "block", width: "70%", height: "100%" }}
             alt="hello"
           />
-        </Flex>
+      </Flex> 
+        */}
       </Carousel>
     </HStack>
   );

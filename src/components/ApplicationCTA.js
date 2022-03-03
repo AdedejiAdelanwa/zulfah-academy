@@ -40,8 +40,8 @@ export const ApplicationCTA = () => {
           Start your application to become a software engineer
         </Heading>
         <Text w={{ base: "80%", lg: "600px" }}>
-          Become a student at Bloom Institute of Technology. The next
-          application deadline is: December 10, 2021
+          Become a student at Zulfah. The next
+          application opens on: March 5th, 2022
         </Text>
         <Button
           variant={"solid"}
@@ -50,7 +50,7 @@ export const ApplicationCTA = () => {
           w="150px"
           size={"lg"}
         >
-          <ReactRouterLink to="/about">Learn more</ReactRouterLink>
+          <ReactRouterLink to="/application">Enroll Now</ReactRouterLink>
         </Button>
       </Stack>
     </Stack>

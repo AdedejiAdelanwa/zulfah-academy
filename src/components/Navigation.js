@@ -16,7 +16,7 @@ import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link as ReactRouterLink } from "react-router-dom";
 import logo from "../assets/zulfah-logo.png";
 
-const Links = ["About", "Courses", "Hire", "FAQs"];
+const Links = [ "FAQs", "HIRE"];
 
 export const NavLink = ({ children }) => (
   <Link
@@ -27,7 +27,7 @@ export const NavLink = ({ children }) => (
       textDecoration: "none",
       bg: useColorModeValue("gray.200", "gray.700"),
     }}
-    href={children === "FAQs" ? "/About#frequently-asked" : children}
+    href={children === "FAQs" ? "/about#frequently-asked" : children}
   >
     {children}
   </Link>
@@ -46,7 +46,7 @@ export default function MainNavigation() {
         >
           <ReactRouterLink to="/">
             <Box>
-              <Image h={45} objectFit="cover" src={logo} alt="Zulfah group" />
+              <Image h={45} objectFit="cover" src={logo} alt="Zulfah" />
             </Box>
           </ReactRouterLink>
 
@@ -57,7 +57,7 @@ export default function MainNavigation() {
             display={{ base: "none", md: "flex" }}
             justifyContent="space-between"
           >
-            <Box w="60%" display={"flex"} justifyContent={"space-around"}>
+            <Box w="100%" display={"flex"} justifyContent={"flex-end"}>
               {Links.map((link) => (
                 <NavLink key={link}>{link}</NavLink>
               ))}

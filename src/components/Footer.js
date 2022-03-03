@@ -31,7 +31,8 @@ export const Footer = () => {
           justifyContent={"space-around"}
         >
           {Links.map((link) => (
-            <NavLink key={link}>{link}</NavLink>
+            <p>{link}</p>
+            // <NavLink key={link}>{link}</NavLink>
           ))}
         </Flex>
       </Stack>
@@ -43,16 +44,17 @@ export const Footer = () => {
         justifyContent={{ base: "space-around", lg: "space-between" }}
       >
         <Text fontSize={"12px"}>
-          © 2021 Zulfah Academy. All rights reserved
+         
+          © {new Date().getFullYear()} Zulfah Academy. All rights reserved
         </Text>
         <Flex w={{ base: "50%", lg: "auto" }} justifyContent={"space-between"}>
-          <Link href="https://chakra-ui.com" isExternal>
+          <Link href="https://www.instagram.com/zulfahacademy/" isExternal>
             <Icon as={AiOutlineInstagram} w={8} h={8} color={"#1D3547"} />
           </Link>
-          <Link href="https://chakra-ui.com" isExternal>
+          <Link href="https://facebook.com/Zulfah-Group-100605405733254" isExternal>
             <Icon as={AiFillFacebook} w={8} h={8} color={"#1D3547"} />
           </Link>
-          <Link href="https://chakra-ui.com" isExternal>
+          <Link href="https://www.linkedin.com/company/zulfah-group/" isExternal>
             <Icon as={AiFillLinkedin} w={8} h={8} color={"#1D3547"} />
           </Link>
         </Flex>

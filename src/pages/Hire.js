@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { BaseUrl } from "../utils/Url";
 
@@ -9,11 +9,6 @@ import {
   Heading,
   HStack,
   Icon,
-  Image,
-  List,
-  ListIcon,
-  ListItem,
-  //Icon,
   Stack,
   Text,
   VStack,
@@ -32,15 +27,8 @@ import {
 } from "@chakra-ui/react";
 import MainNavigation from "../components/Navigation";
 import { Footer } from "../components/Footer";
-import { ApplicationCTA } from "../components/ApplicationCTA";
-import HireHero1 from "../assets/hire-hero1.png";
-import HireHero2 from "../assets/hire-hero2.png";
-import WhiteHair from "../assets/white-hair-guy.png";
-import Aneezah from "../assets/aneezah.png";
-import Sancho from "../assets/sancho.png";
+import ProcessPic from "../assets/process-pic-3.png";
 import { HireFAQs } from "../components/HireFAQs";
-import { AiFillCheckCircle } from "react-icons/ai";
-import { OneStar } from "../assets/icons";
 import Partner1 from "../assets/partner1.png";
 import Partner2 from "../assets/partner2.png";
 import { RatingStars } from "../assets/icons";
@@ -137,9 +125,7 @@ const reviews = [
 ];
 
 export const Hire = () => {
-  const tokenEmail = "roshbon@gmail.com";
-  const tokenPassword = "Pass123@#";
-  const [token, setToken] = useState("");
+
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
@@ -156,7 +142,7 @@ export const Hire = () => {
       title,
       description: desc,
       status,
-      duration: 9000,
+      duration: 5000,
       isClosable: true,
     });
   }
@@ -164,12 +150,10 @@ export const Hire = () => {
     e.preventDefault();
     setIsRequesting(true);
     try {
+     
       await axios({
         method: "post",
         url: `${BaseUrl}/application/hire`,
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
         data: {
           fullname,
           email,
@@ -190,39 +174,38 @@ export const Hire = () => {
       setMessage("");
 
       onClose();
-      showToast("Successful", "We will be in touch", "success");
+      showToast("Success", "We will be in touch", "success");
     } catch (error) {
       setIsRequesting(false);
       if (error.response) {
         onClose();
         showToast("Oops!", "There seems to be an issue", "error");
       }
-      showToast("Oops!", "There seems to be an issue", "error");
-      onClose();
+     
     }
   }
 
-  useEffect(() => {
-    const getToken = async () => {
-      try {
-        const { data } = await axios({
-          method: "post",
-          url: `${BaseUrl}/get-token`,
-          data: {
-            email: tokenEmail,
-            password: tokenPassword,
-          },
-        });
-        setToken(data.token);
-      } catch (error) {
-        if (error.repsonse) {
-          console.log(error.repsonse);
-        }
-        console.log(error);
-      }
-    };
-    getToken();
-  }, []);
+  // useEffect(() => {
+  //   const getToken = async () => {
+  //     try {
+  //       const { data } = await axios({
+  //         method: "post",
+  //         url: `${BaseUrl}/get-token`,
+  //         data: {
+  //           email: tokenEmail,
+  //           password: tokenPassword,
+  //         },
+  //       });
+  //      // setToken(data.token);
+  //     } catch (error) {
+  //       if (error.repsonse) {
+  //         console.log(error.repsonse);
+  //       }
+  //       console.log(error);
+  //     }
+  //   };
+  //   getToken();
+  // }, []);
   return (
     <Box position={"relative"}>
       <MainNavigation />
@@ -288,7 +271,8 @@ export const Hire = () => {
                 </GridItem>
                 <GridItem colSpan={1}>
                   <Input
-                    type="text"
+                    type="number"
+                    minimum={1}
                     value={numOfEngineers}
                     onChange={(e) => setNumOfEngineers(e.target.value)}
                     placeholder="Number of Engineers"
@@ -299,7 +283,7 @@ export const Hire = () => {
                   <Textarea
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Any question for us?"
+                    placeholder="Any other details ?"
                     size="sm"
                   />
                 </GridItem>
@@ -321,7 +305,7 @@ export const Hire = () => {
         </ModalContent>
       </Modal>
       <Box paddingTop={{ base: "25px", lg: "none" }} bg={"white"}>
-        <Stack
+       <Stack
           pos={"relative"}
           h={{ base: "auto", lg: "75vh" }}
           direction={{ base: "column", md: "row" }}
@@ -334,19 +318,20 @@ export const Hire = () => {
               spacing={8}
               maxW={{ base: "95%", lg: "90%" }}
               textAlign={{ base: "center", lg: "left" }}
+              border={{border:"2px solid red"}}
             >
               <Heading
                 color={"#000000"}
                 fontSize={{ base: "36px", lg: "64px" }}
               >
-                Build your <span style={{ color: "#3C9A9D" }}>workforce</span>{" "}
-                with non-traditional talent
+      
+                Build your <span style={{ color: "#3C9A9D" }}>workforce</span>.{" "}
+                <i>Hire from our trained Engineers.</i>
               </Heading>
               <Text fontSize={"16px"} color={"#000000"}>
-                You already know the cost of having unfilled critical positions
-                in your business, not to mention the huge investment of
-                resources required for recruiting, hiring and training. You
-                might not know how Bloom Institute of Technology can help.
+                Thanks to our proven curriculum and reputation
+                with employers, learners graduate ready to impact your
+                business on day one.
               </Text>
               <Button
                 variant={"solid"}
@@ -368,13 +353,13 @@ export const Hire = () => {
             <div
               style={{
                 height: "399px",
-                width: "246px",
+                width: "100%",
                 alignSelf: "center",
                 marginRight: "30px",
               }}
             >
               <img
-                src={HireHero1}
+                src={ProcessPic}
                 alt="demo"
                 style={{
                   objectFit: "cover",
@@ -384,10 +369,10 @@ export const Hire = () => {
                 }}
               />
             </div>
-            <div
+            {/* <div
               style={{ height: "399px", width: "246px", alignSelf: "flex-end" }}
             >
-              <img
+               <img
                 src={HireHero2}
                 alt="demo"
                 style={{
@@ -396,29 +381,32 @@ export const Hire = () => {
                   maxWidth: "100%",
                   borderRadius: "15px",
                 }}
-              />
-            </div>
+              /> 
+            </div>  */}
           </Flex>
-        </Stack>
+        </Stack> 
+        {/*
         <Stack
           alignItems={"center"}
           mt={{ base: "40px", lg: "100px" }}
           mb={{ base: "0px", lg: "150px" }}
           spacing={{ base: "8", lg: "24" }}
         >
+
+          
           <Stack alignItems={"center"}>
-            <Heading>Find the right hires—fast.</Heading>
-            <Text
+            <Heading>Find the right hires — fast.</Heading>
+             <Text
               textAlign="center"
               fontSize={"20px"}
               w={{ base: "70%", lg: "85%" }}
               color={"#7B7C7C"}
             >
               Zulfah can transform the hiring process so you can continue to
-              grow your business.
+              grow your business. 
             </Text>
           </Stack>
-
+            
           <Stack
             pos={"relative"}
             h={{ base: "auto", lg: "65vh" }}
@@ -446,17 +434,15 @@ export const Hire = () => {
                 >
                   <ListItem>
                     <ListIcon as={AiFillCheckCircle} color="brand.green" />
-                    Tap into a pipeline of trained, ready-to-work professionals
+                    Tap into a pipeline of trained, ready-to-work professionals.
                   </ListItem>
                   <ListItem>
                     <ListIcon as={AiFillCheckCircle} color="brand.green" />
-                    Fill openings during a hiring surge with BloomTech-hosted
-                    hiring days
+                    Fill openings during a hiring surge with our best fit ready learners.
                   </ListItem>
                   <ListItem>
                     <ListIcon as={AiFillCheckCircle} color="brand.green" />
-                    Choose from candidates who graduate every month, independent
-                    of traditional graduation schedules
+                    Hire our software engineers with knowledge of the technology stack your product is built with
                   </ListItem>
                 </List>
               </Stack>
@@ -490,7 +476,7 @@ export const Hire = () => {
                 >
                   <Image boxSize={"60px"} src={Aneezah} alt="Girl" />
                   <Stack spacing={0}>
-                    <Text fontSize={"18px"}>Aneezah Buju</Text>
+                    <Text fontSize={"18px"}>Brilliant & experienced</Text>
                     <Flex alignItems={"center"} spacing={0}>
                       <Icon as={OneStar} />
                       <Text fontSize={"12px"}>5.0</Text>
@@ -510,7 +496,7 @@ export const Hire = () => {
                 >
                   <Image boxSize={"60px"} src={Aneezah} alt="Girl" />
                   <Stack spacing={0}>
-                    <Text fontSize={"18px"}>Aneezah Buju</Text>
+                    <Text fontSize={"18px"}>Best Fit</Text>
                     <Flex alignItems={"center"} spacing={0}>
                       <Icon as={OneStar} />
                       <Text fontSize={"12px"}>5.0</Text>
@@ -530,7 +516,7 @@ export const Hire = () => {
                 >
                   <Image boxSize={"60px"} src={Sancho} alt="Girl" />
                   <Stack spacing={0}>
-                    <Text fontSize={"18px"}>Pulisic Sancho</Text>
+                    <Text fontSize={"18px"}>Already vetted talents</Text>
                     <Flex alignItems={"center"} spacing={0}>
                       <Icon as={OneStar} />
                       <Text fontSize={"12px"}>5.0</Text>
@@ -551,7 +537,11 @@ export const Hire = () => {
             </Flex>
           </Stack>
         </Stack>
-        <Stack alignItems={"center"} spacing={12}>
+        */}
+
+
+        {/* Partner Reviews */}
+       <Stack alignItems={"center"} spacing={12}>
           <Stack
             spacing={8}
             width={{ base: "80%", lg: "40%" }}
@@ -574,8 +564,68 @@ export const Hire = () => {
             />
           </Stack>
         </Stack>
-        <HireFAQs />
-        <ApplicationCTA />
+        {/*Partner Reviews */}
+        
+         {/*You need a Partner */}
+          <Stack w={"100%"} py={"50px"} alignItems={"center"}>
+            <Stack
+              pos={"relative"}
+              w={{ base: "90%", lg: "80%" }}
+              h={{ base: "470px", lg: "370px" }}
+              justifyContent={{ base: "space-around", lg: "center" }}
+              alignItems={"center"}
+              color={"white"}
+              textAlign={"center"}
+              bg={"brand.lightgrey"}
+              borderRadius={{ base: "15px", lg: "4px" }}
+              spacing={{ base: 4, lg: 8 }}
+              overflow={"hidden"}
+            >
+              <Box
+                pos={"absolute"}
+                top={0}
+                left={0}
+                display={{ base: "none", lg: "block" }}
+                boxSize={"100px"}
+                style={{ clipPath: "polygon(0 0, 100% 0%,  0 100%)" }}
+              ></Box>
+              <Box
+                pos={"absolute"}
+                bottom={0}
+                right={0}
+                display={{ base: "none", lg: "block" }}
+                
+                boxSize={"100px"}
+                style={{ clipPath: "polygon(100% 0, 100% 100%,  0 100%)" }}
+              ></Box>
+              <Heading
+                      color={"#000000"}
+                      fontSize={{ base: "36px", lg: "64px" }}
+                    >
+            
+                      You need a partner
+                    </Heading>
+                    <Text fontSize={"16px"} color={"#000000"}>
+                    Save time, money, and resources on junior positions by partnering  with  us at Zulfah Academy.<br />
+                    We advance your long-term goals by supporting your workforce strategy and diversity initiatives. <br />
+                      We train the best engineers. 
+                    </Text>
+                    <Button
+                      variant={"solid"}
+                      bg={"brand.gold"}
+                      w="150px"
+                      size={"lg"}
+                      alignSelf={{ lg: "justify-content" }}
+                      onClick={onOpen}
+                    >
+                      Hire engineers
+                    </Button>
+            </Stack>
+          </Stack>
+        {/*You need a Partner */}
+
+        <HireFAQs /> 
+
       </Box>
       <Footer />
     </Box>
