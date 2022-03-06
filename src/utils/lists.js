@@ -34,25 +34,17 @@ export const paymentOptions = [
 
 export const hireFaqs = [
   {
-    title: " How do I enrol for this training",
-    body: "We work with employers to understand their needs, then teach you those in-demand skills. At Zulfah, you'll get the work experience to grow a rewarding career.",
+    title: " What curriculum do your grads go through? ",
+    body: "We train our learners on fullstack engineering, so they can comfortably write both frontend and backend excellently. If you'd like more information, please reach out to support@zulfahgroup.com.",
   },
   {
-    title: "Do you still offer Fellows under the same terms as before?",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    title: "What do I pay for wanting to hire your graduate",
+    body: "Our partnership team is dedicated to understanding your soft and technical needs. We defintely can discuss and work things out. Kindly reach us directly at support@zulfahgroup.com",
   },
   {
-    title: "Can I cancel my registration after submitting",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  },
-  {
-    title: "What curriculum do your grads go through?",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  },
-  {
-    title: "Who should I contact to learn more about hiring BloomTech grads?",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Utenim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  },
+    title: "When can we hire grads from your program? ",
+    body: "Our first cohort will graduate in May 2022. We expect to then have monthly cohorts ready for employment career opportunities.",
+  }
 ];
 
 export const hearAboutUs = [
@@ -66,9 +58,9 @@ export const hearAboutUs = [
 export const tableOfContent = [
   {
     title: "Overview",
-    body: `Our Fullstack engineering course  is designed to teach you the technical and professional skills hiring managers need most and off course to be world class. You’ll attend classes led by industry experts who will teach you the foundations of full-stack development using HTML, CSS, and JavaScript.
-    You’ll also develop web servers using Node.js and RDBMS, including SQL and PostgreSQL, as well as able to understand, explain, and apply fundamental computer science concepts. Plus, you’ll have the chance to build and contribute to real products with a team of other learners that you can showcase in your portfolio.\n
-    We promote collaborative learning, this will be seen in our usage of git, trello and other tools in software engineering. Through an agile delivery methodology, mentor matching and leadership modules, our elite engineers are equipped with techniques and a leadership mindset that enables them to work competitively in any team globally.
+    body: `Our Fullstack engineering course is designed to make you world-class, teaching you the technical and professional skills hiring managers need most. You’ll attend classes led by industry experts who will teach you the foundations of full-stack development using HTML, CSS, and JavaScript.
+    You’ll also develop web servers using Node.js and RDBMS, including SQL and PostgreSQL, as well as be able to understand, explain, and apply fundamental computer science concepts. Plus, you’ll have the chance to build and contribute to real products with a team of other learners that you can showcase in your portfolio.\n
+    We promote collaborative learning, which will be seen in our usage of git, Trello, and other tools in software engineering. Through an agile delivery methodology, mentor matching, and leadership modules, our elite engineers are equipped with techniques and a leadership mindset that enables them to work competitively in any team globally.
    `
   },
   {
@@ -92,6 +84,6 @@ export const tableOfContent = [
   },
   {
     title: "Next Application",
-    body: `Applications are now opened for cohorts 10, March 2022 .`,
+    body: `Applications are now opened today, 7th March 2022 for the next cohorts .`,
   },
 ];

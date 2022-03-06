@@ -131,7 +131,7 @@ const  showToast = (title, desc, status) => {
 
   
   
-  return (
+  return ( 
     <Flex pos={"relative"} h={"100vh"} bg={"white"}>
       <AppNavigation />
       <Stack
@@ -422,7 +422,7 @@ const  showToast = (title, desc, status) => {
 
                     <GridItem colSpan={1}>
                       <Select
-                        placeholder="Programming Experience"
+                        placeholder="What is programming experience like ?"
                         value={devExperience}
                         onChange={(e) => setDevExperience(e.target.value)}
                         required
@@ -439,7 +439,7 @@ const  showToast = (title, desc, status) => {
                         type="text"
                         value={programmingLanguage}
                         onChange={(e) => setProgrammingLanguage(e.target.value)}
-                        placeholder="Programming language"
+                        placeholder="what programming language(s)"
                         required
                       />
                     </GridItem>

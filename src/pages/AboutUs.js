@@ -26,14 +26,11 @@ import { AiFillFacebook, AiFillLinkedin } from "react-icons/ai";
 import { Footer } from "../components/Footer";
 import MainNavigation from "../components/Navigation";
 import { Link as ReactRouterLink } from "react-router-dom";
-import LadyWithTab from "../assets/ladywithpad.png";
-import LadyWithTabLarge from "../assets/ladywithLarge.png";
 import MemberB from "../assets/rosh1.png";
 import MemberA from "../assets/rosh2.png";
 import MemberC from "../assets/rosh3.png";
 import { Hourglass, Tuition } from "../assets/icons";
 import { BsArrowRight } from "react-icons/bs";
-import EventsCarousel from "../components/EventsCarousel";
 import { FAQs } from "../components/FAQs";
 import { ApplicationCTA } from "../components/ApplicationCTA";
 import { tableOfContent } from "../utils/lists";
@@ -66,7 +63,7 @@ export default function AboutUs() {
               </Heading>
               <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
                 Gain the skills you need to land a job in the tech industry. Zulfah
-                Academy trains and mentors you to become the excellent software engineer.
+                Academy trains and mentors you to become an excellent engineer.
               </Text>
               <Button
                 display={{ lg: "none" }}
@@ -79,16 +76,19 @@ export default function AboutUs() {
               </Button>
             </Stack>
           </Flex>
+          {/* coffe icon */}
           <Flex flex={1} justifyContent={"center"}>
             <Box
-              boxSize={{ base: "350px", lg: "100%" }}
+              boxSize={{ base: "0px", md:"100%" }}
               backgroundImage={coffee}
               backgroundSize={"cover"}
               backgroundPosition={"bottom"}
               backgroundRepeat={"no-repeat"}
-              borderRadius={{ base: "15px", lg: "none" }}
+              borderRadius={{ base: "0px", md: "0px" }}
             ></Box>
           </Flex>
+          {/* coffe icon */}
+          
           <Box
             display={{ base: "none", lg: "flex" }}
             alignItems={"center"}
@@ -119,10 +119,10 @@ export default function AboutUs() {
               />
               <Stack spacing={4} pl={4} w={"220px"}>
                 <Heading fontSize={"lg"} color={"brand.fuscia"}>
-                  Selection{" "}
+                  Interview - Selection{" "}
                 </Heading>
                 <Text fontSize={"12px"} color={"brand.textgrey"}>
-                  You get a call from us because you made it into the Academy
+                  You get a chance to convince us, then, we make our desicion
                  
                 </Text>
               </Stack>
@@ -132,7 +132,7 @@ export default function AboutUs() {
                   Training
                 </Heading>
                 <Text fontSize={"12px"} color={"brand.textgrey"}>
-                 After six-months, you will earn the title "Skilled Software Engineer"
+                 After six months, you will earn the title "Skilled Software Engineer"
                 </Text>
               </Stack>
             </HStack>
@@ -155,15 +155,17 @@ export default function AboutUs() {
             </VStack>
           </Box>
         </Stack>
-        <br /><br />
+      
 
-        
+   {/** 4 cards , equipped curriculum, Innovatiobe learning environment */}
         <Stack
           direction={{ base: "column", lg: "row" }}
           h={{ base: "auto", lg: "750px" }}
-          pt={{ base: "300px", lg: "150px" }}
+          pt={{ base: "0px", md:"0px", lg: "150px" }}
           justifyContent={"space-around"}
           alignItems={{ base: "center", lg: "baseline" }}
+          spacing={6} maxW="100%"
+       
         >
           <VStack
             textAlign={{ base: "center", lg: "justify" }}
@@ -171,6 +173,8 @@ export default function AboutUs() {
             w={{ base: "75%", lg: "500px" }}
             mb={{ base: "40px", lg: "none" }}
             mt={{ base: "50px", lg: "none" }}
+            justifyContent={{ base: "center", lg: "left" }}
+            ml={{base:"60px", lg: "none"}}
           >
             {/* <Heading fontSize={"36px"}>
             Why Zulfah is the #1
@@ -181,13 +185,18 @@ export default function AboutUs() {
               learn both full-stack software development and additional soft skills
                 in an immersive environment.</p><br />
               <p>Through an agile delivery methodology, mentor matching and leadership modules,
-                our elite engineers are equipped with techniques and a leadership mindset
+                our software engineers are equipped with techniques and a leadership mindset
                 that enables them to work competitively in any team globally.</p><br />
               <p>As part of our curriculum, we expose our engineers to real-life
                 applications and projects. During these projects, we ensure they are
-                well-equipped to design programs both individually and in teams.</p>
+                well-equipped to develop programs individually and in teams.</p>
               <p>This aspect of our program provides our engineers with verifiable work
-                experience and the confidence to excel in their jobs after the training.</p>
+                experience and the confidence to excel in their jobs after the training.
+                Our graduates are mentored by various veterans in the 
+                tech industry, we leverage on that network to match our graduate with  
+                partner company.
+              </p>
+           
             </Text>
           </VStack>
           <SimpleGrid
@@ -203,7 +212,7 @@ export default function AboutUs() {
               justifyContent={"space-evenly"}
               p={4}
               bg="brand.lightpink"
-              w={"320px"}
+              w={{ base: "100%", md: "300px" }}
               height="235px"
             >
               <IconButton
@@ -216,7 +225,7 @@ export default function AboutUs() {
               Equipped Curriculum
               </Heading>
               <Text fontSize={"12px"}>
-              We ensure industry standard and best practices that match the dynamics of the tech industry.
+              We enforce industry standard and best practices that match the dynamics of the tech industry.
               </Text>
             </VStack>
             <VStack
@@ -225,7 +234,7 @@ export default function AboutUs() {
               justifyContent={"space-evenly"}
               p={4}
               bg="brand.lightpink"
-              w={"320px"}
+              w={{ base: "100%", md: "300px" }}
               height="235px"
             >
               <IconButton
@@ -238,7 +247,7 @@ export default function AboutUs() {
               Complete hands-on coding projects with personalized feedback
               </Heading>
               <Text fontSize={"12px"}>
-               Enhances tactical problem solving techniques and gives a feel of reality.
+               Enhances tactical problem-solving techniques and gives a feel of reality.
               </Text>
             </VStack>
             <VStack
@@ -247,7 +256,7 @@ export default function AboutUs() {
               justifyContent={"space-evenly"}
               p={4}
               bg="brand.lightpink"
-              w={"320px"}
+              w={{ base: "100%", md: "300px" }}
               height="235px"
             >
               <IconButton
@@ -260,7 +269,7 @@ export default function AboutUs() {
                 Monthly session with Industry experts
               </Heading>
               <Text fontSize={"12px"}>
-                Opportunity to engage tech veterans, network and gain mentorship. 
+                Opportunity to engage tech veterans, network, and gain mentorship. 
               </Text>
             </VStack>
             <VStack
@@ -269,7 +278,7 @@ export default function AboutUs() {
               justifyContent={"space-evenly"}
               p={8}
               bg="brand.lightpink"
-              w={"320px"}
+              w={{ base: "100%", md: "300px" }}
               height="235px"
             >
               <IconButton
@@ -282,13 +291,16 @@ export default function AboutUs() {
               Innovative learning culture
               </Heading>
               <Text fontSize={"12px"}>
-                Peer-to-peer learning, with collaborative approach. And guess what "Lunch is always on the house".
+                Peer-to-peer learning, with collaborative approach. And guess what? "Lunch is always on the house."
               </Text>
             </VStack>
           </SimpleGrid>
         </Stack>
+  {/** 4 cards , equipped curriculum, Innovatiobe learning environment */}
+       
 
-        
+      {/** What you wil learn */}
+       
         <Flex width={"100%"} bg={"white"} justifyContent={"center"}>
           <Stack
             pos={"relative"}
@@ -314,10 +326,10 @@ export default function AboutUs() {
                 color={"white"}
                
               >
-                <Stack
-              justifyContent={{ base: "center", lg: "left" }}
-              w={{ base: "100%", lg: "420px" }}
-            >
+              <Stack
+                justifyContent={{ base: "center", lg: "left" }}
+                w={{ base: "100%", lg: "420px" }}
+              >
               <Heading fontSize={{ base: "28px", lg: "48px" }}>
                 What you will learn
               </Heading><br />
@@ -335,7 +347,7 @@ export default function AboutUs() {
                 >
                   <Heading fontSize={"22px"}>Front-end development</Heading>
                   <Text fontSize={"14px"}>
-                    Core expertise in user interfaces including visual elements like
+                    Core expertise in user interfaces, including visual elements like
                     layouts and aesthetics.
                     {/* HTML - CSS - CSS3 - BOOTSTRAP
                     - TAILWIND - SASS - JAVASCRIPT - REACTJS */}
@@ -450,13 +462,14 @@ export default function AboutUs() {
            
           </Stack>
         </Flex>
-
+      {/** What you wil learn */}
 
 
         <Stack
           w={"100%"}
           alignItems={"center"}
-          paddingTop={{ base: "350px", lg: "90px" }}
+          paddingTop={{ base: "0px", lg: "90px" }}
+        
         >
           <Tabs
             w={"80%"}
@@ -540,28 +553,31 @@ export default function AboutUs() {
                   paddingTop={{ base: "50px", lg: "90px" }}
                   bg={"whiteAlpha.100"}
                 >
-                  <Heading w={"80%"} textAlign={{ base: "left", lg: "center" }}>
+                  <Heading w={"80%"} textAlign={{ base: "center", lg: "center" }}>
                     Meet the team
                   </Heading><br />
                   <Flex
                     direction={{ base: "column", lg: "row" }}
                     width={{ base: "80%", lg: "80%" }}
-                    justifyContent={"space-around"}
+            justifyContent={"space-around"}
+            
+            alignContent={"center"} 
                   >
-                    {team.map((member) => (
-                      <Stack
-                        key={member.img}
-                        spacing={{ base: 4, lg: 8 }}
-                        marginBottom={{ base: 9, lg: 0 }}
+            {team.map((member) => (
+              <Stack
+                key={member.img}
+                spacing={{ base: 4, lg: 8 }}
+                marginBottom={{ base: 9, lg: 0 }}
                       >
                         <Box
                           boxSize={"287px"}
                           backgroundImage={member.img}
                           backgroundSize={"contain"}
-                          backgroundPosition={"center"}
-                          backgroundRepeat={"no-repeat"}
+                          backgroundPosition="center"
+                          backgroundRepeat="no-repeat"
                           borderRadius={"500px"}
                           backgroundColor={"pink"}
+                          marginLeft={{ base: "0px", sm: "100px", md:"200px", lg: "0px" }}
                         ></Box>
                         <Stack spacing={2}>
                           <Stack spacing={0} >
@@ -569,7 +585,10 @@ export default function AboutUs() {
                             {/* <Text fontSize={"12px"}>Chief Technical Officer</Text> */}
                             
                           </Stack>
-                          <Flex  style={{ justifyContent: "center", alignItems: "center" }} >
+                          <Flex style={{
+                            justifyContent: "center",
+                            alignItems: "center"
+                          }} >
                             {
                               (member.linkedIn !== "") ?
                                 <Link href={member.linkedIn} isExternal>

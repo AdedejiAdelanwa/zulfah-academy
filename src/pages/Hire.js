@@ -151,7 +151,7 @@ export const Hire = () => {
     setIsRequesting(true);
     try {
      
-      await axios({
+    const hireReponse =   await axios({
         method: "post",
         url: `${BaseUrl}/application/hire`,
         data: {
@@ -174,12 +174,12 @@ export const Hire = () => {
       setMessage("");
 
       onClose();
-      showToast("Success", "We will be in touch", "success");
+      showToast("Success", hireReponse.data.message, "success");
     } catch (error) {
       setIsRequesting(false);
       if (error.response) {
         onClose();
-        showToast("Oops!", "There seems to be an issue", "error");
+        showToast("Oops!", "All fields are mandatory", "error");
       }
      
     }
@@ -305,7 +305,7 @@ export const Hire = () => {
         </ModalContent>
       </Modal>
       <Box paddingTop={{ base: "25px", lg: "none" }} bg={"white"}>
-       <Stack
+        <Stack
           pos={"relative"}
           h={{ base: "auto", lg: "75vh" }}
           direction={{ base: "column", md: "row" }}
@@ -330,7 +330,7 @@ export const Hire = () => {
               </Heading>
               <Text fontSize={"16px"} color={"#000000"}>
                 Thanks to our proven curriculum and reputation
-                with employers, learners graduate ready to impact your
+                with employers, our graduates are ready to impact your
                 business on day one.
               </Text>
               <Button
@@ -541,7 +541,7 @@ export const Hire = () => {
 
 
         {/* Partner Reviews */}
-       <Stack alignItems={"center"} spacing={12}>
+        {/* <Stack alignItems={"center"} spacing={12}>
           <Stack
             spacing={8}
             width={{ base: "80%", lg: "40%" }}
@@ -563,7 +563,7 @@ export const Hire = () => {
               disableButtonsControls={true}
             />
           </Stack>
-        </Stack>
+        </Stack> */}
         {/*Partner Reviews */}
         
          {/*You need a Partner */}

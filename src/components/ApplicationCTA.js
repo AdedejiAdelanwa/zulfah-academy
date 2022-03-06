@@ -41,7 +41,7 @@ export const ApplicationCTA = () => {
         </Heading>
         <Text w={{ base: "80%", lg: "600px" }}>
           Become a student at Zulfah. The next
-          application opens on: March 5th, 2022
+          application opens on: March 7th, 2022
         </Text>
         <Button
           variant={"solid"}

@@ -22,7 +22,11 @@ export const FAQs = () => {
       justifyContent={"center"}
       id="frequently-asked"
     >
-      <Heading py={"15px"}>Frequently Asked Questions</Heading><br />
+      <Heading
+        py={"15px"}
+        textAlign={{ base: "center" }}
+                   
+      >Frequently Asked Questions</Heading><br />
       <Tabs variant="unstyled" w={{ base: "80%", lg: "70%" }}>
         <TabList justifyContent={"center"}>
           {/* <Tab
@@ -87,10 +91,7 @@ export const FAQs = () => {
                 <AccordionPanel pb={4}>
                    We are an Innovative Software company &#128077; &nbsp;. Dont just take
                   that as we have said it. check what we do <a style={{color: '#CF3A5C'}}href="https://zulfahgroup.com">here</a>.
-                  The Academy is our "secret sauce." as a software company. The Bootcamp is a  6-months immersive training program that gives you
-                  the tools and training you need to launch a new career. The program trains people
-                  on-campus and online on fullstack engineering. It's a part of our 
-                  curriculum that gives you hands-on experience .This makes us smile &#128522;
+                  The Academy is our "secret sauce." as a software company. The Bootcamp is a 6-months immersive training program that gives you the tools and training you need to launch a new career. The program trains people on-campus and online on fullstack engineering. 
                 </AccordionPanel>
               </AccordionItem>
 
@@ -116,8 +117,7 @@ export const FAQs = () => {
                 </h2>
                 <AccordionPanel pb={4}>
                 
-                  Any one who is motivated, committed and has the zeal to learn,
-                  must be willing to commit fulltime to the programme
+                Anyone who is motivated, committed, has the zeal to learn, and be willing to commit full-time to the programme
                 
                 </AccordionPanel>
               </AccordionItem>
@@ -143,9 +143,7 @@ export const FAQs = () => {
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
-                  We offer both physical and remote options.
-                  Learners can either choose to work out of our physical location,
-                  or take classes from anywhere via our remote channels.
+                We offer both physical and remote options. Learners can either choose to learn in our physical location or take classes from anywhere via our remote channels.
                 </AccordionPanel>
               </AccordionItem> 
 
@@ -164,14 +162,14 @@ export const FAQs = () => {
                     _expanded={{ color: "brand.fuscia" }}
                   >
                     <Box flex="1" textAlign="left">
-                      How long is training Programme ?
+                    How long is the training programme?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
                 
-                  The program runs for Mondays, Wednesdays and Fridays for a period of 6 months.
+                The program runs on Mondays, Wednesdays, and Fridays for 6 months.
       
                 
                 </AccordionPanel>
@@ -274,19 +272,14 @@ export const FAQs = () => {
                     _expanded={{ color: "brand.fuscia" }}
                   >
                     <Box flex="1" textAlign="left">
-                    Is learning coding hard ?
+                    Is it difficult to learn to code?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
                 
-                  No, coding is not hard to learn. However, like anything new,
-                  it's not easy to start, and how difficult a time one has with
-                  learning to code will vary across a number of factors.
-                  The point is, learning to code isn't impossible; or,
-                  it's not as impossible as it might seem when it comes to
-                  getting involved.
+                No, coding is not difficult to learn. However, like with everything new, it may be difficult at first. The difficulty of learning to code will vary depending on a variety of factors. The idea is that learning to code isn't impossible, or at least not as difficult as it may appear, as long as you're dedicated.
                 </AccordionPanel>
               </AccordionItem>
 
@@ -305,19 +298,15 @@ export const FAQs = () => {
                     _expanded={{ color: "brand.fuscia" }}
                   >
                     <Box flex="1" textAlign="left">
-                      Do I need to be good at math to code?
+                    Do I need to be good at Math to code?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
                 </h2>
                 <AccordionPanel pb={4}>
                
-                  Math is great, but it is not an essential skill for the modern
-                  day programmer. The modern day programmer needs to be good at
-                  one or two programing languages, be proficient with their data
-                  structures, design patterns and databases.
-                  This is the typical stack of knowledge that they need to have,
-                  to be a good programmer.
+
+                Math is great, but it is not an essential skill for the modern-day programmer. The modern-day programmer needs to be good at one or two programming languages and be proficient with data structures, design patterns, and databases. This is the typical knowledge stack they need to be a good programmer.
                 </AccordionPanel>
               </AccordionItem>
 
@@ -343,10 +332,7 @@ export const FAQs = () => {
                 </h2>
                 <AccordionPanel pb={4}>
                
-                  The national average for an entry-level coder is $53,000,
-                  but depending on your location you can earn an average of
-                  up to $80,000 a year. With more experience and a higher
-                  job title, the average salary drastically increases.
+                The national average for an entry-level coder is $53,000, but you can earn an average of up to $80,000 a year, depending on your location. The average salary drastically increases with more experience and a higher job title.
                 </AccordionPanel>
               </AccordionItem>
 
