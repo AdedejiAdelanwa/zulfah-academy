@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  useDisclosure,
   Box,
   Button,
   Flex,
@@ -18,6 +19,13 @@ import {
   TabPanel,
   SimpleGrid,
   IconButton,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalCloseButton,
+  ModalBody,
+  Avatar,
+  Image
 } from "@chakra-ui/react";
 
 import guyWithLaptop from "../assets/guy-with-laptop.png"
@@ -29,14 +37,20 @@ import { Link as ReactRouterLink } from "react-router-dom";
 import MemberB from "../assets/rosh1.png";
 import MemberA from "../assets/rosh2.png";
 import MemberC from "../assets/rosh3.png";
+import Interswitch from "../assets/_interswitch.jpeg";
+import Flutterwave from "../assets/flutterwave.png";
+import Meristem from "../assets/meristem.png";
+import HerVest from "../assets/HerVest.png";
+import App1 from "../assets/application1.png";
 import { Hourglass, Tuition } from "../assets/icons";
 import { BsArrowRight } from "react-icons/bs";
 import { FAQs } from "../components/FAQs";
 import { ApplicationCTA } from "../components/ApplicationCTA";
-import { tableOfContent } from "../utils/lists";
+import { tableOfContent, students_reviews } from "../utils/lists";
 import coffee from '../assets/coffee.webp'
 
 export default function AboutUs() {
+  const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true })
   const team = [
     { name: "nerdy - knight", img: MemberA , linkedIn: ""},
     { name: "code - ninja", img: MemberB, linkedIn: "https://www.linkedin.com/in/abayomi-ajao-18458b7b/" },
@@ -45,6 +59,21 @@ export default function AboutUs() {
   return (
     <Box position={"relative"}>
       <MainNavigation />
+      <Modal isOpen={isOpen} size={"lg"} onClose={onClose}>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalCloseButton />
+                      <ModalBody>
+                          <Image
+                            boxSize="100%"
+                            objectFit="cover"
+                            src={App1}
+                            alt="Zulfah Applications are now open"
+                            
+                           />
+                    </ModalBody>
+                </ModalContent>
+      </Modal>
       <Box paddingTop={{ base: "0px", lg: "none" }} bg={"white"}>
    
         <Stack
@@ -57,9 +86,9 @@ export default function AboutUs() {
             <Stack alignItems={"center"} spacing={6} maxW="85%">
               <Heading
                 color={"brand.darkergrey"}
-                fontSize={{ base: "3xl", md: "4xl", lg: "6xl" }}
+                fontSize={{ base: "4xl", md: "4xl", lg: "6xl" }}
               >
-                Become a Skilled Software Engineer
+              Become a Skilled Software Engineer
               </Heading>
               <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
                 Gain the skills you need to land a job in the tech industry. Zulfah
@@ -69,16 +98,28 @@ export default function AboutUs() {
                 display={{ lg: "none" }}
                 variant={"solid"}
                 bg={"brand.gold"}
-                w="150px"
                 size={"lg"}
+                width={{ base: "100%", lg: "150px" }}
+               
               >
-                <ReactRouterLink to="/application">Apply now</ReactRouterLink>
+                <ReactRouterLink to="/application">👉🏾 Apply now</ReactRouterLink>
+               
               </Button>
+              {/* <Text
+                style={{float: "left"}}
+                textColor={"#CF3A5E"}>
+              {
+                (new Date().getMonth() + 1) === 9 && new Date().getDate() === 26 ?
+                 "👉🏾 Applications currently open"  : " 👉🏾 Join waitlist here"
+              
+              }
+              </Text> */}
             </Stack>
           </Flex>
           {/* coffe icon */}
           <Flex flex={1} justifyContent={"center"}>
             <Box
+              shadow="2xl"
               boxSize={{ base: "0px", md:"100%" }}
               backgroundImage={coffee}
               backgroundSize={"cover"}
@@ -96,7 +137,7 @@ export default function AboutUs() {
             pos={"absolute"}
             bottom={"-10%"}
             left={"40px"}
-            w={"1080px"}
+            w={"1080px" }
             h={"155px"}
             bg={"brand.white"}
             borderRadius="12px"
@@ -147,6 +188,7 @@ export default function AboutUs() {
               borderRadius="12px"
               boxShadow={"md"}
               cursor={"pointer"}
+              display={{ base: "none", lg: "flex" }}
             >
               <BsArrowRight size={"30px"} />
               <ReactRouterLink to="/application">
@@ -157,7 +199,7 @@ export default function AboutUs() {
         </Stack>
       
 
-   {/** 4 cards , equipped curriculum, Innovatiobe learning environment */}
+       {/** 4 cards , equipped curriculum, Innovatiobe learning environment */}
         <Stack
           direction={{ base: "column", lg: "row" }}
           h={{ base: "auto", lg: "750px" }}
@@ -165,16 +207,17 @@ export default function AboutUs() {
           justifyContent={"space-around"}
           alignItems={{ base: "center", lg: "baseline" }}
           spacing={6} maxW="100%"
+          mb={{ base: "50px", lg: "0px" }}
        
         >
           <VStack
-            textAlign={{ base: "center", lg: "justify" }}
+            textAlign={{ base: "justify", lg: "justify" }}
             spacing={{ base: "15px", lg: "50px" }}
             w={{ base: "75%", lg: "500px" }}
             mb={{ base: "40px", lg: "none" }}
             mt={{ base: "50px", lg: "none" }}
             justifyContent={{ base: "center", lg: "left" }}
-            ml={{base:"60px", lg: "none"}}
+            ml={{base:"0px", lg: "60px"}}
           >
             {/* <Heading fontSize={"36px"}>
             Why Zulfah is the #1
@@ -296,7 +339,7 @@ export default function AboutUs() {
             </VStack>
           </SimpleGrid>
         </Stack>
-  {/** 4 cards , equipped curriculum, Innovatiobe learning environment */}
+       {/** 4 cards , equipped curriculum, Innovatiobe learning environment */}
        
 
       {/** What you wil learn */}
@@ -339,10 +382,15 @@ export default function AboutUs() {
                   borderLeftWidth={"4px"}
                   borderLeftStyle={"solid"}
                   borderLeftColor={"brand.fuscia"}
+                  borderRightWidth={"4px"}
+                  borderRightStyle={"solid"}
+                  borderRightColor={"brand.fuscia"}
                   p={{ base: 4, lg: 8 }}
                   spacing={4}
                   boxShadow={"md"}
                   borderTopRightRadius={"12px"}
+                  borderBottomLeftRadius={"12px"}
+                  borderTopLeftRadius={"12px"}
                   borderBottomRightRadius={"12px"}
                 >
                   <Heading fontSize={"22px"}>Front-end development</Heading>
@@ -354,14 +402,19 @@ export default function AboutUs() {
                   </Text>
                 </Stack>
                 <Stack
-                  h={"150px"}
+                  h={"auto"}
                   borderLeftWidth={"4px"}
                   borderLeftStyle={"solid"}
                   borderLeftColor={"brand.gold"}
+                  borderRightWidth={"4px"}
+                  borderRightStyle={"solid"}
+                  borderRightColor={"brand.gold"}
                   p={{ base: 4, lg: 8 }}
                   spacing={4}
                   boxShadow={"md"}
                   borderTopRightRadius={"12px"}
+                  borderBottomLeftRadius={"12px"}
+                  borderTopLeftRadius={"12px"}
                   borderBottomRightRadius={"12px"}
                 >
                   <Heading fontSize={"22px"}>Back-end development</Heading>
@@ -373,20 +426,25 @@ export default function AboutUs() {
                   </Text>
                 </Stack>
                 <Stack
-                  h={"150px"}
+                  h={"auto"}
                   borderLeftWidth={"4px"}
                   borderLeftStyle={"solid"}
+                  borderRightColor={"brand.green"}
+                  borderRightWidth={"4px"}
+                  borderRightStyle={"solid"}
                   borderLeftColor={"brand.green"}
                   p={{ base: 4, lg: 8 }}
                   spacing={4}
                   boxShadow={"md"}
                   borderTopRightRadius={"12px"}
+                  borderBottomLeftRadius={"12px"}
+                  borderTopLeftRadius={"12px"}
                   borderBottomRightRadius={"12px"}
                 >
                   <Heading fontSize={"22px"}>DevOps</Heading>
                   <Text fontSize={"14px"}>
                     Familiar with the development of systems to build, deploy, integrate
-                    and administer back-end software
+                    and administer software
                   </Text>
                 </Stack>
               </VStack>
@@ -464,7 +522,7 @@ export default function AboutUs() {
         </Flex>
       {/** What you wil learn */}
 
-
+      {/** Software Bootcamp */}
         <Stack
           w={"100%"}
           alignItems={"center"}
@@ -473,7 +531,7 @@ export default function AboutUs() {
         >
           <Tabs
             w={"80%"}
-            display={{ base: "none", lg: "flex" }}
+            display={{ base: "flex", lg: "flex" }}
             alignItems={"flex-start"}
             justifyContent={"space-between"}
             variant="unstyled"
@@ -512,17 +570,18 @@ export default function AboutUs() {
                 <TabPanel key={item.title}>
                   <Stack
                     spacing={8}
-                    textAlign={{ base: "center", lg: "left" }}
+                    textAlign={{ base: "justify", lg: "left" }}
                     mt={{ base: "30px", lg: "0px" }}
                   >
                     <Heading fontSize={{ base: "20px", lg: "20px" }}>
                       {item.title}
                     </Heading><hr />
                     {
-                      (item.title === 'Next Application') ? 
+                      (item.title === 'Next Application' && `${new Date().getMonth() + 1}` === 9 && 
+                      `${new Date().getDate() === 26}`) ? 
                      
                         <>
-                          <Text lineHeight={"2"}>{item.body}</Text>         
+                          <Text lineHeight={"2"}>{item.body_out}</Text>         
                           <Button
                           variant={"solid"}
                           bg={"brand.fuscia"}
@@ -545,7 +604,8 @@ export default function AboutUs() {
             </TabPanels>
           </Tabs>
         </Stack>
-
+      {/** Software Bootcamp */}
+        
         {/*  Meet the Team */}
           <Stack
                   w={"100%"}
@@ -617,7 +677,7 @@ export default function AboutUs() {
                               />
                           </Flex>
                         </Stack>
-                      </Stack>
+              </Stack>
                     ))}
                   </Flex>
           </Stack>
@@ -632,10 +692,10 @@ export default function AboutUs() {
             justifyContent={{ base: "space-around", lg: "space-between" }}
             bg={"white"}
             mt={{ base: "50px", lg: "100px" }}
-            mb={{ base: "50px", lg: "100px" }}
           >
             <Stack
-              w={{ base: "330px", lg: "530px" }}
+              display={{ sm: "none", md:"flex" }}
+              w={{ base: "100%", lg: "530px" }}
               h={{ base: "auto", lg: "541px" }}
               alignItems={"flex-end"}
               justifyContent={"space-around"}
@@ -663,7 +723,7 @@ export default function AboutUs() {
                 >
                   <Icon as={Tuition} width={"57px"} h={"57px"} />
                 </Flex>
-                <Stack color={"white"} w={{ base: "40%", lg: "60%" }}>
+                <Stack color={"white"} w={{ base: "50%", lg: "60%" }}>
                   <Heading>500,000</Heading>
                   <Text>Tuition Fee</Text>
                 </Stack>
@@ -685,16 +745,18 @@ export default function AboutUs() {
                   <Icon as={Hourglass} width={"57px"} h={"57px"} />
                 </Flex>
                 <Stack color={"white"} w={{ base: "40%", lg: "60%" }}>
-                  <Heading>180</Heading>
-                  <Text>Days</Text>
+                  <Heading>6</Heading>
+                  <Text>Months</Text>
                 </Stack>
               </Flex>
             </Stack>
             <Stack
-              w={{ base: "100%", lg: "541px" }}
-              mt={{ base: "50px", lg: "none" }}
+              m={{ base: "20px", md: "20px", lg:"20px" }}></Stack>
+            <Stack
+              w={{ base: "100%", lg: "100%" }}
+              mt={{ base: "20px",lg: "none" }}
             >
-              <Heading py={"15px"}>Payment Options</Heading>
+              <Heading py={"15px"}>Payment & Sponsorship</Heading><br />
               <Tabs variant="unstyled">
                 <TabList>
                   <Tab
@@ -710,8 +772,8 @@ export default function AboutUs() {
                     borderColor={"brand.deepgrey"}
                     borderTopLeftRadius={4}
                     borderBottomLeftRadius={4}
-                    py={{ base: "5px", lg: "10px" }}
-                    px={{ base: "10px", lg: "15px" }}
+                    py={{ base: "10px", lg: "10px" }}
+                    px={{ base: "20px",md:"50px", lg: "70px" }}
                   >
                     Self Sponsorship Plan - SSP
                   </Tab>
@@ -727,8 +789,8 @@ export default function AboutUs() {
                     borderStyle={"solid"}
                     borderColor={"brand.deepgrey"}
                     borderTopRightRadius={4}
-                    py={{ base: "5px", lg: "10px" }}
-                    px={{ base: "10px", lg: "15px" }}
+                    py={{ base: "10px", lg: "10px" }}
+                    px={{ base: "20px", md:"50px",lg: "70px" }}
                   >
                     Financial Investment Plan - FIP 
                   </Tab>
@@ -736,10 +798,11 @@ export default function AboutUs() {
                 <TabPanels>
                   <TabPanel px={0} py={8}>
                     <Text mb={"40px"}>
-                      The Self Sponsorship Plan - SSP is (Payment-Learn-Earn) action plan
-                      where prospective learners either sponsor themselves and/or a third-party
-                      sponsorship for the training. We are so confident that our training and 
-                      career support will lead to a high paying jobs   
+                      The Self Sponsorship Plan - SSP is a (Payment-Learn-Earn) payment plan
+                      where prospective learners either sponsor themselves and/or a third-party from the learner
+                      help with the training costs.<br /><br />
+                      We are so confident that our training and career support will lead to a high paying jobs for the learner
+                      after going through our 6-month intensive training 
                     </Text>
                     <ReactRouterLink to="/application">
                       <Flex
@@ -757,11 +820,12 @@ export default function AboutUs() {
                   <TabPanel px={0} py={8}>
                     <Text mb={"40px"}>
                       <p>
-                      Learners who cannot afford the bootcamp payment can opt for the
-                      FIP(Financiers Investment Plan):<br /><br />This is (Learn-Earn-Payment)
-                      action plan. Here, Zulfah and its financier partners will agree to sponsor Students
+                      Learners who cannot afford the bootcamp fees can opt for the
+                      FIP(Financiers Investment Plan):<br /><br />This is a (Learn-Earn-Payment)
+                      action plan. <br /><br />
+                      Here, Zulfah and its financier partners will agree to sponsor learners
                       throughout the programme under which the student agree to pay XY% of
-                      your post-Zulfah Academy income for XYmonths as agreed by the learner
+                      your post-Zulfah training income for XYmonths as agreed by the learner
                       and the financier partner.
                       </p>
                     </Text>
@@ -785,6 +849,177 @@ export default function AboutUs() {
         </Stack>
        {/*  Payment Options */}
        
+
+
+        {/*  Company our student works */}
+        <Stack w={"100%"} mb={0} mt={50} alignItems={{ base: "center" }}
+          display={{ base: "none", md: "flex" }}
+        >
+        <Heading w={"80%"} fontSize={{base:"20px"}} textAlign={{ base: "center", lg: "center" }}>
+           Companies Our Graduates Work For 😎
+        </Heading><br />
+        <Flex
+            w={"85%"}
+            direction={{ base: "row", md:"row", lg: "row" }}
+            bg={"white"}
+            mt={{ base: "20px", lg: "100px" }}
+          >
+            <Stack
+              w={{ base: "100%" }}
+            >
+               <Box
+                  display={{ base: "flex" }}
+                  alignItems={"center"}
+                  justifyContent={"space-around"}
+                  w={"100%" }
+                  h={"155px"}
+                  bg={"brand.white"}
+                  borderRadius="12px"
+                  boxShadow={"lg"}
+                >
+            <HStack h={"70%"} pl={4}>
+              <Stack spacing={4} pl={4} pr={4} w={"20%"}>
+                  <Image src={Meristem} alt="Zulfah" />
+              </Stack>
+              <Divider
+                orientation="vertical"
+                bg={"brand.deepgrey"}
+                color={"brand.deepgrey"}
+              />
+              <Stack spacing={4} pl={4} pr={4} w={"20%"}>
+                <Image src={Interswitch} alt="Zulfah" />
+              </Stack>
+              <Divider orientation="vertical" />
+              <Stack spacing={4} pl={4} pr={4} w={"20%"}>
+              <Image src={Flutterwave} alt="Zulfah" />
+              </Stack>
+                  
+              <Divider orientation="vertical" />
+              <Stack spacing={4} pl={4} pr={4} w={"20%"}>
+                <Image h={50} w={"80%"} src={HerVest} alt="Zulfah" />
+              </Stack>
+              <Divider orientation="vertical" />
+              <Stack spacing={4} pl={4} pr={4} w={"20%"}>
+              <Image src={Interswitch} alt="Zulfah" />
+              </Stack>
+            </HStack>
+
+               </Box>
+            </Stack>
+          </Flex>
+        </Stack>
+       
+        {/*  Company our student works */}
+        
+        
+        {/*  Graduate Testimonials */}
+        <Stack w={"100%"} alignItems={{ base: "center" }} >
+          <Flex
+            w={"85%"}
+            direction={{ base: "column", lg: "row" }}
+            bg={"white"}
+            mt={{ base: "30px", md: "10px" }}
+          >
+            
+            <Stack
+              w={{ base: "100%" }}
+              mt={{ base: "50px"}}
+            >
+              <Heading py={"15px"}
+                fontSize={{ base: "20px" }}
+                textAlign={"center"}>What Our Alumni Say About Us</Heading>
+              <Tabs isFitted variant='enclosed'>
+                <TabList mb='1em' fontSize={"25px"} color={"#CF3A5E"} >
+                  {/* <Tab >Student Testimonials</Tab> */}
+                </TabList>
+                <TabPanels>
+                  <TabPanel>
+                  <Flex
+                      direction={{ base: "column", lg: "row" }}
+                      justifyContent={"space-around"}
+                      alignContent={"center"} 
+                     
+                    >
+                    {students_reviews.map((details) => (
+                      <Stack
+                        spacing={{ base: 4, lg: 8 }}
+                        marginBottom={{ base: 9, lg: 0 }}
+                      >
+                      <Box
+                          p={5}
+                          shadow='md'
+                          borderWidth='1px'
+                          backgroundColor={"#edbf52"}
+                          marginLeft={{ base: "0px", lg: "0px" }}
+                          overflowY={"scroll"}
+                          overflowX={"scroll"}
+                      >
+                          <Stack direction='column'  >
+                            <Stack direction='row' >
+                              <Avatar name='Abayomi Ajao' src='https://bit.ly/broken-link' />
+                              <Stack direction='column'  >
+                                <Heading fontSize='md'>{details.name}</Heading>
+                                <Text fontSize='xs'>{details.work}</Text>
+                              </Stack>
+                            </Stack>
+                            <Text mt={4}>{details.review}</Text> 
+                          </Stack>  
+                      </Box>
+                      </Stack>
+                    ))}
+                    
+                  </Flex>
+                    
+                  </TabPanel>
+                  <TabPanel>
+                    <p>two!</p>
+                  </TabPanel>
+                </TabPanels>
+              </Tabs>
+            </Stack>
+          </Flex>
+          </Stack>
+       {/*  Graduate Testimonials */}
+       
+        
+
+      {/*  Payment Options */}
+        {/* <Stack w={"100%"} alignItems={{ base: "center", lg: "flex-start" }}>
+          <Flex
+            w={"85%"}
+            direction={{ base: "column", lg: "row" }}
+            bg={"white"}
+            mb={{ base: "50px", lg: "100px" }}
+          >
+            <Stack
+              w={{ base: "100%", lg: "541px" }}
+              mt={{ base: "50px", lg: "none" }}
+            >
+              <Heading
+                py={"15px"}
+                textAlign={"center"}>
+                Testimonials
+              </Heading>
+              <Tabs isFitted variant='enclosed'>
+                <TabList mb='1em'>
+                  <Tab>One</Tab>
+                  <Tab>Two</Tab>
+                </TabList>
+                <TabPanels>
+                  <TabPanel>
+                    <p>one!</p>
+                  </TabPanel>
+                  <TabPanel>
+                    <p>two!</p>
+                  </TabPanel>
+                </TabPanels>
+              </Tabs>
+            </Stack>
+          </Flex>
+        </Stack> */}
+       {/*  Payment Options */} 
+
+
 
         <FAQs />        
         <ApplicationCTA />

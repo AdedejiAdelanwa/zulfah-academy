@@ -40,8 +40,8 @@ export const ApplicationCTA = () => {
           Start your application to become a software engineer
         </Heading>
         <Text w={{ base: "80%", lg: "600px" }}>
-          Become a student at Zulfah. The next
-          application opens on: March 7th, 2022
+          A 6months journey with us will translate that dream to reality. 
+         <br />Application opens on: Sepetember 26th, 2022.
         </Text>
         <Button
           variant={"solid"}

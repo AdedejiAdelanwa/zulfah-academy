@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react" 
+import React, { useState } from "react" 
 import axios from "axios" 
 import { Link as ReactRouterLink } from "react-router-dom" 
 
@@ -18,6 +18,7 @@ import {
   useToast,
   useDisclosure,
   Textarea,
+  Divider
 } from "@chakra-ui/react" 
 import { AiFillCheckCircle } from "react-icons/ai" 
 import Spacedev from "../assets/space-dev.png" 
@@ -29,6 +30,8 @@ import {
   processStages,
   qualifications,
   hearAboutUs,
+  programmeTypes,
+  programmes
 } from "../utils/lists" 
 import { BaseUrl } from "../utils/Url" 
 export const Application = () => {
@@ -52,6 +55,8 @@ export const Application = () => {
   const [devExperience, setDevExperience] = useState("") 
   const [programmingLanguage, setProgrammingLanguage] = useState("") 
   const [paymentOption, setPaymentOption] = useState("") 
+  const [programmeType, setProgrammeType] = useState("") 
+  const [programme, setProgramme] = useState("") 
   const [isSubmitted, setIsSubmitted] = useState(false) 
   const [successMessage, setSuccessMessage] = useState("")
   const toast = useToast()
@@ -81,7 +86,8 @@ export const Application = () => {
           email,
           where_you_heard_about_us: infoMedium,
           available_in_six_month: true,
-
+          programme_type: programmeType,
+          programme: programme,
           payment_option: paymentOption,
         },
       })
@@ -326,7 +332,7 @@ const  showToast = (title, desc, status) => {
                         type="text"
                         value={postalcode}
                         onChange={(e) => setPostalCode(e.target.value)}
-                        placeholder="Current Location"
+                        placeholder="Location"
                         required
                       />
                     </GridItem>
@@ -485,10 +491,61 @@ const  showToast = (title, desc, status) => {
                   </Stack>
                 </Stack>
               )}
+ 
               {progress === "payment" && (
                 <Stack spacing={8}>
-                  <Heading fontSize={"36px"}>Payment Option</Heading>
-                  <SimpleGrid columns={1} rowGap={4} w="100%">
+                    <Heading fontSize={"36px"}>Payment & Sponsorships</Heading>
+
+                    <SimpleGrid columns={1} rowGap={4} w="100%">
+                      
+                    <GridItem colSpan={1}>
+                      <Select
+                        placeholder="Select Programme "
+                        value={programme}
+                        onChange={(e) => setProgramme(e.target.value)}
+                        required
+                      >
+                        {programmes.map((option) => (
+                          <option key={option.name} value={option.value}>
+                            {option.name}
+                          </option>
+                        ))}
+                      </Select>
+                    </GridItem>
+                    
+                    <Divider
+                      orientation="horizontal"
+                      bg={"brand.deepgrey"}
+                      color={"brand.deepgrey"}
+                      mt="10px"
+                      mb="10px"
+                    />
+                      
+                     <GridItem colSpan={1}>
+                      <Select
+                        placeholder="Select Programme Type "
+                        value={programmeType}
+                        onChange={(e) => setProgrammeType(e.target.value)}
+                        required
+                      >
+                        {programmeTypes.map((option) => (
+                          <option key={option.name} value={option.value}>
+                            {option.name}
+                          </option>
+                        ))}
+                      </Select>
+                    </GridItem>
+                      
+                    <Divider
+                      orientation="horizontal"
+                      bg={"brand.deepgrey"}
+                      color={"brand.deepgrey"}
+                      mt="10px"
+                      mb="10px"
+                      />
+                    <Heading fontSize={"12px"}> Kindly make sure you have read and understood the various payment
+                      options and sponsorship packages. click <ReactRouterLink style={{ color: "#cf3a5e" }} to="/">here </ReactRouterLink> to learn more
+                    </Heading> 
                     <GridItem colSpan={1}>
                       <Select
                         placeholder="Please select payment options"
@@ -503,6 +560,7 @@ const  showToast = (title, desc, status) => {
                         ))}
                       </Select>
                     </GridItem>
+                    
                   </SimpleGrid>
                   <Stack>
                     <Button
@@ -524,11 +582,12 @@ const  showToast = (title, desc, status) => {
                       size={"lg"}
                       onClick={handleSubmit}
                       mt={{ base: "30px", lg: "50px" }}
-                      disabled={!paymentOption}
+                      disabled={!paymentOption || !programme || !programmeType}
                     >
                       {isSubmitted ? "Submitting..." : "Submit"}
                     </Button>
-                  </Stack>
+                    </Stack>
+                    
                 </Stack>
               )}
             </form>

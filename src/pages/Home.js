@@ -46,7 +46,8 @@ export default function Home() {
                 color={"brand.darkergrey"}
                 fontSize={{ base: "3xl", md: "4xl", lg: "6xl" }}
               >
-                Become a Skilled Software Engineer
+                vggfhjghjg.Become a Skilled Software Engineer
+    
               </Heading>
               <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
                 Gain the skills you need to land a job in the tech industry. Zulfah
@@ -80,7 +81,7 @@ export default function Home() {
             pos={"absolute"}
             bottom={"-10%"}
             left={"40px"}
-            w={"1080px"}
+            w={{ base: "100%", lg: "1080px" }}
             h={"155px"}
             bg={"brand.white"}
             borderRadius="12px"
@@ -110,7 +111,7 @@ export default function Home() {
                  
                 </Text>
               </Stack>
-              <Divider orientation="vertical" />
+              <Divider orientation="vertical"  color={"brand.deepgrey"} />
               <Stack spacing={4} pl={4} w={"220px"}>
                 <Heading fontSize={"lg"} color={"brand.fuscia"}>
                   Training

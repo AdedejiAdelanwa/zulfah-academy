@@ -305,7 +305,7 @@ export const Hire = () => {
         </ModalContent>
       </Modal>
       <Box paddingTop={{ base: "25px", lg: "none" }} bg={"white"}>
-        <Stack
+        {/* <Stack
           pos={"relative"}
           h={{ base: "auto", lg: "75vh" }}
           direction={{ base: "column", md: "row" }}
@@ -369,22 +369,9 @@ export const Hire = () => {
                 }}
               />
             </div>
-            {/* <div
-              style={{ height: "399px", width: "246px", alignSelf: "flex-end" }}
-            >
-               <img
-                src={HireHero2}
-                alt="demo"
-                style={{
-                  objectFit: "cover",
-                  display: "block",
-                  maxWidth: "100%",
-                  borderRadius: "15px",
-                }}
-              /> 
-            </div>  */}
+           
           </Flex>
-        </Stack> 
+        </Stack>  */}
         {/*
         <Stack
           alignItems={"center"}
