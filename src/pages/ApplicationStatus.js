@@ -122,7 +122,7 @@ export const ApplicationStatus = () => {
                     <Stack spacing={4} pt={{ base: "20px", lg: "0px" }}>
                     <Heading>Application</Heading>
                     <Text>
-                      Check your application status here... Kindly input the <b>email address</b> associated with your application.
+                      Check status of your application... Kindly input the <b>email address</b> associated with your application.
                     </Text>
                     <Box
                         w={"100%"}
@@ -173,7 +173,7 @@ export const ApplicationStatus = () => {
             >
                 <>
                     <Heading color={"#cf3a5e"}> Pending ... </Heading>
-                    <Text>Hi {email} , We know you cant wait to start this journey with us .<br /> C'mon we also cant wait to get started with you</Text>
+                    <Text>Hi <b>{email} </b>, <br /> We know you cant wait to start this journey with us .<br /> C'mon we also can't wait to get started with you</Text>
                     <Text>Kindly check back later ,<br /> application result will be out soon.</Text>
                                 <br />✌🏽
                 </>

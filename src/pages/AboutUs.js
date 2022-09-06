@@ -25,7 +25,9 @@ import {
   ModalCloseButton,
   ModalBody,
   Avatar,
-  Image
+  Image,
+  Container,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 import guyWithLaptop from "../assets/guy-with-laptop.png"
@@ -50,12 +52,83 @@ import { tableOfContent, students_reviews } from "../utils/lists";
 import coffee from '../assets/coffee.webp'
 
 export default function AboutUs() {
-  const { isOpen, onClose } = useDisclosure({ defaultIsOpen: true })
+  const { isOpen, onClose } = useDisclosure({ defaultIsOpen: false })
   const team = [
     { name: "nerdy - knight", img: MemberA , linkedIn: ""},
     { name: "code - ninja", img: MemberB, linkedIn: "https://www.linkedin.com/in/abayomi-ajao-18458b7b/" },
     { name: "code - slayer", img: MemberC, linkedIn:"" },
-  ];
+  ]
+  const Testimonial = ({ children }) => {
+    return <Box>{children}</Box>
+  }
+  const TestimonialContent = ({ children }) => {
+    return (
+      <Stack
+        bg={useColorModeValue('white', 'gray.800')}
+        boxShadow={'lg'}
+        p={8}
+        rounded={'xl'}
+        align={'center'}
+        pos={'relative'}
+        _after={{
+          content: `""`,
+          w: 0,
+          h: 0,
+          borderLeft: 'solid transparent',
+          borderLeftWidth: 16,
+          borderRight: 'solid transparent',
+          borderRightWidth: 16,
+          borderTop: 'solid',
+          borderTopWidth: 16,
+          borderTopColor: useColorModeValue('white', 'gray.800'),
+          pos: 'absolute',
+          bottom: '-16px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+        }}>
+        {children}
+      </Stack>
+    );
+  }
+  const TestimonialHeading = ({ children }) => {
+    return (
+      <Heading as={'h3'} fontSize={'xl'}>
+        {children}
+      </Heading>
+    );
+  }
+  const TestimonialText = ({ children }) => {
+    return (
+      <Text
+        textAlign={'center'}
+        color={useColorModeValue('gray.600', 'gray.400')}
+        fontSize={'sm'}>
+        {children}
+      </Text>
+    );
+  }
+  const TestimonialAvatar = ({
+    src,
+    name,
+    title,
+    company
+  }) => {
+    return (
+      <Flex align={'center'} mt={8} direction={'column'}>
+        <Avatar name={ name} alt={name} mb={2} />
+        <Stack spacing={-1} align={'center'}>
+          <Text fontWeight={600}>{name}</Text>
+          <Text fontSize={'sm'} color={useColorModeValue('gray.600', 'gray.400')}>
+            {title}
+          </Text>
+          <Text fontSize={'sm'} color={useColorModeValue('gray.600', 'gray.400')}>
+            {company}
+          </Text>
+        </Stack>
+      </Flex>
+    );
+  }
+
   return (
     <Box position={"relative"}>
       <MainNavigation />
@@ -856,7 +929,7 @@ export default function AboutUs() {
           display={{ base: "none", md: "flex" }}
         >
         <Heading w={"80%"} fontSize={{base:"20px"}} textAlign={{ base: "center", lg: "center" }}>
-           Companies Our Graduates Work For 😎
+           Companies Our Graduates Work For
         </Heading><br />
         <Flex
             w={"85%"}
@@ -908,12 +981,11 @@ export default function AboutUs() {
             </Stack>
           </Flex>
         </Stack>
-       
         {/*  Company our student works */}
         
         
         {/*  Graduate Testimonials */}
-        <Stack w={"100%"} alignItems={{ base: "center" }} >
+        <Stack w={"100%"} mb={10} alignItems={{ base: "center" }} >
           <Flex
             w={"85%"}
             direction={{ base: "column", lg: "row" }}
@@ -927,58 +999,40 @@ export default function AboutUs() {
             >
               <Heading py={"15px"}
                 fontSize={{ base: "20px" }}
-                textAlign={"center"}>What Our Alumni Say About Us</Heading>
-              <Tabs isFitted variant='enclosed'>
-                <TabList mb='1em' fontSize={"25px"} color={"#CF3A5E"} >
-                  {/* <Tab >Student Testimonials</Tab> */}
-                </TabList>
-                <TabPanels>
-                  <TabPanel>
-                  <Flex
-                      direction={{ base: "column", lg: "row" }}
-                      justifyContent={"space-around"}
-                      alignContent={"center"} 
-                     
-                    >
-                    {students_reviews.map((details) => (
-                      <Stack
-                        spacing={{ base: 4, lg: 8 }}
-                        marginBottom={{ base: 9, lg: 0 }}
-                      >
-                      <Box
-                          p={5}
-                          shadow='md'
-                          borderWidth='1px'
-                          backgroundColor={"#edbf52"}
-                          marginLeft={{ base: "0px", lg: "0px" }}
-                          overflowY={"scroll"}
-                          overflowX={"scroll"}
-                      >
-                          <Stack direction='column'  >
-                            <Stack direction='row' >
-                              <Avatar name='Abayomi Ajao' src='https://bit.ly/broken-link' />
-                              <Stack direction='column'  >
-                                <Heading fontSize='md'>{details.name}</Heading>
-                                <Text fontSize='xs'>{details.work}</Text>
-                              </Stack>
-                            </Stack>
-                            <Text mt={4}>{details.review}</Text> 
-                          </Stack>  
-                      </Box>
-                      </Stack>
+                textAlign={"center"}>Our Alumni Speak</Heading>
+            
+                <Box bg={useColorModeValue('gray.100', 'gray.700')}>
+                  <Container maxW={'7xl'} py={16} as={Stack} spacing={12}>
+                   
+                    <Stack
+                      direction={{ base: 'column', md: 'row' }}
+                    spacing={{ base: 10, md: 4, lg: 10 }}>
+                    {students_reviews.map((testimonial) => (
+                      <Testimonial>
+                      <TestimonialContent>
+                        <TestimonialHeading>Efficient Collaborating</TestimonialHeading>
+                        <TestimonialText>
+                          {testimonial.review}
+                        </TestimonialText>
+                      </TestimonialContent>
+                      <TestimonialAvatar
+                        src={""}
+                        name={ `${testimonial.name}` }
+                        title={`${testimonial.work}`}
+                      />
+                      </Testimonial>
                     ))}
-                    
-                  </Flex>
-                    
-                  </TabPanel>
-                  <TabPanel>
-                    <p>two!</p>
-                  </TabPanel>
-                </TabPanels>
-              </Tabs>
+                     
+                      
+                    </Stack>
+                  </Container>
+                </Box>
+              
+
+
             </Stack>
           </Flex>
-          </Stack>
+        </Stack>
        {/*  Graduate Testimonials */}
        
         

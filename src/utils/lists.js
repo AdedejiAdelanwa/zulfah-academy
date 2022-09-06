@@ -94,24 +94,21 @@ export const tableOfContent = [
 
 export const students_reviews = [
   {
-    name: "Abayomi",
+    name: "Abayomi Ajao",
     work: "Software Engineer",
+    company: "Hervest",
     review: `Working with Kazeem has been a great addition to our efficiency as an organization. He has also added a lot of value to the business and achieved this at a very short time frame. Engineers from Decagon are very hardworking and figure out things fast.`
   },
   {
-    name: "Azeez",
+    name: "Abass Ajao",
     work: "Software Engineer",
-    review: `Working with Kazeem has been a great addition to our efficiency as an organization. He has also added a lot of value to the business and achieved this at a very short time frame. Engineers from Decagon are very hardworking and figure out things fast.`
-  },
-  
-  {
-    name: "Abass",
-    work: "Software Engineer",
+    company: "Flutterwave",
     review: `Working with Kazeem has been a great addition to our efficiency as an organization. He has also added a lot of value to the business and achieved this at a very short time frame. Engineers from Decagon are very hardworking and figure out things fast.`
   },
   {
-    name: "Faruq",
+    name: "Faruq Ajao",
     work: "Software Engineer",
+    company: "Interswich",
     review: ` Working with Zulfah has been a great addition to our efficiency as an organization. He has also added a lot of value to the business and achieved this at a very short time frame. Engineers from Decagon are very hardworking and figure out things fast.`,
   }
 ];
