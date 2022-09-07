@@ -1,5 +1,6 @@
 export const countries = [
   { name: "Nigeria" },
+  { name: "Ghana" },
   { name: "Others" },
 ];
 

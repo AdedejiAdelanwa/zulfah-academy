@@ -30,7 +30,12 @@ import {
   Image,
   
 } from "@chakra-ui/react";
-import { IoAnalyticsSharp, IoLogoBitcoin, IoSearchSharp } from 'react-icons/io5';
+import {
+  IoBookmarksOutline, IoCloudySharp, IoLogoReact,
+  IoBowlingBallSharp, IoCafeSharp, IoEaselSharp,
+  IoHourglassSharp,
+  IoAnalyticsSharp, IoLogoBitcoin, IoSearchSharp
+} from 'react-icons/io5';
 import { FcAssistant, FcDonate, FcInTransit } from 'react-icons/fc';
 
 
@@ -104,34 +109,34 @@ export default function Courses() {
             }>
             <Feature
               icon={
-                <Icon as={IoAnalyticsSharp} color={'yellow.500'} w={5} h={5} />
+                <Icon as={IoLogoReact} color={'yellow.500'} w={5} h={5} />
               }
               iconBg={useColorModeValue('yellow.100', 'yellow.900')}
-              text={'FrontEnd Engineering'}
+              text={'FRONTEND '}
             />
             <Feature
-              icon={<Icon as={IoLogoBitcoin} color={'green.500'} w={5} h={5} />}
+              icon={<Icon as={IoCloudySharp} color={'green.500'} w={5} h={5} />}
               iconBg={useColorModeValue('green.100', 'green.900')}
-              text={'BackEnd Engineering'}
+              text={'BACKEND '}
             />
             <Feature
               icon={
-                <Icon as={IoSearchSharp} color={'purple.500'} w={5} h={5} />
+                <Icon as={IoCafeSharp} color={'teal'} w={5} h={5} />
               }
-              iconBg={useColorModeValue('purple.100', 'purple.900')}
-              text={'FullStack Engineering'}
+              iconBg={useColorModeValue('teal.100', 'teal.900')}
+              text={'FULLSTACK'}
             /> <Feature
             icon={
-              <Icon as={IoSearchSharp} color={'purple.500'} w={5} h={5} />
+              <Icon as={IoHourglassSharp} color={'purple.500'} w={5} h={5} />
             }
             iconBg={useColorModeValue('purple.100', 'purple.900')}
-            text={'Blockchain Engineering'}
+            text={'WEB3'}
           /> <Feature
           icon={
-            <Icon as={IoSearchSharp} color={'purple.500'} w={5} h={5} />
+            <Icon as={IoEaselSharp} color={'blue.500'} w={5} h={5} />
           }
-          iconBg={useColorModeValue('purple.100', 'purple.900')}
-          text={'Product Development'}
+          iconBg={useColorModeValue('blue.100', 'blue.900')}
+          text={'PRODUCT'}
         />
           </Stack>
         </Stack>
