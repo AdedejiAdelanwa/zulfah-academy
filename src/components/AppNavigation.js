@@ -14,7 +14,8 @@ import { Link as ReactRouterLink } from "react-router-dom";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import logo from "../assets/zulfah-mono.png";
 
-const Links = ["FAQs", "HIRE"];
+const Links = [  "Home", "Courses", "FAQs",  "Application-status"];
+
 
 export const NavLink = ({ children }) => (
   <Link

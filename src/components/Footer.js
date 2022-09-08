@@ -1,7 +1,6 @@
 import React from "react";
 import { Flex, Icon, Image, Link, Stack, Text } from "@chakra-ui/react";
 import logo from "../assets/zulfah-logo.png";
-import { NavLink } from "./Navigation";
 import {
   AiFillFacebook,
   AiFillLinkedin,

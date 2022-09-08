@@ -5,13 +5,9 @@ import { BaseUrl } from "../utils/Url";
 import {
   Box,
   Button,
-  Flex,
   Heading,
-  HStack,
-  Icon,
   Stack,
   Text,
-  VStack,
   Modal,
   ModalOverlay,
   ModalContent,
@@ -27,102 +23,10 @@ import {
 } from "@chakra-ui/react";
 import MainNavigation from "../components/Navigation";
 import { Footer } from "../components/Footer";
-import ProcessPic from "../assets/process-pic-3.png";
 import { HireFAQs } from "../components/HireFAQs";
-import Partner1 from "../assets/partner1.png";
-import Partner2 from "../assets/partner2.png";
-import { RatingStars } from "../assets/icons";
-import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 
-const responsive = {
-  0: { items: 1 },
-  568: { items: 2 },
-  1024: { items: 2 },
-};
-const reviews = [
-  <HStack
-    w={{ base: "350px", lg: "466px" }}
-    h={"200px"}
-    justifyContent={"space-between"}
-    borderRadius={4}
-    bg={"brand.lightpink"}
-    p={4}
-  >
-    <img
-      src={Partner1}
-      style={{ height: "165px", width: "120px" }}
-      alt="Partner 1"
-      display={"block"}
-    />
-    <VStack alignItems={"left"} w="266px" textAlign="left" spacing={4}>
-      <Icon as={RatingStars} />
-      <Heading fontSize={"18px"}>Best Learning Platform</Heading>
-      <Text fontSize={"14px"}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper magna
-        sapien
-      </Text>
-      <Stack spacing={0}>
-        <Heading fontSize={"12px"}>Tobi Foluso</Heading>
-        <Text fontSize={"10px"}>Vp, Adasi Inc.</Text>
-      </Stack>
-    </VStack>
-  </HStack>,
-  <HStack
-    w={{ base: "350px", lg: "466px" }}
-    h={"200px"}
-    justifyContent={"space-between"}
-    borderRadius={4}
-    bg={"brand.lightpink"}
-    p={4}
-  >
-    <img
-      src={Partner2}
-      style={{ height: "165px", width: "120px" }}
-      alt="Partner 1"
-      display={"block"}
-    />
-    <VStack alignItems={"left"} w="266px" textAlign="left" spacing={4}>
-      <Icon as={RatingStars} />
-      <Heading fontSize={"18px"}>Best Learning Platform</Heading>
-      <Text fontSize={"14px"}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper magna
-        sapien
-      </Text>
-      <Stack spacing={0}>
-        <Heading fontSize={"12px"}>Tobi Foluso</Heading>
-        <Text fontSize={"10px"}>Vp, Adasi Inc.</Text>
-      </Stack>
-    </VStack>
-  </HStack>,
-  <HStack
-    w={{ base: "350px", lg: "466px" }}
-    h={"200px"}
-    justifyContent={"space-between"}
-    borderRadius={4}
-    bg={"brand.lightpink"}
-    p={4}
-  >
-    <img
-      src={Partner1}
-      style={{ height: "165px", width: "120px" }}
-      alt="Partner 1"
-      display={"block"}
-    />
-    <VStack alignItems={"left"} w="266px" textAlign="left" spacing={4}>
-      <Icon as={RatingStars} />
-      <Heading fontSize={"18px"}>Best Learning Platform</Heading>
-      <Text fontSize={"14px"}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In semper magna
-        sapien
-      </Text>
-      <Stack spacing={0}>
-        <Heading fontSize={"12px"}>Tobi Foluso</Heading>
-        <Text fontSize={"10px"}>Vp, Adasi Inc.</Text>
-      </Stack>
-    </VStack>
-  </HStack>,
-];
+
 
 export const Hire = () => {
 

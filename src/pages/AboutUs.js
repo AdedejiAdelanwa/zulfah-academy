@@ -29,7 +29,7 @@ import {
   Container,
   useColorModeValue,
 } from "@chakra-ui/react";
-
+import logo from "../assets/zulfah-logo.png";
 import guyWithLaptop from "../assets/guy-with-laptop.png"
 import { Android, BriefCase, Bookmark, Charts } from "../assets/icons/index";
 import { AiFillFacebook, AiFillLinkedin } from "react-icons/ai";
@@ -168,16 +168,29 @@ export default function AboutUs() {
                 Academy trains and mentors you to become an excellent engineer.
               </Text>
               <Button
-                display={{ lg: "none" }}
-                variant={"solid"}
-                bg={"brand.gold"}
-                size={"lg"}
-                width={{ base: "100%", lg: "150px" }}
+                          display={{ lg: "none" }}
+                          variant={"solid"}
+                          bg={"brand.gold"}
+                          size={"lg"}
+                          width={{ base: "100%", lg: "150px" }}
+                    > 
+                    <ReactRouterLink to="/application">👉🏾 Apply now</ReactRouterLink>
+                </Button>
+                {/* {new Date().getTime() > new Date('2022-08-10').getTime()
+                 ?  <Button
+                          display={{ lg: "none" }}
+                          variant={"solid"}
+                          bg={"brand.gold"}
+                          size={"lg"}
+                          width={{ base: "100%", lg: "150px" }}
+                    > 
+                    <ReactRouterLink to="/application">👉🏾 Apply now</ReactRouterLink>
+                    </Button>
+                  : <Text style={{ float: "left" }} textColor={"#CF3A5E"}>
+                    👉🏾 Applications will open 26th September </Text>
+                  } */}
                
-              >
-                <ReactRouterLink to="/application">👉🏾 Apply now</ReactRouterLink>
                
-              </Button>
               {/* <Text
                 style={{float: "left"}}
                 textColor={"#CF3A5E"}>
@@ -950,30 +963,37 @@ export default function AboutUs() {
                   borderRadius="12px"
                   boxShadow={"lg"}
                 >
-            <HStack h={"70%"} pl={4}>
-              <Stack spacing={4} pl={4} pr={4} w={"20%"}>
-                  <Image src={Meristem} alt="Zulfah" />
+            <HStack h={"70%"}  pl={4}>
+                  <Stack style={{ alignItems: "center", justifyContent: "center" }}
+                          spacing={4} pl={4} pr={4} w={"20%"}>
+                    <Image src={Meristem} w={{ md: "100%", lg: "70%" }} alt="Zulfah" />
               </Stack>
               <Divider
                 orientation="vertical"
                 bg={"brand.deepgrey"}
                 color={"brand.deepgrey"}
               />
-              <Stack spacing={4} pl={4} pr={4} w={"20%"}>
-                <Image src={Interswitch} alt="Zulfah" />
+              <Stack style={{ alignItems: "center", justifyContent: "center" }}
+                               spacing={4} pl={4} pr={4} w={"20%"}>
+                <Image src={Interswitch}  w={{ md: "100%", lg: "80%" }} alt="Zulfah" />
               </Stack>
-              <Divider orientation="vertical" />
-              <Stack spacing={4} pl={4} pr={4} w={"20%"}>
-              <Image src={Flutterwave} alt="Zulfah" />
+                <Divider orientation="vertical" />
+                  
+              <Stack style={{ alignItems: "center", justifyContent: "center" }}
+                    spacing={4} pl={4} pr={4} w={"20%"}>
+              <Image src={Flutterwave} alt="Zulfah" w={{ md: "100%", lg: "100%" }} />
               </Stack>
                   
               <Divider orientation="vertical" />
-              <Stack spacing={4} pl={4} pr={4} w={"20%"}>
-                <Image h={50} w={"80%"} src={HerVest} alt="Zulfah" />
+                  
+              <Stack style={{ alignItems: "center", justifyContent: "center" }}
+                    spacing={4} pl={4} pr={4} w={"20%"}>
+                <Image h={50} w={{ md: "100%", lg: "70%" }} alignItems="start" src={HerVest} alt="Zulfah" />
               </Stack>
               <Divider orientation="vertical" />
-              <Stack spacing={4} pl={4} pr={4} w={"20%"}>
-              <Image src={Interswitch} alt="Zulfah" />
+              <Stack style={{ alignItems: "center", justifyContent: "center" }}
+                              spacing={4} pl={4} pr={4} w={"15%"}>
+              <Image src={logo} w={{ md: "100%", lg: "100%" }} alt="Zulfah" />
               </Stack>
             </HStack>
 

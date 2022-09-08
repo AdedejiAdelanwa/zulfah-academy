@@ -34,8 +34,9 @@ import {
   programmes
 } from "../utils/lists" 
 import { BaseUrl } from "../utils/Url" 
+
 export const Application = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { onClose } = useDisclosure();
   const [progress, setProgress] = useState("not started") 
   const [surname, setSurname] = useState("") 
   const [othernames, setOthernames] = useState("") 
@@ -105,7 +106,8 @@ export const Application = () => {
   }
 
 const  showToast = (title, desc, status) => {
-    toast({
+  toast({
+      position: 'top',
       title,
       description: desc,
       status,
@@ -227,7 +229,7 @@ const  showToast = (title, desc, status) => {
                     w={{ base: "100%", lg: "150px" }}
                     size={"lg"}
                     alignSelf={"flex-start"}
-                    onClick={() => setProgress("personal")}
+                    onClick={() => new Date().getTime() > new Date('2022-09-26').getTime() ? setProgress("personal") : showToast("Alert", "Application will open 26th September", "success")}
                   >
                     Get started
                   </Button>
