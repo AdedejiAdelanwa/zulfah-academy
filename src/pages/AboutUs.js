@@ -1030,7 +1030,7 @@ export default function AboutUs() {
                     {students_reviews.map((testimonial) => (
                       <Testimonial>
                       <TestimonialContent>
-                        <TestimonialHeading>Efficient Collaborating</TestimonialHeading>
+                        {/* <TestimonialHeading>Efficient Collaborating</TestimonialHeading> */}
                         <TestimonialText>
                           {testimonial.review}
                         </TestimonialText>

@@ -101,16 +101,6 @@ export default function Courses() {
           return
       }
 
-      // remove this code and implement your submit logic right here
-    //   setTimeout(() => {
-    //     if (email === 'fail@example.com') {
-    //       setError(true);
-    //       setState('initial');
-    //       return;
-    //     }
-
-    //     setState('success');
-    //   }, 1000);
      }
 
   return (
@@ -244,8 +234,11 @@ export default function Courses() {
                 fontSize={{ base: 'xl', sm: '2xl' }}
                 textAlign={'center'}
                 mb={5}>
-                Subscribe to our Newsletter
+                Hear From Us
               </Heading>
+              <Text mb={10}>
+                Subscribe to our newsletter to stay connected to our activities !
+              </Text>
               <Stack
                 direction={{ base: 'column', md: 'row' }}
                 as={'form'}

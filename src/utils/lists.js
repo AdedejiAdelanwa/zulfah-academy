@@ -95,22 +95,22 @@ export const tableOfContent = [
 
 export const students_reviews = [
   {
-    name: "Abayomi Ajao",
-    work: "Software Engineer",
-    company: "Hervest",
-    review: `Working with Kazeem has been a great addition to our efficiency as an organization. He has also added a lot of value to the business and achieved this at a very short time frame. Engineers from Decagon are very hardworking and figure out things fast.`
-  },
-  {
-    name: "Abass Ajao",
+    name: "Abass",
     work: "Software Engineer",
     company: "Flutterwave",
-    review: `Working with Kazeem has been a great addition to our efficiency as an organization. He has also added a lot of value to the business and achieved this at a very short time frame. Engineers from Decagon are very hardworking and figure out things fast.`
+    review: `Thanks to Zulfah my life will forever be changed. I went from zero knowledge of tech to a full stack developer. I loved this program and everything it's done for me.`
   },
   {
-    name: "Faruq Ajao",
-    work: "Software Engineer",
-    company: "Interswich",
-    review: ` Working with Zulfah has been a great addition to our efficiency as an organization. He has also added a lot of value to the business and achieved this at a very short time frame. Engineers from Decagon are very hardworking and figure out things fast.`,
+    name: "Hikmah",
+    work: "Frontend Engineer",
+    company: "HerVest",
+    review: `After my Undergrad, it was not clear what i wanted to do. I opted from a career switch and Zulfah has helped me build a career in Software Engineering. I presently work as a frontend engineer and it's been really amazing journey from biochemistry to Software developer. I can confidently say I made the right decision.`
+  },
+  {
+    name: "Faruq",
+    work: "Fullstack Engineer",
+    company: "Zulfah",
+    review: ` It was an amazing 6 months of intense learning, unlearning, and relearning. Indeed, the jounery was worth it all along, learning with @zulfah from zero to code-ninja level. cheers to building solutions!.`,
   }
 ];
 
