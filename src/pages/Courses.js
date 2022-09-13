@@ -139,19 +139,19 @@ export default function Courses() {
                 <Icon as={IoLogoReact} color={'yellow.500'} w={5} h={5} />
               }
               iconBg={useColorModeValue('yellow.100', 'yellow.900')}
-              text={'SOFTWARE ENGINEERING - FRONTEND '}
+              text={'FRONTEND'}
             />
             <Feature
               icon={<Icon as={IoCloudySharp} color={'green.500'} w={5} h={5} />}
               iconBg={useColorModeValue('green.100', 'green.900')}
-              text={'SOFTWARE ENGINEERING - BACKEND '}
+              text={'BACKEND'}
             />
             <Feature
               icon={
                 <Icon as={IoCafeSharp} color={'teal'} w={5} h={5} />
               }
               iconBg={useColorModeValue('teal.100', 'teal.900')}
-              text={'SOFTWARE ENGINEERING - FULLSTACK'}
+              text={'FULLSTACK'}
               />
               
               <Feature
@@ -185,17 +185,17 @@ export default function Courses() {
             fontSize={{ base: "25px" }}
             textAlign={"center"}>Still not sure which course is right for me ? 
           </Heading>
-          <Text textAlign={"center"}>Ready to change your career and join the world’s next workforce?<br/ >
-            Talk to one of our career coach, join our event and/or take our quiz to find your path to a tech career.</Text>
+          <Text textAlign={"center"}>
+            Talk to one of our career coach.<br /> Join our event to find your path to a tech career.</Text>
           <br /><br />
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={10}>
         <Feature2
           icon={<Icon as={FcAssistant} w={10} h={10} />}
           title={'You can talk to us'}
           text={
-                `You can reach out to us via call or whatsapp on +2348115371014. Lets meet you, 
+            `You can reach out to us via call or whatsapp on +2348115371014. Lets meet you, 
                  we will ask you few more questions and definitely reach out with more infromation 
-                 on which of the courses is a best fit`
+                 on which of the courses is a best fit.`
           }
         />
         <Feature2
@@ -209,9 +209,9 @@ export default function Courses() {
         />
         <Feature2
           icon={<Icon as={FcLink} w={10} h={10} />}
-          title={'Instant Delivery'}
+          title={'Visit our office'}
           text={
-            `Ready to change your career and join the world’s next workforce? Our office is always open, you can walk in anytime 9AM - 5PM, let us  discuss together and advise you better your how to start your journey into tech`
+            `Ready to change your career and join the world’s next workforce? Our office is always open, you can walk in anytime 9AM - 5PM. Let's discuss and advise you better on how to start your journey into tech.`
           }
         />
       </SimpleGrid>

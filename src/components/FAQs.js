@@ -83,7 +83,7 @@ export const FAQs = () => {
                     _expanded={{ color: "brand.fuscia" }}
                   >
                     <Box flex="1" textAlign="left">
-                    What is Zulfah Academy ?
+                    What is Zulfah ?
                     </Box>
                     <AccordionIcon />
                   </AccordionButton>
@@ -117,7 +117,7 @@ export const FAQs = () => {
                 </h2>
                 <AccordionPanel pb={4}>
                 
-                Anyone who is motivated, committed, has the zeal to learn, and be willing to commit full-time to the programme
+                Anyone who is motivated, committed, has the zeal to learn, and is willing to commit full-time to the programme
                 
                 </AccordionPanel>
               </AccordionItem>
@@ -169,7 +169,7 @@ export const FAQs = () => {
                 </h2>
                 <AccordionPanel pb={4}>
                 
-                The program runs on Mondays, Wednesdays, and Fridays for 6 months.
+                The program runs on Mondays, Wednesdays, and Fridays for 6 months. There are also weekend classes for those who are unable to attend during the week.
       
                 
                 </AccordionPanel>
@@ -279,7 +279,7 @@ export const FAQs = () => {
                 </h2>
                 <AccordionPanel pb={4}>
                 
-                No, coding is not difficult to learn. However, like with everything new, it may be difficult at first. The difficulty of learning to code will vary depending on a variety of factors. The idea is that learning to code isn't impossible, or at least not as difficult as it may appear, as long as you're dedicated.
+                No, coding is not difficult to learn. However, like with everything new, it may be challenging at first. The difficulty of learning to code will vary depending on a variety of factors. The idea is that learning to code isn't impossible, or at least not as difficult as it may appear, as long as you're dedicated.
                 </AccordionPanel>
               </AccordionItem>
 
@@ -332,7 +332,7 @@ export const FAQs = () => {
                 </h2>
                 <AccordionPanel pb={4}>
                
-                The national average for an entry-level coder is $53,000, but you can earn an average of up to $80,000 a year, depending on your location. The average salary drastically increases with more experience and a higher job title.
+                The global average for an entry-level coder is $53,000, but you can earn an average of up to $80,000 a year, depending on your location. The average salary drastically increases with more experience and a higher job title.
                 </AccordionPanel>
               </AccordionItem>
 

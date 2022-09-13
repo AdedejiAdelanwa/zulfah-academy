@@ -1,6 +1,15 @@
 export const countries = [
   { name: "Nigeria" },
   { name: "Ghana" },
+  { name: "Ghana" },
+  { name: "Ghana" },
+  { name: "Ghana" },
+  { name: "Ghana" },
+  { name: "Ghana" },
+  { name: "Ghana" },
+  { name: "Ghana" },
+  { name: "Ghana" },
+  { name: "Ghana" },
   { name: "Others" },
 ];
 
@@ -47,7 +56,7 @@ export const hireFaqs = [
   },
   {
     title: "When can we hire grads from your program? ",
-    body: "Our first cohort will graduate in May 2022. We expect to then have monthly cohorts ready for employment career opportunities.",
+    body: "Our graduates are ready to interview in April and October. You can reach out to us ",
   }
 ];
 
@@ -62,8 +71,8 @@ export const hearAboutUs = [
 export const tableOfContent = [
   {
     title: "Overview",
-    body: `Our development & engineering courses is designed to make you world-class fit, teaching you the technical and professional skills hiring managers need most. You’ll attend classes led by industry experts who will teach you the foundations of full-stack development using HTML, CSS, JavaScript and Typescript.
-    You’ll also develop web servers using NodeJs, RDBMS, including SQL and PostgreSQL, explain, and apply fundamental computer science concepts. Plus, you’ll have the chance to build and contribute to real products with a team of other learners that you can showcase in your portfolio.\n
+    body: `Our development & engineering courses are designed to make you world-class fit, teaching you the technical and professional skills hiring managers need most. You’ll attend classes led by industry experts who will teach you the foundations of full-stack development using HTML, CSS, JavaScript, Typescript, ReactJs. 
+    You’ll also develop web servers using NodeJs,ExpressJS, RDBMS including MySQL and PostgreSQL while and applying various fundamental computer science concepts in your development. Plus, you’ll have the chance to build and contribute to real products with a team of other learners that you can showcase in your portfolio.\n
     We promote collaborative learning, which will be seen in our usage of git, Trello, and other tools in the software engineering space. Through an agile delivery methodology, mentor matching, and leadership modules, our elite engineers are equipped with techniques and a leadership mindset that enables them to work competitively in any team globally.
    `
   },
@@ -82,8 +91,8 @@ export const tableOfContent = [
   },
   {
     title: "Payment & Sponsorship",
-    body: ` The Self Sponsorship Plan - SSP is (Payment-Learn-Earn) action plan where prospective learners either sponsor themselves and/or a third-party sponsorship for the bootcamp.\n
-    The Financier Investment Plan - FIP is (Learn-Earn-Payment). Here, Zulfah and its financier partners will agree to sponsor learners throughout the programme under which the learner agree to pay XY% of their post-zulfah academy income for XYmonths as agreed by the learner and the financier partner.
+    body: ` The Self Sponsorship Plan - SSP is (Pay-Learn-Earn) action plan where prospective learners either sponsor themselves and/or a third-party sponsorship for the bootcamp.\n
+    The Financier Investment Plan - FIP is (Learn-Earn-Pay). Here, Zulfah and its financier partners will agree to sponsor learners throughout the programme under which the learner agree to pay XY% of their post-zulfah academy income for XYmonths as agreed by the learner and the financier partner.
    \n For more info, you can reach us at support@zulfahgroup.com or at +2348115371014`,
   },
   {
@@ -98,19 +107,19 @@ export const students_reviews = [
     name: "Abass",
     work: "Software Engineer",
     company: "Flutterwave",
-    review: `Thanks to Zulfah my life will forever be changed. I went from zero knowledge of tech to a full stack developer. I loved this program and everything it's done for me.`
+    review: `Thanks to Zulfah,  my life will forever be changed. I went from zero knowledge of tech to a full stack developer. I loved this program and everything it's done for me.From zero knowlegde to joining flutterwave as a software engineer`
   },
   {
     name: "Hikmah",
     work: "Frontend Engineer",
     company: "HerVest",
-    review: `After my Undergrad, it was not clear what i wanted to do. I opted from a career switch and Zulfah has helped me build a career in Software Engineering. I presently work as a frontend engineer and it's been really amazing journey from biochemistry to Software developer. I can confidently say I made the right decision.`
+    review: `After my Undergrad, it was not clear what i wanted to do. I opted for a career switch and Zulfah has helped me build a career in Software Engineering. I presently work as a frontend engineer at herVest and it's been really amazing journey from biochemistry to Software developer. I can confidently say I made the right decision.`
   },
   {
     name: "Faruq",
     work: "Fullstack Engineer",
     company: "Zulfah",
-    review: ` It was an amazing 6 months of intense learning, unlearning, and relearning. Indeed, the jounery was worth it all along, learning with @zulfah from zero to code-ninja level. cheers to building solutions!.`,
+    review: ` It was an amazing 6 months of intense learning, unlearning, and relearning. Indeed, the jounery was worth it all along, learning with @zulfah from zero to a ninja level. Cheers to building solutions!.`,
   }
 ];
 

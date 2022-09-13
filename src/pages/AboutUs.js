@@ -167,15 +167,17 @@ export default function AboutUs() {
                 Gain the skills you need to land a job in the tech industry. Zulfah
                 Academy trains and mentors you to become an excellent engineer.
               </Text>
-              <Button
+              <ReactRouterLink to="/application"  w={100}>
+                <Button
                           display={{ lg: "none" }}
                           variant={"solid"}
                           bg={"brand.gold"}
                           size={"lg"}
                           width={{ base: "100%", lg: "150px" }}
                     > 
-                    <ReactRouterLink to="/application">👉🏾 Apply now</ReactRouterLink>
+                   👉🏾 Apply now
                 </Button>
+                </ReactRouterLink>
                 {/* {new Date().getTime() > new Date('2022-08-10').getTime()
                  ?  <Button
                           display={{ lg: "none" }}
@@ -249,7 +251,7 @@ export default function AboutUs() {
                   Interview - Selection{" "}
                 </Heading>
                 <Text fontSize={"12px"} color={"brand.textgrey"}>
-                  You get a chance to convince us, then, we make our desicion
+                  You get a chance to convince us, then, we make our decision
                  
                 </Text>
               </Stack>
@@ -311,7 +313,7 @@ export default function AboutUs() {
             </Heading> */}
             <Text fontSize={"16px"}>
              <p> We deliver an intensive 6-month program where our software developers
-              learn both full-stack software development and additional soft skills
+              learn <b>Frontend development</b>, <b>Backend development</b>, <b>Fullstack development</b> and additional soft skills
                 in an immersive environment.</p><br />
               <p>Through an agile delivery methodology, mentor matching and leadership modules,
                 our software engineers are equipped with techniques and a leadership mindset
@@ -323,7 +325,7 @@ export default function AboutUs() {
                 experience and the confidence to excel in their jobs after the training.
                 Our graduates are mentored by various veterans in the 
                 tech industry, we leverage on that network to match our graduate with  
-                partner company.
+                partner companies.
               </p>
            
             </Text>
@@ -428,8 +430,7 @@ export default function AboutUs() {
        {/** 4 cards , equipped curriculum, Innovatiobe learning environment */}
        
 
-      {/** What you wil learn */}
-       
+      {/** What you wil learn */}     
         <Flex width={"100%"} bg={"white"} justifyContent={"center"}>
           <Stack
             pos={"relative"}
@@ -505,8 +506,8 @@ export default function AboutUs() {
                 >
                   <Heading fontSize={"22px"}>Back-end development</Heading>
                   <Text fontSize={"14px"}>
-                    Core expertise in designing and implementing the core logic, 
-                    keeping in mind scalability. 
+                    Core expertise in designing and implementing the core business logic, 
+                    keeping in mind scalability, security and maintainability. 
                     {/* JAVASCRIPT - NODEJS - EXPRESSJS - 
                     MYSQL - MONGODB  */}
                   </Text>
@@ -529,8 +530,8 @@ export default function AboutUs() {
                 >
                   <Heading fontSize={"22px"}>DevOps</Heading>
                   <Text fontSize={"14px"}>
-                    Familiar with the development of systems to build, deploy, integrate
-                    and administer software
+                    Core expertise with various tools and system to build, deploy, integrate
+                    and administer software applications 
                   </Text>
                 </Stack>
               </VStack>
@@ -617,7 +618,7 @@ export default function AboutUs() {
         >
           <Tabs
             w={"80%"}
-            display={{ base: "flex", lg: "flex" }}
+            display={{ base: "grid", md: "flex" }}
             alignItems={"flex-start"}
             justifyContent={"space-between"}
             variant="unstyled"
@@ -641,10 +642,11 @@ export default function AboutUs() {
               <TabList
                 spacing={4}
                 display={"flex"}
-                style={{ flexDirection: "column", alignItems: "flex-start" }}
+                alignItems={"flex-start"}
+                flexDirection={{ base: "row", md: "column" }}
               >
-                <Tab pl={0} _selected={{ fontWeight: "bold" }}> Overview  </Tab>
-                 <Tab pl={0} _selected={{ fontWeight: "bold" }}> Requirements</Tab>
+                <Tab b={3} pl={0} _selected={{ fontWeight: "bold" }}> Overview  </Tab>
+                <Tab pl={0} _selected={{ fontWeight: "bold" }}> Requirements</Tab>
                 <Tab pl={0} _selected={{ fontWeight: "bold" }}>Curriculum</Tab>
                 <Tab pl={0} _selected={{ fontWeight: "bold" }}> Payment & Sponsorship </Tab>
                 <Tab pl={0} _selected={{ fontWeight: "bold" }}>  Next application</Tab>
@@ -884,10 +886,10 @@ export default function AboutUs() {
                 <TabPanels>
                   <TabPanel px={0} py={8}>
                     <Text mb={"40px"}>
-                      The Self Sponsorship Plan - SSP is a (Payment-Learn-Earn) payment plan
+                      The Self Sponsorship Plan - SSP is a (Pay-Learn-Earn) payment plan
                       where prospective learners either sponsor themselves and/or a third-party from the learner
                       help with the training costs.<br /><br />
-                      We are so confident that our training and career support will lead to a high paying jobs for the learner
+                      We are confident that our training and career support will lead to a high paying job for the learner
                       after going through our 6-month intensive training 
                     </Text>
                     <ReactRouterLink to="/application">
@@ -907,12 +909,12 @@ export default function AboutUs() {
                     <Text mb={"40px"}>
                       <p>
                       Learners who cannot afford the bootcamp fees can opt for the
-                      FIP(Financiers Investment Plan):<br /><br />This is a (Learn-Earn-Payment)
+                      FIP(Financier Investment Plan):<br /><br />This is a (Learn-Earn-Pay)
                       action plan. <br /><br />
                       Here, Zulfah and its financier partners will agree to sponsor learners
-                      throughout the programme under which the student agree to pay XY% of
-                      your post-Zulfah training income for XYmonths as agreed by the learner
-                      and the financier partner.
+                      throughout the programme under which the student agrees to pay XY% of
+                      your post-training income for XYmonths as agreed by the candidate
+                      and the financier partner. Click <ReactRouterLink to='#'>here</ReactRouterLink> for more details
                       </p>
                     </Text>
                     <ReactRouterLink to="/application">
@@ -1039,6 +1041,7 @@ export default function AboutUs() {
                         src={""}
                         name={ `${testimonial.name}` }
                         title={`${testimonial.work}`}
+                        company={`${testimonial.company}`}
                       />
                       </Testimonial>
                     ))}
