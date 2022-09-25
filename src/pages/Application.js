@@ -229,7 +229,7 @@ const  showToast = (title, desc, status) => {
                     w={{ base: "100%", lg: "150px" }}
                     size={"lg"}
                     alignSelf={"flex-start"}
-                    onClick={() => new Date().getTime() > new Date('2022-09-26').getTime() ? setProgress("personal") : showToast("Alert", "Application will open 26th September", "success")}
+                    onClick={() => new Date().getTime() > new Date('2022-09-25').getTime() ? setProgress("personal") : showToast("Alert", "Application will open 26th September", "success")}
                   >
                     Get started
                   </Button>
