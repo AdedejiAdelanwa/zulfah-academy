@@ -229,7 +229,7 @@ const  showToast = (title, desc, status) => {
                     w={{ base: "100%", lg: "150px" }}
                     size={"lg"}
                     alignSelf={"flex-start"}
-                    onClick={() => new Date().getTime() > new Date('2022-09-25').getTime() ? setProgress("personal") : showToast("Alert", "Application will open 26th September", "success")}
+                    onClick={() => setProgress("personal")}
                   >
                     Get started
                   </Button>
@@ -288,8 +288,16 @@ const  showToast = (title, desc, status) => {
                             required
                           />
                     </GridItem>
-                    <GridItem colSpan={{ base: 2, lg: 3 }}>
-                      <Select
+                      <GridItem colSpan={{ base: 2, lg: 3 }}>
+                      <Input
+                            id='Country'
+                            type="text"
+                            value={country}
+                            onChange={(e) => setCountry(e.target.value)}
+                            placeholder="Country"
+                            required
+                          />
+                      {/* <Select
                         placeholder="Select country"
                         value={country}
                         onChange={(e) => setCountry(e.target.value)}
@@ -300,7 +308,7 @@ const  showToast = (title, desc, status) => {
                             {country.name}
                           </option>
                         ))}
-                      </Select>
+                      </Select> */}
                     </GridItem>
                     <GridItem colSpan={{ base: 2, lg: 3 }}>
                       <Textarea

@@ -173,8 +173,8 @@ export const ApplicationStatus = () => {
             >
                 <>
                     <Heading color={"#cf3a5e"}> Pending ... </Heading>
-                    <Text>Hi <b>{email} </b>, <br /> We know you cant wait to start this journey with us .<br /> C'mon we also can't wait to get started with you</Text>
-                    <Text>Kindly check back later ,<br /> application result will be out soon.</Text>
+                    <Text>Hi <b>{email} </b>, <br /> We know you can't wait to start this journey with us.<br />  We also can't wait to get started with you</Text>
+                    <Text>Kindly check back later,<br /> application result will be out soon.</Text>
                                 <br />✌🏽
                 </>
                 </Stack>
@@ -194,7 +194,7 @@ export const ApplicationStatus = () => {
             >
                 <>
                     <Text>We know you gave this your best shot </Text> and we were impressed 
-                    <Text>We wanted to let you know that we decided to move forward with other candidates for the current cohort. 
+                    <Text>We wanted to let you know that we decided to move forward with other candidates for this current cohort. 
                           This does not reflect negative judgement of your background or experience.
                           We really appreciate you taking the time to speak with us and hope you'll consider a future cohort.<br /><br /><br />
                           wishing you the very best and do have a great rest for the week.🤗

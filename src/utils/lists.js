@@ -1,8 +1,8 @@
 export const countries = [
   { name: "Nigeria" },
   { name: "Ghana" },
-  { name: "Ghana" },
-  { name: "Ghana" },
+  { name: "Cameroon" },
+  { name: "Algeria" },
   { name: "Ghana" },
   { name: "Ghana" },
   { name: "Ghana" },
