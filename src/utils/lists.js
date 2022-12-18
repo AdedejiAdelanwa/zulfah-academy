@@ -42,7 +42,7 @@ export const devYears = ["0 years", "1-2 years", "3+ years"];
 
 export const paymentOptions = [
   { name: "Self Sponsorship Plan - SSP", value: "SIP" },
-  { name: "Financier Investment Plan - FIP", value: "FIP" },
+  // { name: "Financier Investment Plan - FIP", value: "FIP" },
 ];
 
 export const hireFaqs = [

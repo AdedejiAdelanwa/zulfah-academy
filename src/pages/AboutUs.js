@@ -813,7 +813,8 @@ export default function AboutUs() {
                 </Flex>
                 <Stack color={"white"} w={{ base: "50%", lg: "60%" }}>
                   <Heading>500,000</Heading>
-                  <Text>Tuition Fee</Text>
+                  <Text>Frontend - Backend</Text>
+                  <Text>6 Months</Text>
                 </Stack>
               </Flex>
               <Flex
@@ -830,11 +831,12 @@ export default function AboutUs() {
                   borderRadius={"50%"}
                   bg={"white"}
                 >
-                  <Icon as={Hourglass} width={"57px"} h={"57px"} />
+                  <Icon as={Tuition} width={"57px"} h={"57px"} />
                 </Flex>
                 <Stack color={"white"} w={{ base: "40%", lg: "60%" }}>
-                  <Heading>6</Heading>
-                  <Text>Months</Text>
+                  <Heading>850,000</Heading>
+                  <Text>Fullstack</Text>
+                  <Text>9 Months</Text>
                 </Stack>
               </Flex>
             </Stack>

@@ -30,7 +30,10 @@ import { Footer } from "../components/Footer";
 import { ApplicationCTA } from "../components/ApplicationCTA";
 
 export default function Home() {
+
+  
   return (
+
     <Box position={"relative"}>
       <MainNavigation />
       <Box paddingTop={{ base: "0px", lg: "none" }} bg={"white"}>
@@ -46,7 +49,7 @@ export default function Home() {
                 color={"brand.darkergrey"}
                 fontSize={{ base: "3xl", md: "4xl", lg: "6xl" }}
               >
-                vggfhjghjg.Become a Skilled Software Engineer
+               Become a Skilled Software Engineer
     
               </Heading>
               <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
@@ -612,5 +615,6 @@ export default function Home() {
       </Box>
       <Footer />
     </Box>
+
   );
 }
